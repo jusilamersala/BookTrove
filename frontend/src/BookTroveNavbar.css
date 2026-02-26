@@ -1,0 +1,70 @@
+.booktrove-navbar {
+  background-color: #3b261a !important;
+  font-family: "Georgia", serif;
+  padding: 8px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Brand */
+.booktrove-navbar .navbar-brand {
+  color: #f5efe6 !important;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* Nav links */
+.booktrove-navbar .nav-link,
+.booktrove-navbar .dropdown-toggle {
+  color: #f5efe6 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.booktrove-navbar .nav-link:hover,
+.booktrove-navbar .dropdown-toggle:hover {
+  color: #e6d3b1 !important;
+}
+
+.booktrove-navbar .dropdown-menu {
+  background-color: #fdfaf5;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.booktrove-navbar .dropdown-item {
+  color: #5a3e2b;
+  font-size: 0.9rem;
+}
+
+.booktrove-navbar .dropdown-item:hover {
+  background-color: #e6d3b1;
+}
+
+.navbar-search {
+  border-radius: 20px;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  background-color: #f5efe6;
+  width: 180px;
+}
+
+.navbar-search:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.cart-icon svg {
+  color: #f5efe6;
+  cursor: pointer;
+}
+
+.cart-icon svg:hover {
+  color: #e6d3b1;
+}
+
+.navbar-actions {
+  gap: 6px;
+}

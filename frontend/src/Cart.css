@@ -1,0 +1,139 @@
+.cart-page {
+  background-color: #fdfaf6;
+  padding: 60px 0;
+  min-height: 90vh;
+}
+
+.cart-header-nav {
+  margin-bottom: 40px;
+}
+
+.back-link {
+  color: #8b5e3c;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-header-nav h1 {
+  color: #3d2b1f;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Kartela e Produktit në Shportë */
+.cart-items-container {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-card:last-child { border-bottom: none; }
+
+.cart-item-img {
+  width: 80px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cart-item-details { flex: 2; }
+.cart-item-details h3 { font-size: 1.1rem; color: #3d2b1f; margin-bottom: 5px; }
+.cart-item-details p { color: #888; font-size: 0.9rem; }
+
+.cart-item-quantity {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qty-btn {
+  background: #f8f5f2;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #3d2b1f;
+  cursor: pointer;
+}
+
+.cart-item-price {
+  flex: 1;
+  font-weight: 700;
+  color: #3d2b1f;
+  text-align: center;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Summary Box */
+.cart-summary {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 100px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.summary-row.total {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #3d2b1f;
+  margin-top: 10px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #5a4030;
+  transform: translateY(-3px);
+}
+
+.payment-methods {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.5rem;
+  color: #ccc;
+}

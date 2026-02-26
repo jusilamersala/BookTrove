@@ -1,60 +1,47 @@
 import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa'; // ikon shporte
-import Button from 'react-bootstrap/Button';
+import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Importo Link
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import './BookTroveNavbar.css';
 
 function BookTroveNavbar() {
   return (
-    <Navbar expand="lg" bg="light" variant="light">
+    <Navbar expand="lg" className="booktrove-navbar" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="#">BookTrove</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">BookTrove</Navbar.Brand>
         <Navbar.Toggle aria-controls="booktrove-navbar" />
         <Navbar.Collapse id="booktrove-navbar">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
 
-            <NavDropdown title="Librat" id="navbar-dropdown-librat">
-              <NavDropdown.Item href="#novels">Romane</NavDropdown.Item>
-              <NavDropdown.Item href="#non-fiction">Edukim</NavDropdown.Item>
-              <NavDropdown.Item href="#children"> Femije</NavDropdown.Item>
-            </NavDropdown>
+            {/* Këtu hoqëm dropdown-in dhe e bëmë Link të thjeshtë */}
+            <Nav.Link as={Link} to="/librat">Librat</Nav.Link>
 
             <NavDropdown title="Zhanerat" id="navbar-dropdown-zhanerat">
-              <NavDropdown.Item href="#fiction">Sci-fi</NavDropdown.Item>
-              <NavDropdown.Item href="#history">Historik</NavDropdown.Item>
-              <NavDropdown.Item href="#science">Shkence</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/librat/sci-fi">Sci-fi</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/librat/historik">Historik</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/librat/shkence">Shkencë</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="#eventet">Eventet</Nav.Link>
-            <Nav.Link href="#rreth-nesh">Rreth Nesh</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#kontakt">Kontakt</Nav.Link>
+            <Nav.Link as={Link} to="/eventet">Eventet</Nav.Link>
+            <Nav.Link as={Link} to="/rreth-nesh">Rreth Nesh</Nav.Link>
+            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+            <Nav.Link as={Link} to="/kontakt">Kontakt</Nav.Link>
           </Nav>
 
-          <Form className="d-flex align-items-center">
-            <Form.Control
-              type="search"
-              placeholder="Kerko"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success" className="me-2">
-              Kerko
-            </Button>
-
-            {/* Ikona e shportes */}
-            <Nav.Link href="#shporta" className="me-2">
-              <FaShoppingCart size={20} />
+          <Form className="d-flex align-items-center navbar-actions">
+            <Form.Control type="search" placeholder="Kërko libra..." className="navbar-search me-3"/>
+            <Nav.Link as={Link} to="/shporta" className="me-3 cart-icon text-white">
+              <FaShoppingCart size={18} />
             </Nav.Link>
-
-            <Button variant="primary" className="me-2">
-              Login
-            </Button>
-            <Button variant="secondary">Signup</Button>
+            <NavDropdown title="Llogaria" id="account-dropdown" align="end">
+              <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/signup">Signup</NavDropdown.Item>
+            </NavDropdown>
           </Form>
         </Navbar.Collapse>
       </Container>

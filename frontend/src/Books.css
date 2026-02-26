@@ -1,0 +1,165 @@
+.librat-container {
+  padding: 40px;
+  background-color: #fdfaf6; /* Ngjyrë e hapur si letër libri */
+  min-height: 80vh;
+}
+
+.librat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.liber-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-top: 5px solid #3d2b1f; /* Ngjyra kafe e Navbar-it */
+  transition: transform 0.2s;
+}
+
+.liber-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-detaje {
+  background-color: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.books-full-page {
+  background-color: #fdfaf6;
+  padding: 40px 8%;
+  min-height: 100vh;
+}
+
+.books-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.books-intro h1 {
+  font-family: 'Playfair Display', serif;
+  color: #3d2b1f;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Toolbar-i Horizontal */
+.horizontal-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+
+.search-minimal {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-icon { color: #8b5e3c; margin-right: 15px; }
+
+.search-minimal input {
+  border: none;
+  outline: none;
+  width: 80%;
+  font-size: 1rem;
+}
+
+.filter-dropdowns {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-btn {
+  background: #f8f5f2;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #3d2b1f;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.filter-btn:hover { background: #3d2b1f; color: white; }
+
+/* Grid i zgjeruar */
+.books-grid-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.modern-book-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  border-bottom: 4px solid transparent;
+}
+
+.modern-book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(61, 43, 31, 0.1);
+  border-bottom: 4px solid #8b5e3c;
+}
+
+.book-image-area {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.book-image-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quick-add {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.modern-book-card:hover .quick-add { bottom: 0; }
+
+.quick-add button {
+  width: 100%;
+  background: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.book-content { padding: 20px; }
+.cat-label { font-size: 10px; text-transform: uppercase; color: #8b5e3c; font-weight: 800; }
+.book-name { font-size: 1.1rem; color: #3d2b1f; margin: 5px 0; }
+.book-writer { font-size: 0.9rem; color: #777; margin-bottom: 15px; }
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.book-price { font-size: 1.2rem; font-weight: 700; color: #3d2b1f; }
+.details-link { background: none; border: none; color: #8b5e3c; font-size: 0.8rem; font-weight: bold; cursor: pointer; }

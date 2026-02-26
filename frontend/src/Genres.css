@@ -1,0 +1,26 @@
+.zhanerat-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.zhanerat-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.zhaner-item {
+  padding: 15px 30px;
+  background-color: #3d2b1f;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.zhaner-item:hover {
+  background-color: #5a4030;
+}

@@ -1,0 +1,109 @@
+.auth-page {
+  background-color: #fdfaf6;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-small-card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(61, 43, 31, 0.08);
+  text-align: center;
+  border: 1px solid #f0ece8;
+}
+
+.auth-small-card h2 {
+  font-family: 'Playfair Display', serif;
+  color: #3d2b1f;
+  margin-bottom: 10px;
+}
+
+.auth-small-card p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box .icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8b5e3c;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  background: #fdfaf6;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #8b5e3c;
+}
+
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.auth-options .forgot {
+  color: #8b5e3c;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-btn {
+  width: 100%;
+  background: #3d2b1f;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-btn {
+  background: #8b5e3c;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.switch-auth {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.switch-auth a {
+  color: #3d2b1f;
+  font-weight: bold;
+  text-decoration: none;
+}

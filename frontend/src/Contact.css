@@ -1,0 +1,16 @@
+.contact-page { background-color: #fdfaf6; padding: 80px 0; min-height: 100vh; }
+.contact-wrapper { display: flex; background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
+.contact-info { flex: 1; background: #3d2b1f; color: white; padding: 60px; }
+.contact-info h2 { margin-bottom: 30px; font-size: 2.5rem; }
+.info-item { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+.info-item .icon { font-size: 1.5rem; color: #d4a373; }
+
+.contact-form-container { flex: 1.5; padding: 60px; }
+.form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 8px; color: #3d2b1f; font-weight: bold; }
+.form-group input, .form-group textarea { padding: 12px; border: 1px solid #ddd; border-radius: 10px; outline: none; transition: 0.3s; }
+.form-group input:focus { border-color: #3d2b1f; }
+
+.submit-btn { background: #3d2b1f; color: white; border: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; width: 100%; transition: 0.3s; }
+.submit-btn:hover { background: #5a4030; transform: translateY(-3px); }

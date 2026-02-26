@@ -1,0 +1,23 @@
+.eventet-page { background-color: #fdfaf6; padding: 60px 10%; min-height: 100vh; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h1 { color: #3d2b1f; font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+
+.event-card-horizontal {
+  display: flex; background: white; border-radius: 20px; overflow: hidden;
+  margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s;
+  position: relative;
+}
+.event-card-horizontal:hover { transform: scale(1.02); }
+
+.event-date-badge {
+  position: absolute; left: 20px; top: 20px; background: #3d2b1f; color: white;
+  width: 70px; height: 70px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; border-radius: 15px; z-index: 2;
+}
+
+.event-image { width: 300px; height: 200px; }
+.event-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.event-info { padding: 30px; flex: 1; }
+.event-meta { display: flex; gap: 20px; color: #8b5e3c; font-size: 0.9rem; margin-bottom: 15px; }
+.btn-interesuar { background: #3d2b1f; color: white; border: none; padding: 10px 25px; border-radius: 50px; font-weight: bold; }

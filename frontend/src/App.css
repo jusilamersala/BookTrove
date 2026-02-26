@@ -13,6 +13,8 @@
   }
 }
 
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +37,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+body, html, #root, .App {
+  background-color: #fdfaf6 !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
