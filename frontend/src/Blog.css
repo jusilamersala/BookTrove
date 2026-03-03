@@ -243,13 +243,16 @@
   background: #3d2b1f;
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  /* Madhësi fikse që të mos rritet */
+  width: 40px !important; 
+  height: 40px !important;
+  border-radius: 50% !important; /* Siguron që të mbetet i rrumbullakët */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 0; /* Heqim çdo padding që mund ta zmadhojë */
+  flex-shrink: 0; /* Parandalon që Flexbox ta shtypë butonin */
 }
 
 .recent-comments {
@@ -270,9 +273,56 @@
 .single-comment p { color: #555; margin: 5px 0; font-size: 0.95rem; }
 .single-comment span { font-size: 0.8rem; color: #999; }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .featured-card { flex-direction: column; }
-  .featured-img { width: 100%; height: 300px; }
-  .blog-grid-modern { grid-template-columns: 1fr; }
+.blog-page-wrapper {
+  padding: 40px 5%; /* Më pak padding anash */
+}
+
+.comment-input-wrapper input {
+  flex: 1; /* Zë gjithë hapësirën */
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%; /* Për t'u siguruar në celular */
+}
+
+.blog-intro-section h1 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+/* Featured Card - Ky është ndryshimi kryesor */
+.featured-card {
+  display: flex;
+  flex-direction: column; /* Default për celular */
+  height: auto;
+}
+
+.featured-img {
+  width: 100%;
+  height: 250px;
+}
+
+@media (min-width: 992px) {
+  .featured-card { flex-direction: row; }
+  .featured-img { height: 450px; flex: 1.2; }
+  .featured-content { flex: 1; padding: 50px; }
+}
+
+/* Grid-i i artikujve */
+.blog-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Më fleksibël se 400px */
+  gap: 20px;
+}
+
+/* Community Section */
+.comment-input-wrapper {
+  flex-direction: column; /* Inputi dhe butoni njëri mbi tjetrin në celular */
+  border-radius: 15px;
+  padding: 15px;
+}
+
+@media (min-width: 600px) {
+  .comment-input-wrapper { flex-direction: row; border-radius: 50px; }
 }

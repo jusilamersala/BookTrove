@@ -1,48 +1,66 @@
+/* 1. RESET TOTAL - Kjo ndalon çdo element të dalë jashtë kornizës */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden; /* Ndalon lëvizjen majtas-djathtas në celular */
+  background-color: #fdfaf6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 2. KONTENIERI KRYESOR - Baza e gjithë website-it */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-
-.App-header {
-  background-color: #282c34;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+/* 3. WRAPPER-I I PËRMBAJTJES - Përdore këtë klasë në JSX-in tënd rreth elementeve */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Hapësirë që teksti të mos prekë anët e celularit */
+}
+
+/* 4. RREGULLIMI I FLEX-it (Për rreshta me shumë elemente) */
+.d-flex {
+  display: flex;
+  flex-wrap: wrap; /* E DETYRON elementin të zbresë poshtë kur s'ka vend */
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+/* 5. ELEMENTET BRENDA FLEX-it (Psh. Kartat e kurseve ose blogut) */
+.flex-item {
+  flex: 1 1 300px; /* Do të tentojë të jetë 300px, por zmadhohet nëse ka vend */
+  max-width: 100%;  /* Nuk lejon kurrë të bëhet më i gjerë se ekrani */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 6. IMAZHET RESPONSIVE */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 7. MEDIA QUERIES PËR CELULARË */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 15px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  
+  /* Bën çdo buton apo input të zërë gjithë gjerësinë në celular */
+  button, input, .flex-item {
+    width: 100% !important;
   }
-}
-
-
-body, html, #root, .App {
-  background-color: #fdfaf6 !important;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
 }

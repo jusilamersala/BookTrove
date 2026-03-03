@@ -1,48 +1,75 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; // Importo Link
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
+import { Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './BookTroveNavbar.css';
+import { AuthContext } from './AuthContext';
 
 function BookTroveNavbar() {
+  const [expanded, setExpanded] = useState(false);
+  const { user, logout } = useContext(AuthContext);
+  const handleToggle = () => setExpanded(false);
+
   return (
-    <Navbar expand="lg" className="booktrove-navbar" variant="dark">
-      <Container fluid>
-        <Navbar.Brand as={Link} to="/">BookTrove</Navbar.Brand>
+    <Navbar 
+      expanded={expanded} 
+      onToggle={setExpanded} 
+      expand="lg" 
+      className="booktrove-navbar" 
+      variant="dark"
+    >
+      <Container fluid className="navbar-container">
+        <Navbar.Brand as={Link} to="/" onClick={handleToggle}>BookTrove</Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="booktrove-navbar" />
+        
         <Navbar.Collapse id="booktrove-navbar">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-
-            {/* Këtu hoqëm dropdown-in dhe e bëmë Link të thjeshtë */}
-            <Nav.Link as={Link} to="/librat">Librat</Nav.Link>
-
-            <NavDropdown title="Zhanerat" id="navbar-dropdown-zhanerat">
-              <NavDropdown.Item as={Link} to="/librat/sci-fi">Sci-fi</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/librat/historik">Historik</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/librat/shkence">Shkencë</NavDropdown.Item>
+          {/* Menuja Kryesore */}
+          <Nav className="navbar-links-center">
+            <Nav.Link as={Link} to="/" onClick={handleToggle}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/librat" onClick={handleToggle}>Librat</Nav.Link>
+            <NavDropdown title="Zhanerat" id="zhanerat-drop">
+              <NavDropdown.Item as={Link} to="/librat/sci-fi" onClick={handleToggle}>Sci-fi</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/librat/historik" onClick={handleToggle}>Historik</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/librat/shkence" onClick={handleToggle}>Shkencë</NavDropdown.Item>
             </NavDropdown>
-
-            <Nav.Link as={Link} to="/eventet">Eventet</Nav.Link>
-            <Nav.Link as={Link} to="/rreth-nesh">Rreth Nesh</Nav.Link>
-            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-            <Nav.Link as={Link} to="/kontakt">Kontakt</Nav.Link>
+            <Nav.Link as={Link} to="/eventet" onClick={handleToggle}>Eventet</Nav.Link>
+            <Nav.Link as={Link} to="/rreth-nesh" onClick={handleToggle}>Rreth Nesh</Nav.Link>
+            <Nav.Link as={Link} to="/blog" onClick={handleToggle}>Blog</Nav.Link>
+            <Nav.Link as={Link} to="/kontakt" onClick={handleToggle}>Kontakt</Nav.Link>
           </Nav>
 
-          <Form className="d-flex align-items-center navbar-actions">
-            <Form.Control type="search" placeholder="Kërko libra..." className="navbar-search me-3"/>
-            <Nav.Link as={Link} to="/shporta" className="me-3 cart-icon text-white">
-              <FaShoppingCart size={18} />
-            </Nav.Link>
-            <NavDropdown title="Llogaria" id="account-dropdown" align="end">
-              <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/signup">Signup</NavDropdown.Item>
-            </NavDropdown>
-          </Form>
+          {/* Grupi i Djathtë - I blinduar kundër zbritjes poshtë */}
+          <div className="navbar-right-final">
+            <Form className="search-form-wrapper">
+              <Form.Control 
+                type="search" 
+                placeholder="Kërko libra..." 
+                className="navbar-search-input"
+              />
+            </Form>
+            
+            <div className="icons-wrapper">
+              <Nav.Link as={Link} to="/shporta" className="cart-link" onClick={handleToggle}>
+                <FaShoppingCart size={20} />
+              </Nav.Link>
+              
+              <NavDropdown title="Llogaria" id="account-drop" align="end">
+                {user ? (
+                  <>
+                    <NavDropdown.Item as={Link} to="/profile" onClick={handleToggle}>Profili</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item onClick={() => { logout(); handleToggle(); }}>Dil</NavDropdown.Item>
+                  </>
+                ) : (
+                  <>
+                    <NavDropdown.Item as={Link} to="/login" onClick={handleToggle}>Login</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/signup" onClick={handleToggle}>Signup</NavDropdown.Item>
+                  </>
+                )}
+              </NavDropdown>
+            </div>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

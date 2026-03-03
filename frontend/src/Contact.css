@@ -14,3 +14,49 @@
 
 .submit-btn { background: #3d2b1f; color: white; border: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; width: 100%; transition: 0.3s; }
 .submit-btn:hover { background: #5a4030; transform: translateY(-3px); }
+/* --- Responsiviteti për Contact Page --- */
+
+@media (max-width: 991px) {
+  .contact-page {
+    padding: 40px 15px; /* Më pak hapësirë anash në celular */
+  }
+
+  .contact-wrapper {
+    flex-direction: column; /* Informacioni lart, formulari poshtë */
+    border-radius: 20px;
+  }
+
+  .contact-info {
+    padding: 40px 30px;
+    text-align: center; /* Centrojmë tekstin për pamje më të mirë */
+  }
+
+  .contact-info h2 {
+    font-size: 2rem;
+  }
+
+  .info-item {
+    flex-direction: column; /* Ikonat mbi tekstin në celular */
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .contact-form-container {
+    padding: 40px 25px;
+  }
+
+  .submit-btn {
+    padding: 12px 30px;
+  }
+}
+
+/* Për ekrane shumë të vogla (Celularë të vjetër) */
+@media (max-width: 480px) {
+  .contact-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+}

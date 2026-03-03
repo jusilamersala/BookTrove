@@ -163,3 +163,44 @@
 
 .book-price { font-size: 1.2rem; font-weight: 700; color: #3d2b1f; }
 .details-link { background: none; border: none; color: #8b5e3c; font-size: 0.8rem; font-weight: bold; cursor: pointer; }
+.books-full-page {
+  padding: 20px 5%;
+}
+
+/* Toolbar-i që nuk "thyhet" */
+.horizontal-toolbar {
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .horizontal-toolbar {
+    flex-direction: row;
+    border-radius: 50px;
+  }
+}
+
+.filter-dropdowns {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Grid-i i Librave */
+.books-grid-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Libra më të vegjël në celular */
+  gap: 20px;
+}
+
+@media (min-width: 480px) {
+  .books-grid-full {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+  }
+}
+
+.book-image-area {
+  height: clamp(200px, 40vh, 320px);
+}

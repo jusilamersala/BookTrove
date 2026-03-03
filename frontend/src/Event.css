@@ -21,3 +21,65 @@
 .event-info { padding: 30px; flex: 1; }
 .event-meta { display: flex; gap: 20px; color: #8b5e3c; font-size: 0.9rem; margin-bottom: 15px; }
 .btn-interesuar { background: #3d2b1f; color: white; border: none; padding: 10px 25px; border-radius: 50px; font-weight: bold; }
+/* --- Responsiviteti për Eventet --- */
+
+@media (max-width: 1024px) {
+  .eventet-page {
+    padding: 40px 5%; /* Pakësojmë anët në tablet */
+  }
+  
+  .event-image {
+    width: 250px; /* Imazhi pak më i vogël në ekranet mesatare */
+  }
+}
+
+@media (max-width: 768px) {
+  .eventet-page {
+    padding: 30px 15px;
+  }
+
+  .event-card-horizontal {
+    flex-direction: column; /* Karta bëhet vertikale në celular */
+    max-width: 450px; /* E mban të mbledhur dhe estetike */
+    margin: 0 auto 30px auto; /* Centron kartën */
+  }
+
+  .event-image {
+    width: 100%; /* Imazhi zë gjithë gjerësinë lart */
+    height: 220px;
+  }
+
+  .event-date-badge {
+    width: 60px;
+    height: 60px;
+    font-size: 0.8rem;
+    left: 15px;
+    top: 15px;
+  }
+
+  .event-info {
+    padding: 20px;
+    text-align: center; /* Centrojmë tekstin për pamje më të mbledhur */
+  }
+
+  .event-meta {
+    justify-content: center;
+    flex-wrap: wrap; /* Ikonat ndahen në dy rreshta nëse nuk nxënë */
+    gap: 10px;
+  }
+
+  .section-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Për celularët e vegjël */
+@media (max-width: 480px) {
+  .event-image {
+    height: 180px;
+  }
+  
+  .btn-interesuar {
+    width: 100%; /* Butoni zë gjithë hapësirën poshtë */
+  }
+}

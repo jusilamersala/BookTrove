@@ -12,6 +12,10 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.hero-btns a, .details-btn, .view-all-books-btn {
+  text-decoration: none !important;
+  display: inline-block;
+}
 
 /* --- HERO SECTION --- */
 .hero-section {

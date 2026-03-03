@@ -1,0 +1,129 @@
+:root {
+  --primary-color: #6366f1;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --text-dark: #1e293b;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+  min-height: 90vh;
+  padding: 40px 20px;
+  background: var(--bg-gradient);
+  display: flex;
+  justify-content: center;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Kartat */
+.profile-card {
+  background: var(--glass-bg);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+/* User Header */
+.user-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.profile-icon {
+  font-size: 80px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.user-details p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  color: var(--text-dark);
+}
+
+.role-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.role-badge.admin { background: #fee2e2; color: #ef4444; }
+.role-badge.user { background: #dcfce7; color: #22c55e; }
+
+/* Logout Button */
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #ef4444;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  background: #dc2626;
+}
+
+/* Orders Section */
+.orders-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.order-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-left: 5px solid var(--primary-color);
+  transition: 0.3s;
+}
+
+.order-item:hover {
+  transform: scale(1.02);
+}
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.order-total {
+  color: var(--primary-color);
+}
+
+/* Responsiviteti (Mobile) */
+@media (max-width: 850px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-container {
+    padding: 20px 10px;
+  }
+}

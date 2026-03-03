@@ -133,3 +133,41 @@
   font-size: 1.2rem;
 }
 
+/* Hero Section - Bëhet më i vogël në celular */
+.about-hero-modern {
+  background-size: cover;
+  background-attachment: scroll; /* Fixed shkakton probleme në disa celularë */
+  min-height: 300px;
+  height: auto;
+  padding: 60px 20px;
+}
+
+.hero-overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 8vw, 4rem); /* Zvogëlohet automatikisht */
+}
+
+/* Stats Bar - Nga horizontale në vertikale në celular */
+.stats-bar {
+  width: 90%;
+  margin-top: -30px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Lejon zbritjen poshtë */
+  justify-content: center;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1 1 150px; /* Minimalisht 150px, pastaj zbret poshtë */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mb-100 { margin-bottom: 50px; }
+  .section-title { font-size: 1.8rem; }
+  /* Heqim dekorimet anësore që prishin gjerësinë në celular */
+  .image-border-decoration, .image-border-decoration-right {
+    display: none; 
+  }
+}

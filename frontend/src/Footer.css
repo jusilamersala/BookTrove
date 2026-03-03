@@ -1,16 +1,22 @@
 .footer {
   font-family: "Georgia", serif;
   color: #2f2f2f;
+  width: 100%;
 }
 
-
+/* FOOTER TOP - Rregulluar për Flex-Wrap */
 .footer-top {
   background-color: #3f2b1f;
   display: flex;
+  flex-wrap: wrap; /* Esenciale për celular */
   justify-content: space-between;
-  padding: 60px 80px;
-  gap: 50px;
+  padding: 40px 5%; /* Përdorim përqindje në vend të px fiks */
+  gap: 30px;
   color: #f5efe6;
+}
+
+.footer-explore, .footer-follow {
+  flex: 1 1 250px; /* Do të marrin të paktën 250px, pastaj zbresin poshtë */
 }
 
 /* TITLES */
@@ -35,35 +41,33 @@
   transition: color 0.2s ease;
 }
 
-.footer-explore li:hover {
-  color: #e6d3b1;
-}
-
 .footer-follow p {
-  max-width: 300px;
+  max-width: 400px;
   margin-bottom: 20px;
   line-height: 1.6;
-  color: #f5efe6;
 }
 
 .footer-images {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .footer-images img {
-  width: 90px;
-  height: 90px;
+  width: 80px; /* Pak më të vegjël që të nxënë më mirë */
+  height: 80px;
   object-fit: cover;
   border-radius: 4px;
 }
 
+/* FOOTER BOTTOM - Ndryshuar nga 4 kolona në Grid fleksibël */
 .footer-bottom {
   background-color: #ffffff;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 50px 80px;
-  gap: 40px;
+  /* Krijon kolona automatike: në celular 1, në tablet 2, në desktop 4 */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 40px 5%;
+  gap: 30px;
   color: #2f2f2f;
 }
 
@@ -89,4 +93,29 @@
   text-align: center;
   padding: 15px;
   font-size: 14px;
+}
+
+/* MEDIA QUERIES PËR CELULARË */
+@media (max-width: 768px) {
+  .footer-top, .footer-bottom {
+    padding: 40px 20px;
+    text-align: center; /* Qendrojmë tekstin për pamje më të rregullt në celular */
+  }
+
+  .footer-images {
+    justify-content: center;
+  }
+
+  .footer-follow p {
+    margin: 0 auto 20px auto;
+  }
+
+  .footer-col {
+    border-bottom: 1px solid #eee; /* Ndarje e lehtë mes seksioneve */
+    padding-bottom: 20px;
+  }
+  
+  .footer-col:last-child {
+    border-bottom: none;
+  }
 }

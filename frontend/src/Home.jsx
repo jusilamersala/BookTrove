@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importi për navigimin
 import './Home.css';
 
 const Home = () => {
@@ -10,13 +11,14 @@ const Home = () => {
           <h1>"Çdo libër, një botë për të zbuluar."</h1>
           <p>Eksploro histori që jetojnë përtej faqeve</p>
           <div className="hero-btns">
-            <button className="btn-dark">Shfleto Librat</button>
-            <button className="btn-light">Eventet e Ardhshme</button>
+            {/* Kthehen në Link për navigim */}
+            <Link to="/librat" className="btn-dark">Shfleto Librat</Link>
+            <Link to="/eventet" className="btn-light">Eventet e Ardhshme</Link>
           </div>
         </div>
       </section>
 
-      {/* Rreshti 2: Kategoritë në rresht horizontal */}
+      {/* Rreshti 2: Kategoritë - Struktura jote origjinale e paprekur */}
       <nav className="categories-row">
         <h3>Kategoritë:</h3>
         <div className="cat-btns">
@@ -39,11 +41,13 @@ const Home = () => {
               <h3>Titulli i Librit</h3>
               <p className="author">Autori</p>
               <p className="price">12.99€</p>
-              <button className="details-btn">Detaje</button>
+              {/* Kthehet në Link */}
+              <Link to="/librat" className="details-btn">Detaje</Link>
             </div>
           ))}
         </div>
-        <button className="view-all-books-btn">Shiko të Gjithë Librat</button>
+        {/* Kthehet në Link */}
+        <Link to="/librat" className="view-all-books-btn">Shiko të Gjithë Librat</Link>
       </section>
     </div>
   );
