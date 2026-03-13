@@ -1,45 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Event.css';
-import { FaCalendarAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const Event = () => {
-  const eventet = [
-    {
-      id: 1,
-      titulli: "Promovimi i Librit 'Kronikë në gur'",
-      data: "12 Mars",
-      ora: "18:00",
-      lokacioni: "Libraria BookTrove, Tiranë",
-      pershkrimi: "Bashkohuni me ne për një mbrëmje diskutimi mbi kryeveprën e Kadaresë.",
-      imazhi: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=500&q=80"
-    },
-    {
-      id: 2,
-      titulli: "Klubi i Leximit: Shkenca dhe Filozofia",
-      data: "20 Mars",
-      ora: "17:30",
-      lokacioni: "Online (Zoom)",
-      pershkrimi: "Diskutojmë mbi librin 'Sapiens' dhe ndikimin e tij në mendimin modern.",
-      imazhi: "https://images.unsplash.com/photo-1529148482759-b35b25c5f217?w=500&q=80"
-    }
-  ];
+  const [eventet, setEventet] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getEvents = async () => {
+      try {
+        const res = await axios.get('http://localhost:5000/api/events');
+        setEventet(res.data);
+      } catch (err) {
+        console.error("Gabim gjatë marrjes së eventeve:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getEvents();
+  }, []);
+
+  const handleInterest = (titulli) => {
+    // KUJDES: Duhet '/kontakt' sepse ashtu e ke te App.js
+    navigate('/kontakt', { state: { eventTitle: titulli } });
+  };
+
+  if (loading) return <div className="text-center mt-5">Duke u ngarkuar eventet...</div>;
 
   return (
     <div className="eventet-page">
-      <div className="section-header">
+      <div className="section-header text-center mb-5">
         <h1>Eventet e Ardhshme</h1>
         <p>Bëhu pjesë e komunitetit tonë të lexuesve</p>
       </div>
 
-      <div className="eventet-list">
+      <div className="eventet-list container">
+        {eventet.length === 0 && <p className="text-center">Nuk ka evente për momentin.</p>}
+        
         {eventet.map(ev => (
-          <div key={ev.id} className="event-card-horizontal">
+          <div key={ev._id || ev.id} className="event-card-horizontal">
             <div className="event-date-badge">
-              <span>{ev.data.split(' ')[0]}</span>
-              <small>{ev.data.split(' ')[1]}</small>
+              <span>{ev.data ? ev.data.split(' ')[0] : ''}</span>
+              <small>{ev.data ? ev.data.split(' ')[1] : ''}</small>
             </div>
             <div className="event-image">
-              <img src={ev.imazhi} alt={ev.titulli} />
+              <img src={ev.imazhi || 'https://via.placeholder.com/500'} alt={ev.titulli} />
             </div>
             <div className="event-info">
               <h3>{ev.titulli}</h3>
@@ -48,7 +56,12 @@ const Event = () => {
                 <span><FaMapMarkerAlt /> {ev.lokacioni}</span>
               </div>
               <p>{ev.pershkrimi}</p>
-              <button className="btn-interesuar">Më trego më shumë</button>
+              <button 
+                className="btn-interesuar" 
+                onClick={() => handleInterest(ev.titulli)}
+              >
+                Rezervo Vendin
+              </button>
             </div>
           </div>
         ))}

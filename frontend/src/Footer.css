@@ -1,121 +1,156 @@
 .footer {
+  background-color: #3f2b1f; /* Ngjyra jote origjinale */
+  color: #f5efe6;
+  padding-top: 50px;
   font-family: "Georgia", serif;
-  color: #2f2f2f;
   width: 100%;
 }
 
-/* FOOTER TOP - Rregulluar për Flex-Wrap */
-.footer-top {
-  background-color: #3f2b1f;
-  display: flex;
-  flex-wrap: wrap; /* Esenciale për celular */
-  justify-content: space-between;
-  padding: 40px 5%; /* Përdorim përqindje në vend të px fiks */
-  gap: 30px;
-  color: #f5efe6;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  /* Krijon kolona automatike: 4 në desktop, 2 në tablet, 1 në celular */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 0 5% 40px 5%;
 }
 
-.footer-explore, .footer-follow {
-  flex: 1 1 250px; /* Do të marrin të paktën 250px, pastaj zbresin poshtë */
+/* Stilimi i teksteve */
+.footer-logo {
+  font-size: 24px;
+  color: #e6d3b1;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-/* TITLES */
-.footer-explore h4,
-.footer-follow h4 {
-  text-transform: uppercase;
+.footer-description {
   font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.footer-section h4 {
+  color: #e6d3b1;
+  font-size: 16px;
+  text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
-  color: #e6d3b1; 
+  border-bottom: 1px solid rgba(230, 211, 177, 0.2);
+  padding-bottom: 10px;
+  display: inline-block;
 }
 
-.footer-explore ul {
+.footer-section ul {
   list-style: none;
   padding: 0;
 }
 
-.footer-explore li {
+.footer-section li {
   margin-bottom: 12px;
+  font-size: 15px;
   cursor: pointer;
-  color: #f5efe6;
-  transition: color 0.2s ease;
+  transition: 0.3s;
+  opacity: 0.8;
 }
 
-.footer-follow p {
-  max-width: 400px;
-  margin-bottom: 20px;
-  line-height: 1.6;
+.footer-section li:hover {
+  opacity: 1;
+  color: #ffffff;
+  padding-left: 5px;
 }
 
-.footer-images {
+/* Social Icons */
+.footer-socials {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
-.footer-images img {
-  width: 80px; /* Pak më të vegjël që të nxënë më mirë */
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
+.social-box {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e6d3b1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* FOOTER BOTTOM - Ndryshuar nga 4 kolona në Grid fleksibël */
-.footer-bottom {
-  background-color: #ffffff;
-  display: grid;
-  /* Krijon kolona automatike: në celular 1, në tablet 2, në desktop 4 */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding: 40px 5%;
-  gap: 30px;
-  color: #2f2f2f;
+.social-box:hover {
+  background-color: #e6d3b1;
+  color: #3f2b1f;
 }
 
-.footer-col h4 {
-  margin-bottom: 15px;
-  color: #3f2b1f; 
-}
-
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-col li {
-  margin-bottom: 10px;
-  color: #4a4a4a;
-}
-
-/* COPYRIGHT */
-.footer-copy {
-  background-color: #1f2a1f;
-  color: #f5efe6;
-  text-align: center;
-  padding: 15px;
+.work-hours {
+  margin-top: 15px;
+  font-style: italic;
   font-size: 14px;
 }
 
-/* MEDIA QUERIES PËR CELULARË */
+/* COPYRIGHT SECTION */
+.footer-bottom {
+  background-color: #1f140d; /* Pak më e errët për kontrast */
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Shto këto te Footer.css ekzistues */
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: inherit; /* Merr ngjyrën e prindit (f5efe6) */
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-logo-link {
+  text-decoration: none;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-bottom a {
+  color: #e6d3b1;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .footer-top, .footer-bottom {
-    padding: 40px 20px;
-    text-align: center; /* Qendrojmë tekstin për pamje më të rregullt në celular */
+  .footer-container {
+    text-align: center;
+    padding-bottom: 20px;
   }
 
-  .footer-images {
+  .footer-section h4 {
+    display: block;
+    width: 100%;
+  }
+
+  .footer-socials {
     justify-content: center;
   }
 
-  .footer-follow p {
-    margin: 0 auto 20px auto;
-  }
-
-  .footer-col {
-    border-bottom: 1px solid #eee; /* Ndarje e lehtë mes seksioneve */
-    padding-bottom: 20px;
-  }
-  
-  .footer-col:last-child {
-    border-bottom: none;
+  .footer-section li:hover {
+    padding-left: 0; /* Heqim levizjen anash ne celular */
   }
 }

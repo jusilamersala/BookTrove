@@ -11,7 +11,7 @@ const ReadOne = () => {
     useEffect(() => {
         const fetchBook = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/getBook/${id}`);
+                const res = await axios.get(`http://localhost:5000/api/items/${id}`);
                 setBook(res.data);
             } catch (err) {
                 console.log("Gabim: " + err);
@@ -27,14 +27,14 @@ const ReadOne = () => {
             <Card className="shadow-lg border-0 rounded-4 overflow-hidden">
                 <Row className="g-0">
                     <Col md={4}>
-                        <Card.Img src={book.image} className="h-100 object-fit-cover" alt={book.title} />
+                        <Card.Img src={book.imazhi} className="h-100 object-fit-cover" alt={book.titulli} />
                     </Col>
                     <Col md={8}>
                         <Card.Body className="p-5">
-                            <h6 className="text-muted text-uppercase mb-2">{book.category}</h6>
-                            <h1 className="display-5 fw-bold mb-3">{book.title}</h1>
-                            <h4 className="text-secondary mb-4">nga {book.author}</h4>
-                            <h2 className="text-primary fw-bold mb-4">{book.price}</h2>
+                            <h6 className="text-muted text-uppercase mb-2">{book.kategoria}</h6>
+                            <h1 className="display-5 fw-bold mb-3">{book.titulli}</h1>
+                            <h4 className="text-secondary mb-4">nga {book.autori}</h4>
+                            <h2 className="text-primary fw-bold mb-4">{book.cmimi} €</h2>
                             <hr />
                             <div className="mt-4">
                                 <Button variant="outline-secondary" onClick={() => nav(-1)} className="me-3 px-4">

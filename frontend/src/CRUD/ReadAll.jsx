@@ -1,23 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthContext";
 
 const ReadAll = () => {
-    const [books, setBooks] = useState([]);
-    
-    // Simulim: Në projektin tënd real, këtë vlerë do e marrësh nga localStorage pas Login-it
-    // const userRole = localStorage.getItem("role"); 
-    const userRole = "admin"; // Ndryshoje në "user" për të parë si zhduken butonat
+    const { user, isAdmin } = useContext(AuthContext);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetchBooks();
+        fetchItems();
     }, []);
 
-    const fetchBooks = async () => {
+    const fetchItems = async () => {
         try {
-            const res = await axios.get("http://localhost:5000/api/getBooks");
-            setBooks(res.data);
+            const res = await axios.get("http://localhost:5000/api/items");
+            setItems(res.data);
         } catch (err) {
             console.log("Gabim gjatë marrjes së librave: " + err);
         }
@@ -25,16 +23,14 @@ const ReadAll = () => {
 
     // Funksioni për fshirjen e librit
     const handleDelete = async (id) => {
-        if (window.confirm("A jeni i sigurt që dëshironi ta fshini këtë libër?")) {
-            try {
-                await axios.delete(`http://localhost:5000/api/deleteBook/${id}`);
-                // Përditësojmë gjendjen (state) direkt që libri të zhduket nga ekrani pa refresh
-                setBooks(books.filter(book => book._id !== id));
-                alert("Libri u fshi me sukses!");
-            } catch (err) {
-                console.log("Gabim gjatë fshirjes: " + err);
-                alert("Nuk u fshi dot. Kontrollo Backend-in.");
-            }
+        if (!window.confirm("A jeni i sigurt që dëshironi ta fshini këtë libër?")) return;
+        try {
+            await axios.delete(`http://localhost:5000/api/items/${id}`, { withCredentials: true });
+            setItems(items.filter(item => item._id !== id));
+            alert("Libri u fshi me sukses!");
+        } catch (err) {
+            console.log("Gabim gjatë fshirjes: " + err);
+            alert("Nuk u fshi dot. Kontrollo Backend-in.");
         }
     };
 
@@ -43,7 +39,7 @@ const ReadAll = () => {
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h1 className="fw-bold">Lista e Librave</h1>
                 {/* Vetëm Admini sheh butonin "Shto" */}
-                {userRole === "admin" && (
+                {isAdmin() && (
                     <Link to="/add" className="btn btn-success shadow-sm">
                         + Shto Libër të Ri
                     </Link>
@@ -61,34 +57,34 @@ const ReadAll = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {books.map((book) => (
-                        <tr key={book._id} className="align-middle">
+                    {items.map((item) => (
+                        <tr key={item._id} className="align-middle">
                             <td>
                                 <img 
-                                    src={book.image} 
-                                    alt={book.title} 
+                                    src={item.imazhi || ""} 
+                                    alt={item.titulli} 
                                     style={{ width: "60px", height: "80px", objectFit: "cover", borderRadius: "5px" }} 
                                 />
                             </td>
-                            <td className="fw-bold">{book.title}</td>
-                            <td>{book.author}</td>
-                            <td className="text-success fw-bold">{book.price}€</td>
+                            <td className="fw-bold">{item.titulli}</td>
+                            <td>{item.autori}</td>
+                            <td className="text-success fw-bold">{item.cmimi}€</td>
                             <td>
                                 {/* Të gjithë mund të shikojnë detajet */}
-                                <Link to={`/read/${book._id}`} className="btn btn-info btn-sm me-2 text-white">
+                                <Link to={`/read/${item._id}`} className="btn btn-info btn-sm me-2 text-white">
                                     Shiko
                                 </Link>
 
                                 {/* Vetëm Admini mund të bëjë Edit dhe Delete */}
-                                {userRole === "admin" && (
+                                {isAdmin() && (
                                     <>
-                                        <Link to={`/update/${book._id}`} className="btn btn-warning btn-sm me-2 text-white">
+                                        <Link to={`/update/${item._id}`} className="btn btn-warning btn-sm me-2 text-white">
                                             Edit
                                         </Link>
                                         <Button 
                                             variant="danger" 
                                             size="sm" 
-                                            onClick={() => handleDelete(book._id)}
+                                            onClick={() => handleDelete(item._id)}
                                         >
                                             Fshi
                                         </Button>
@@ -96,7 +92,7 @@ const ReadAll = () => {
                                 )}
                                 
                                 {/* Përdoruesi i thjeshtë sheh butonin "Shto në Shportë" */}
-                                {userRole === "user" && (
+                                {!isAdmin() && (
                                     <Button variant="primary" size="sm">
                                         🛒 Shportë
                                     </Button>

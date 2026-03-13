@@ -1,136 +1,125 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useEffect, useContext } from 'react';
+import axios from 'axios';
 import './Blog.css';
-import { FaArrowRight, FaCommentDots, FaUserCircle, FaPaperPlane } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaPaperPlane, FaSearch } from 'react-icons/fa';
+import { AuthContext } from './AuthContext';
 
 const Blog = () => {
-  // State për menaxhimin e komenteve
+  const { user } = useContext(AuthContext) || {};
+  const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [komenti, setKomenti] = useState("");
-  const [listaKomenteve, setListaKomenteve] = useState([
-    { id: 1, emri: "Arben G.", tekst: "Sapo mbarova 'Mjeshtri dhe Margarita'. Një kryevepër e vërtetë!", koha: "Para 2 orësh" },
-    { id: 2, emri: "Mira L.", tekst: "Sugjerimet për pranverën janë fiks ato që kërkoja. Faleminderit!", koha: "Para 5 orësh" }
-  ]);
+  const [selectedPost, setSelectedPost] = useState(null);
+  const [listaKomenteve, setListaKomenteve] = useState(() => {
+    const saved = localStorage.getItem('booktrove_blog_comments');
+    return saved ? JSON.parse(saved) : [];
+  });
 
-  const postimet = [
-    {
-      id: 1,
-      titulli: "5 Librat që duhet t'i lexoni këtë pranverë",
-      data: "24 Shkurt, 2024",
-      autori: "Stafi BookTrove",
-      imazhi: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=800&q=80",
-      shkurtesa: "Zbuloni listën tonë të përzgjedhur me kujdes për t'ju shoqëruar në ditët me diell dhe mbrëmjet e qeta.",
-      tag: "Rekomandime"
-    },
-    {
-      id: 2,
-      titulli: "Si të krijoni një rutinë leximi",
-      data: "15 Shkurt, 2024",
-      autori: "Ekspertët tanë",
-      imazhi: "https://images.unsplash.com/photo-1491843351663-7c116e81483b?w=600&q=80",
-      shkurtesa: "Nuk keni kohë për të lexuar? Këtu janë disa teknika që do t'ju ndihmojnë të gjeni kohë çdo ditë.",
-      tag: "Këshilla"
-    },
-    {
-      id: 3,
-      titulli: "Intervistë me autorët e rinj",
-      data: "10 Shkurt, 2024",
-      autori: "Redaksia",
-      imazhi: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80",
-      shkurtesa: "Një bisedë e hapur mbi sfidat e letërsisë moderne në epokën digjitale.",
-      tag: "Intervistë"
-    }
-  ];
+  // Merr postimet nga Backendi
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await axios.get('http://localhost:5000/api/blog');
+        setPosts(res.data);
+      } catch (err) {
+        console.error("Gabim në marrjen e postimeve:", err);
+      }
+    };
+    fetchPosts();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('booktrove_blog_comments', JSON.stringify(listaKomenteve));
+  }, [listaKomenteve]);
+
+  const filteredPosts = useMemo(() => {
+    if (!searchTerm.trim()) return posts;
+    const search = searchTerm.toLowerCase();
+    return posts.filter(post => 
+      post.titulli.toLowerCase().includes(search) || 
+      post.tag.toLowerCase().includes(search)
+    );
+  }, [searchTerm, posts]);
 
   const handleSendComment = (e) => {
     e.preventDefault();
-    if (komenti.trim() === "") return;
-
-    const iRi = {
-      id: Date.now(),
-      emri: "Vizitor", // Mund ta ndryshosh nëse ke sistem login-i
-      tekst: komenti,
-      koha: "Tani"
-    };
-
-    setListaKomenteve([iRi, ...listaKomenteve]);
+    if (!komenti.trim()) return;
+    const iRi = { id: Date.now(), emri: user?.username || "Vizitor", tekst: komenti };
+    setListaKomenteve(prev => [iRi, ...prev]);
     setKomenti("");
   };
 
+  const FullArticle = ({ post }) => (
+    <div className="full-article-view">
+      <button className="back-btn" onClick={() => setSelectedPost(null)}>
+        <FaArrowLeft /> Kthehu te Blogu
+      </button>
+      <div className="article-header">
+        <img src={post.imazhi} alt={post.titulli} className="full-article-img" />
+        <span className="post-tag">{post.tag}</span>
+        <h1>{post.titulli}</h1>
+        <div className="article-meta">
+          <span>Nga {post.autori}</span> | <span>{new Date(post.data).toLocaleDateString()}</span>
+        </div>
+      </div>
+      <div className="article-body">
+        <p className="lead-text">{post.shkurtesa}</p>
+        <div className="main-content">{post.permbajtja}</div>
+      </div>
+      <hr />
+    </div>
+  );
+
   return (
     <div className="blog-page-wrapper">
-      <div className="blog-intro-section">
-        <span className="blog-subtitle">Lajmet & Kultura</span>
-        <h1>Blogu i BookTrove</h1>
-        <div className="blog-divider"></div>
-      </div>
-
-      {/* Featured Post */}
-      <section className="featured-post-container">
-        <div className="featured-card">
-          <div className="featured-img">
-            <img src={postimet[0].imazhi} alt="Featured" />
-            <span className="featured-tag">E RE</span>
-          </div>
-          <div className="featured-content">
-            <span className="post-tag">{postimet[0].tag}</span>
-            <h2>{postimet[0].titulli}</h2>
-            <p>{postimet[0].shkurtesa}</p>
-            <div className="post-meta-footer">
-              <span>{postimet[0].autori} • {postimet[0].data}</span>
-              <button className="read-more-btn">Vazhdo Leximin <FaArrowRight /></button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Grid i Artikujve */}
-      <div className="blog-grid-modern">
-        {postimet.slice(1).map(post => (
-          <article key={post.id} className="modern-article-card">
-            <div className="article-img-holder">
-              <img src={post.imazhi} alt={post.titulli} />
-            </div>
-            <div className="article-details">
-              <span className="post-tag-small">{post.tag}</span>
-              <h3>{post.titulli}</h3>
-              <p>{post.shkurtesa}</p>
-              <div className="article-footer">
-                <span className="date">{post.data}</span>
-                <button className="simple-link">Lexo <FaArrowRight /></button>
+      {selectedPost ? (
+        <FullArticle post={selectedPost} />
+      ) : (
+        <>
+          <div className="blog-intro-section text-center mt-5">
+            <h1>Blogu i BookTrove</h1>
+            <div className="blog-search-container mt-4">
+              <div className="search-box">
+                <FaSearch className="search-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Kërko artikuj..." 
+                  onChange={(e) => setSearchTerm(e.target.value)} 
+                />
               </div>
             </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Seksioni i Komunitetit */}
-      <section className="blog-community-section">
-        <div className="community-card">
-          <div className="community-header">
-            <FaCommentDots className="comm-icon" />
-            <h2>Bashkohu Diskutimit</h2>
-            <p>Çfarë po lexon këtë javë? Ndaje me komunitetin!</p>
           </div>
-          
-          <form className="comment-input-wrapper" onSubmit={handleSendComment}>
-            <FaUserCircle className="user-avatar-icon" />
-            <input 
-              type="text" 
-              placeholder="Shkruaj mendimin tënd..." 
-              value={komenti}
-              onChange={(e) => setKomenti(e.target.value)}
-            />
-            <button type="submit" className="send-comment-btn">
-              <FaPaperPlane />
-            </button>
+
+          {filteredPosts.length > 0 ? (
+            <div className="blog-grid-modern mt-5">
+              {filteredPosts.map(post => (
+                <article key={post._id} className="modern-article-card" onClick={() => setSelectedPost(post)}>
+                  <div className="article-img-holder">
+                    <img src={post.imazhi} alt={post.titulli} />
+                  </div>
+                  <div className="article-details">
+                    <span className="badge bg-warning text-dark">{post.tag}</span>
+                    <h3>{post.titulli}</h3>
+                    <button className="simple-link">Lexo më shumë <FaArrowRight /></button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : <p className="text-center mt-5">Nuk u gjet asnjë postim.</p>}
+        </>
+      )}
+
+      {/* Community Section */}
+      <section className="blog-community-section mt-5">
+        <div className="community-card p-4 shadow-sm bg-white rounded">
+          <h3>Bashkohu Diskutimit</h3>
+          <form className="d-flex gap-2" onSubmit={handleSendComment}>
+            <input className="form-control" placeholder="Shkruaj një koment..." value={komenti} onChange={(e) => setKomenti(e.target.value)} />
+            <button className="btn btn-danger" type="submit"><FaPaperPlane /></button>
           </form>
-
-          <div className="recent-comments">
+          <div className="mt-3">
             {listaKomenteve.map(c => (
-              <div key={c.id} className="single-comment">
-                <strong>{c.emri}</strong>
-                <p>{c.tekst}</p>
-                <span>{c.koha}</span>
-              </div>
+              <div key={c.id} className="p-2 border-bottom"><strong>{c.emri}:</strong> {c.tekst}</div>
             ))}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
 export const AuthContext = createContext();
 
@@ -10,6 +11,14 @@ export const AuthProvider = ({ children }) => {
       return null;
     }
   });
+
+  // Apply token from localStorage to axios defaults if present
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+  }, []);
 
   const fetchMe = async () => {
     try {
@@ -33,11 +42,17 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (!user) fetchMe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
+    // store token if returned by server
+    if (userData.token) {
+      localStorage.setItem('token', userData.token);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${userData.token}`;
+    }
   };
 
   const logout = async () => {
@@ -51,10 +66,20 @@ export const AuthProvider = ({ children }) => {
     }
     setUser(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    delete axios.defaults.headers.common['Authorization'];
+  };
+
+  const isAdmin = () => {
+    return user && user.role === 'admin';
+  };
+
+  const isAuthenticated = () => {
+    return user !== null;
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isAdmin, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,7 +1,9 @@
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
+import ProtectedRoute from './ProtectedRoute';
 import BookTroveNavbar from './BookTroveNavbar';
 import Footer from './Footer';
 import Home from './Home';
@@ -15,6 +17,13 @@ import Cart from './Cart';
 import Login from './Login';
 import Signup from './Signup';
 import Profile from './Profile';
+import AdminPanel from './AdminPanel';
+
+// legacy CRUD
+import CreateItem from './CRUD/CreateItem';
+import ReadAll from './CRUD/ReadAll';
+import ReadOne from './CRUD/ReadOne';
+import UpdateItem from './CRUD/UpdateItem';
 
 function App() {
   return (
@@ -36,7 +45,47 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/profile" element={<Profile />} />
-            
+              <Route 
+                path="/admin" 
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <AdminPanel />
+                  </ProtectedRoute>
+                } 
+              />
+              {/* legacy CRUD pages (also admin-only) */}
+              <Route
+                path="/add"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <CreateItem />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/list"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <ReadAll />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/read/:id"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <ReadOne />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/update/:id"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <UpdateItem />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </main>
 

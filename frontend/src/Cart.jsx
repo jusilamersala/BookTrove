@@ -4,7 +4,6 @@ import { FaTrashAlt, FaPlus, FaMinus, FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  // Shembull i të dhënave në shportë
   const [items, setItems] = useState([
     { id: 1, titulli: "Mjeshtri dhe Margarita", autori: "Mikhail Bulgakov", cmimi: 15.00, sasia: 1, imazhi: "https://via.placeholder.com/100" },
     { id: 2, titulli: "Sapiens", autori: "Yuval Noah Harari", cmimi: 18.50, sasia: 1, imazhi: "https://via.placeholder.com/100" }

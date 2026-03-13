@@ -25,6 +25,24 @@ const userSchema = new mongoose.Schema({
     enum: ["user", "admin", "employee"], //rolet e mundshme
     default: "user" 
   },
+  // Scheduling for employees (assigned by admin)
+  schedule: [
+    {
+      date: { type: Date, required: true },
+      startTime: { type: String, required: true },
+      endTime: { type: String, required: true },
+      assignedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+      createdAt: { type: Date, default: Date.now }
+    }
+  ],
+  // Attendance records for check-in / check-out
+  attendance: [
+    {
+      date: { type: Date, required: true },
+      checkIn: Date,
+      checkOut: Date
+    }
+  ],
   createdAt: { 
     type: Date, 
     default: Date.now 

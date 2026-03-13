@@ -1,9 +1,11 @@
-import React, { useState } from 'react'; // Added useState import
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Contact.css';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import axios from 'axios';
 
 const Contact = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,6 +14,17 @@ const Contact = () => {
 
   const [status, setStatus] = useState({ type: '', msg: '' });
   const [loading, setLoading] = useState(false);
+
+  // Kapim titullin e eventit nëse vjen nga faqja Eventet
+  useEffect(() => {
+    if (location.state && location.state.eventTitle) {
+      setFormData(prev => ({
+        ...prev,
+        comment: `Përshëndetje! Jam i interesuar të marr pjesë në eventin: "${location.state.eventTitle}". Ju lutem më konfirmoni regjistrimin.`
+      }));
+      window.scrollTo(0, 0); // Dërgoje faqen në fillim
+    }
+  }, [location]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,10 +37,9 @@ const Contact = () => {
 
     try {
       const response = await axios.post('http://localhost:5000/api/contact/sendMessage', formData);
-
       if (response.status === 201) {
         setStatus({ type: 'success', msg: 'Mesazhi u dërgua me sukses! ✅' });
-        setFormData({ name: '', email: '', comment: '' }); // Reset form
+        setFormData({ name: '', email: '', comment: '' });
       }
     } catch (error) {
       console.error("Gabim gjatë dërgimit:", error);
@@ -43,7 +55,7 @@ const Contact = () => {
         <div className="contact-wrapper">
           <div className="contact-info">
             <h2>Na Kontaktoni</h2>
-            <p>Keni një pyetje apo sugjerim? Ne jemi këtu për ju.</p>
+            <p>Keni një pyetje apo dëshironi të regjistroheni në eventet tona?</p>
             <div className="info-item">
               <FaPhone className="icon" />
               <div><h5>Telefon</h5><p>+355 69 00 00 000</p></div>
@@ -62,47 +74,18 @@ const Contact = () => {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Emri i plotë</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                  placeholder="Shkruani emrin tuaj..." 
-                  required 
-                />
+                <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Emri juaj..." required />
               </div>
               <div className="form-group">
                 <label>Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  value={formData.email} 
-                  onChange={handleChange} 
-                  placeholder="email@shembull.com" 
-                  required 
-                />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="email@shembull.com" required />
               </div>
               <div className="form-group">
                 <label>Mesazhi</label>
-                <textarea 
-                  name="comment" 
-                  value={formData.comment} 
-                  onChange={handleChange} 
-                  rows="5" 
-                  placeholder="Si mund t'ju ndihmojmë?" 
-                  required
-                ></textarea>
+                <textarea name="comment" value={formData.comment} onChange={handleChange} rows="5" placeholder="Si mund t'ju ndihmojmë?" required></textarea>
               </div>
 
-              {status.msg && (
-                <div className={`status-message ${status.type}`} style={{ 
-                  color: status.type === 'danger' ? '#dc3545' : '#28a745',
-                  marginBottom: '15px',
-                  fontWeight: 'bold'
-                }}>
-                  {status.msg}
-                </div>
-              )}
+              {status.msg && <div className={`status-message text-${status.type} mb-3 fw-bold`}>{status.msg}</div>}
 
               <button type="submit" className="submit-btn" disabled={loading}>
                 {loading ? 'Duke u dërguar...' : 'Dërgo Mesazhin'}

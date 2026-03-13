@@ -1,14 +1,21 @@
 import React, { useState, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './BookTroveNavbar.css';
 import { AuthContext } from './AuthContext';
+import { genres } from './constants/genres';
 
 function BookTroveNavbar() {
   const [expanded, setExpanded] = useState(false);
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, isAdmin } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleToggle = () => setExpanded(false);
+
+  const handleGenreClick = (genre) => {
+    navigate('/librat', { state: { selectedGenre: genre } });
+    handleToggle();
+  };
 
   return (
     <Navbar 
@@ -29,14 +36,21 @@ function BookTroveNavbar() {
             <Nav.Link as={Link} to="/" onClick={handleToggle}>Home</Nav.Link>
             <Nav.Link as={Link} to="/librat" onClick={handleToggle}>Librat</Nav.Link>
             <NavDropdown title="Zhanerat" id="zhanerat-drop">
-              <NavDropdown.Item as={Link} to="/librat/sci-fi" onClick={handleToggle}>Sci-fi</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/librat/historik" onClick={handleToggle}>Historik</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/librat/shkence" onClick={handleToggle}>Shkencë</NavDropdown.Item>
+              {genres.map((genre, index) => (
+                <NavDropdown.Item key={index} onClick={() => handleGenreClick(genre)}>
+                  {genre}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
             <Nav.Link as={Link} to="/eventet" onClick={handleToggle}>Eventet</Nav.Link>
             <Nav.Link as={Link} to="/rreth-nesh" onClick={handleToggle}>Rreth Nesh</Nav.Link>
             <Nav.Link as={Link} to="/blog" onClick={handleToggle}>Blog</Nav.Link>
             <Nav.Link as={Link} to="/kontakt" onClick={handleToggle}>Kontakt</Nav.Link>
+            {isAdmin() && (
+              <Nav.Link as={Link} to="/admin" className="admin-link" onClick={handleToggle}>
+                <i className="bi bi-shield-lock"></i> Admin
+              </Nav.Link>
+            )}
           </Nav>
 
           {/* Grupi i Djathtë - I blinduar kundër zbritjes poshtë */}
@@ -58,6 +72,14 @@ function BookTroveNavbar() {
                 {user ? (
                   <>
                     <NavDropdown.Item as={Link} to="/profile" onClick={handleToggle}>Profili</NavDropdown.Item>
+                    {isAdmin() && (
+                      <>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item as={Link} to="/admin" onClick={handleToggle}>
+                          <i className="bi bi-shield-lock"></i> Admin Panel
+                        </NavDropdown.Item>
+                      </>
+                    )}
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={() => { logout(); handleToggle(); }}>Dil</NavDropdown.Item>
                   </>
