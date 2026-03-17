@@ -1,14 +1,14 @@
 const http = require('http');
 
 // require server to start it in same process
-require('./server');
+require('../server');
 
 setTimeout(() => {
   const data = JSON.stringify({
-    username: 'booktroveadmin',
-    email: 'admin@booktrove.com',
-    password: 'AdminPassword123',
-    role: 'admin'
+    username: 'debuguser',
+    email: 'debuguser@example.com',
+    password: 'password123',
+    role: 'user'
   });
 
   const options = {
@@ -23,16 +23,17 @@ setTimeout(() => {
   };
 
   const req = http.request(options, (res) => {
-    console.log('Status:', res.statusCode);
+    console.log('status', res.statusCode);
     res.on('data', chunk => process.stdout.write(chunk));
     res.on('end', () => {
-      console.log('\n✅ Admin user creation response complete');
+      console.log('response end');
+      // keep process alive a bit to capture server logs
       setTimeout(() => process.exit(0), 4000);
     });
   });
 
   req.on('error', (e) => {
-    console.error('❌ Request error:', e);
+    console.error('request error', e);
     setTimeout(() => process.exit(1), 1000);
   });
 

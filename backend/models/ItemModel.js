@@ -21,6 +21,7 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  stoku: { type: Number, default: 0, min: 0 }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Item", itemSchema);

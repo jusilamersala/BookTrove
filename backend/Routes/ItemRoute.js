@@ -1,68 +1,29 @@
 const express = require("express");
 const router = express.Router();
 const Item = require("../models/ItemModel");
-const { adminOnly, authenticate } = require("../middleware/authMiddleware");
+const { authenticate } = require("../middleware/authMiddleware");
 
-// allowed categories/genres - must match frontend list
-const allowedGenres = [
-  "Romancë",
-  "Mister",
-  "Fantazi",
-  "Histori",
-  "Shkencë",
-  // additional options if necessary
-];
-const { log } = require("../logToFile");
-
-// CREATE ITEM - ADMIN ONLY
-router.post("/", adminOnly, async (req, res, next) => {
-  try {
-    log("\n=== CREATE ITEM REQUEST ===");
-    log("Request body: " + JSON.stringify(req.body));
-    log("Request user from token: " + JSON.stringify(req.user));
-    
-    const { titulli, autori, cmimi, kategoria, imazhi } = req.body;
-
-    // Validate all required fields
-    if (!titulli || !autori || !cmimi || !kategoria) {
-      log("❌ Validation failed - Missing fields: titulli=" + titulli + " autori=" + autori + " cmimi=" + cmimi + " kategoria=" + kategoria);
-      return res.status(400).json({ message: "Të gjushta fushat janë të detyrueshme" });
-    }
-
-    // Validate category against allowed list
-    if (!allowedGenres.includes(kategoria)) {
-      log("❌ Invalid category provided: " + kategoria);
-      return res.status(400).json({ message: "Kategoria e zgjedhur nuk është e vlefshme" });
-    }
-
-    log("✓ All fields present and valid");
-    log("Converting cmimi to Number: " + cmimi + " => " + Number(cmimi));
-
-    const newItem = new Item({
-      titulli,
-      autori,
-      cmimi: Number(cmimi),
-      kategoria,
-      imazhi
-    });
-
-    log("Saving item to database...");
-    const savedItem = await newItem.save();
-    log("✓ Item saved successfully: " + savedItem._id);
-    log("=== CREATE ITEM SUCCESS ===");
-    res.status(201).json(savedItem);
-
-  } catch (error) {
-    log("❌ Error in CREATE ITEM: " + error.message);
-    log("Stack: " + error.stack);
-    log("Name: " + error.name);
-    log("=== CREATE ITEM FAILED ===");
-    // Pass to global error handler or send response
-    res.status(500).json({ message: error.message || "Gabim në ruajtjen e librit" });
+// Middleware: Lejon Adminin ose Inventory Manager
+const canManageInventory = (req, res, next) => {
+  if (req.user && (req.user.role === "admin" || req.user.role === "inventory_manager")) {
+    next();
+  } else {
+    res.status(403).json({ message: "Akses i mohuar! Nuk keni autorizim për inventarin." });
   }
-});
+};
 
-// GET ALL ITEMS
+// Middleware: Vetëm Admini mund të fshijë libra
+const adminOnly = (req, res, next) => {
+  if (req.user && req.user.role === "admin") {
+    next();
+  } else {
+    res.status(403).json({ message: "Ky veprim lejohet vetëm për Adminin." });
+  }
+};
+
+// =========================================================
+// 1. GET ALL ITEMS (Publike)
+// =========================================================
 router.get("/", async (req, res) => {
   try {
     const items = await Item.find();
@@ -72,50 +33,70 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET SINGLE ITEM
-router.get("/:id", async (req, res) => {
+// =========================================================
+// 2. CREATE ITEM
+// =========================================================
+router.post("/", authenticate, canManageInventory, async (req, res) => {
   try {
-    const item = await Item.findById(req.params.id);
-    if (!item) {
-      return res.status(404).json({ message: "Libri nuk u gjet" });
+    const { titulli, autori, cmimi, kategoria, imazhi, stoku } = req.body;
+
+    if (!titulli || !autori || !cmimi || !kategoria) {
+      return res.status(400).json({ message: "Fushat kryesore janë të detyrueshme" });
     }
-    res.status(200).json(item);
+
+    const newItem = new Item({
+      titulli,
+      autori,
+      cmimi: Number(cmimi),
+      kategoria,
+      imazhi,
+      stoku: Number(stoku) || 0
+    });
+
+    const savedItem = await newItem.save();
+    res.status(201).json(savedItem);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: "Gabim në ruajtjen e librit" });
   }
 });
 
-// UPDATE ITEM - ADMIN ONLY
-router.put("/:id", adminOnly, async (req, res) => {
+// =========================================================
+// 3. UPDATE ITEM (Updated for Ana's Inventory Dashboard)
+// =========================================================
+router.put("/:id", authenticate, canManageInventory, async (req, res) => {
   try {
-    const { titulli, autori, cmimi, kategoria, imazhi } = req.body;
+    const updateData = {};
     
+    // Only add to updateData if the field actually exists in the request
+    if (req.body.titulli) updateData.titulli = req.body.titulli;
+    if (req.body.autori) updateData.autori = req.body.autori;
+    if (req.body.kategoria) updateData.kategoria = req.body.kategoria;
+    
+    // Check explicitly for undefined to allow 0 as a valid number
+    if (req.body.cmimi !== undefined) updateData.cmimi = Number(req.body.cmimi);
+    if (req.body.stoku !== undefined) updateData.stoku = Number(req.body.stoku);
+
     const updatedItem = await Item.findByIdAndUpdate(
       req.params.id,
-      { titulli, autori, cmimi, kategoria, imazhi },
+      { $set: updateData }, // Crucial: $set only changes what is provided
       { new: true, runValidators: true }
     );
 
-    if (!updatedItem) {
-      return res.status(404).json({ message: "Libri nuk u gjet" });
-    }
-
+    if (!updatedItem) return res.status(404).json({ message: "Libri nuk u gjet" });
     res.status(200).json(updatedItem);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 });
 
-// DELETE ITEM - ADMIN ONLY
-router.delete("/:id", adminOnly, async (req, res) => {
+// =========================================================
+// 4. DELETE ITEM (Vetëm Admini)
+// =========================================================
+router.delete("/:id", authenticate, adminOnly, async (req, res) => {
   try {
     const deletedItem = await Item.findByIdAndDelete(req.params.id);
-    
-    if (!deletedItem) {
-      return res.status(404).json({ message: "Libri nuk u gjet" });
-    }
-
-    res.status(200).json({ message: "Libri u fshi me sukses", item: deletedItem });
+    if (!deletedItem) return res.status(404).json({ message: "Libri nuk u gjet" });
+    res.status(200).json({ message: "Libri u fshi me sukses" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

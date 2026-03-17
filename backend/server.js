@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const path = require("path"); // UPDATE: Shtuar për të menaxhuar folderat e faturave
 const { log } = require("./logToFile");
 
 log("\n\n========== SERVER STARTING ==========");
@@ -35,6 +36,7 @@ app.use(cors({
     preflightContinue: false
 }));
 
+// Manual Cookie Parser Middleware
 app.use((req, res, next) => {
   req.cookies = {};
   const cookieHeader = req.headers?.cookie;
@@ -53,8 +55,14 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+/** * UPDATE: LEJIMII I FAKTURAVE (Static Files)
+ * Ky rresht zgjidh gabimin "Cannot GET /invoices/..."
+ * E bën folderin "invoices" të aksesueshëm nga browser-i.
+ */
+app.use("/invoices", express.static(path.join(__dirname, "invoices")));
+
 app.use(session({
-    secret: process.env.SESSION_SECRET, // Moved to .env
+    secret: process.env.SESSION_SECRET || "default_secret", // Added fallback
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -65,6 +73,7 @@ app.use(session({
     }
 }));
 
+// API Routes
 app.use("/api/contact", ContactRoute);
 app.use("/api/items", itemRoutes);
 app.use("/api/users", UserRoute);
@@ -76,6 +85,7 @@ mongoose.connect(mongoURI)
   .then(() => console.log("🍃 MongoDB Connected Successfully"))
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
+// Global error handler
 app.use((err, req, res, next) => {
   console.error('❌ Global error handler caught error:', {
     message: err.message,

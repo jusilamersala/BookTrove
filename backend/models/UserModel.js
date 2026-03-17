@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   },
   role: { 
     type: String, 
-    enum: ["user", "admin", "employee"], //rolet e mundshme
+    enum: ["user", "admin", "employee", "inventory_manager"], 
     default: "user" 
   },
   // Scheduling for employees (assigned by admin)

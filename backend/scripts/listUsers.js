@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('./models/UserModel');
+const User = require('../models/UserModel');
 
 const mongoURI = "mongodb+srv://emxhejenxhej_db_user:di2oCFVjeixapuXR@cluster0.c0hfnpq.mongodb.net/BookTrove?retryWrites=true&w=majority";
 

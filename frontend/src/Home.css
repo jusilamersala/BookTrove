@@ -216,6 +216,52 @@
   }
 }
 
+
+
+.view-more-container {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+
+.btn-explore-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background-color: #2d3436; /* Ngjyrë e errët elegante */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px; /* Round design */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-explore-more svg {
+  transition: transform 0.3s ease;
+}
+
+/* Efekti kur kalon mausin (Hover) */
+.btn-explore-more:hover {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-3px); /* Ngrihet pak lart */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+/* Animacioni i shigjetës */
+.btn-explore-more:hover svg {
+  transform: translateX(8px); /* Shigjeta lëviz djathtas */
+}
+
+/* Efekti kur klikohet */
+.btn-explore-more:active {
+  transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
   .hero-section {
     height: 400px;

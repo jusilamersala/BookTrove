@@ -4,16 +4,28 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './BookTroveNavbar.css';
 import { AuthContext } from './AuthContext';
+import { useCart } from './CartContext'; 
 import { genres } from './constants/genres';
 
 function BookTroveNavbar() {
   const [expanded, setExpanded] = useState(false);
   const { user, logout, isAdmin } = useContext(AuthContext);
+  const { cartItems } = useCart(); 
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+  
   const handleToggle = () => setExpanded(false);
+
+  const totalItems = cartItems.reduce((acc, item) => acc + item.sasia, 0);
 
   const handleGenreClick = (genre) => {
     navigate('/librat', { state: { selectedGenre: genre } });
+    handleToggle();
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate('/librat', { state: { searchQuery: searchTerm } });
     handleToggle();
   };
 
@@ -53,19 +65,26 @@ function BookTroveNavbar() {
             )}
           </Nav>
 
-          {/* Grupi i Djathtë - I blinduar kundër zbritjes poshtë */}
+          {/* Grupi i Djathtë: Search + Icons */}
           <div className="navbar-right-final">
-            <Form className="search-form-wrapper">
+            <Form className="search-form-wrapper" onSubmit={handleSearch}>
               <Form.Control 
                 type="search" 
                 placeholder="Kërko libra..." 
                 className="navbar-search-input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </Form>
             
             <div className="icons-wrapper">
               <Nav.Link as={Link} to="/shporta" className="cart-link" onClick={handleToggle}>
-                <FaShoppingCart size={20} />
+                <div className="cart-icon-wrapper">
+                  <FaShoppingCart size={20} />
+                  {totalItems > 0 && (
+                    <span className="cart-badge">{totalItems}</span>
+                  )}
+                </div>
               </Nav.Link>
               
               <NavDropdown title="Llogaria" id="account-drop" align="end">
@@ -90,8 +109,8 @@ function BookTroveNavbar() {
                   </>
                 )}
               </NavDropdown>
-            </div>
-          </div>
+            </div> {/* Mbyllja e icons-wrapper */}
+          </div> {/* Mbyllja e navbar-right-final */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,7 +1,7 @@
 const http = require('http');
 
 // require server to start it in same process
-require('./server');
+require('../server');
 
 setTimeout(() => {
   const data = JSON.stringify({

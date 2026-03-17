@@ -138,6 +138,32 @@
   }
 }
 
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #e74c3c; /* Ngjyrë e kuqe */
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+
+
+
 /* Rregullim shtesë për ekranet shumë të vogla (iPhone etj.) */
 @media (max-width: 480px) {
   .booktrove-navbar {

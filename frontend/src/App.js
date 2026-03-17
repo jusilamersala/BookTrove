@@ -2,7 +2,12 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Context Providers
 import { AuthProvider } from './AuthContext';
+import { CartProvider } from './CartContext'; 
+
+// Components
 import ProtectedRoute from './ProtectedRoute';
 import BookTroveNavbar from './BookTroveNavbar';
 import Footer from './Footer';
@@ -18,8 +23,9 @@ import Login from './Login';
 import Signup from './Signup';
 import Profile from './Profile';
 import AdminPanel from './AdminPanel';
+import InventoryManager from './InventoryManager';
 
-// legacy CRUD
+//  CRUD
 import CreateItem from './CRUD/CreateItem';
 import ReadAll from './CRUD/ReadAll';
 import ReadOne from './CRUD/ReadOne';
@@ -28,72 +34,100 @@ import UpdateItem from './CRUD/UpdateItem';
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <div className="App">
-          <BookTroveNavbar />
-          
-          <main style={{ minHeight: '80vh' }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/librat" element={<Books />} />
-              <Route path="/zhanerat" element={<Genres />} />
-              <Route path="/eventet" element={<Event />} />
-              <Route path="/rreth-nesh" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/kontakt" element={<Contact />} />
-              <Route path="/shporta" element={<Cart />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route 
-                path="/admin" 
-                element={
-                  <ProtectedRoute requiredRole="admin">
-                    <AdminPanel />
-                  </ProtectedRoute>
-                } 
-              />
-              {/* legacy CRUD pages (also admin-only) */}
-              <Route
-                path="/add"
-                element={
-                  <ProtectedRoute requiredRole="admin">
-                    <CreateItem />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/list"
-                element={
-                  <ProtectedRoute requiredRole="admin">
-                    <ReadAll />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/read/:id"
-                element={
-                  <ProtectedRoute requiredRole="admin">
-                    <ReadOne />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/update/:id"
-                element={
-                  <ProtectedRoute requiredRole="admin">
-                    <UpdateItem />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
-          </main>
+      <CartProvider>
+        <Router>
+          <div className="App">
+            <BookTroveNavbar />
+            
+            <main style={{ minHeight: '80vh' }}>
+              <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/librat" element={<Books />} />
+                <Route path="/zhanerat" element={<Genres />} />
+                <Route path="/eventet" element={<Event />} />
+                <Route path="/rreth-nesh" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/kontakt" element={<Contact />} />
+                <Route path="/shporta" element={<Cart />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/profile" element={<Profile />} />
 
-          <Footer />
-        </div>
-      </Router>
+                {/* DASHBOARD-I DINAMIK 
+                   Kjo rrugë pranon të dy rolet, por brenda ProtectedRoute 
+                   ose te komponenti vetë bëhet ndarja e pamjes.
+                */}
+                <Route 
+                  path="/admin" 
+                  element={
+                    <ProtectedRoute requiredRole={["admin", "inventory_manager"]}>
+                       <AdminPanel />
+                    </ProtectedRoute>
+                  } 
+                />
+                
+                {/* Legacy CRUD - I mbrojtur vetëm për Admin ose Inventory Manager */}
+                <Route
+                  path="/add"
+                  element={
+                    <ProtectedRoute requiredRole={["admin", "inventory_manager"]}>
+                      <CreateItem />
+                    </ProtectedRoute>
+                  }
+                />
+                
+                <Route
+                  path="/list"
+                  element={
+                    <ProtectedRoute requiredRole={["admin", "inventory_manager"]}>
+                      <ReadAll />
+                    </ProtectedRoute>
+                  }
+                />
+                
+                <Route
+                  path="/read/:id"
+                  element={
+                    <ProtectedRoute requiredRole={["admin", "inventory_manager"]}>
+                      <ReadOne />
+                    </ProtectedRoute>
+                  }
+                />
+                
+                <Route
+                  path="/update/:id"
+                  element={
+                    <ProtectedRoute requiredRole={["admin", "inventory_manager"]}>
+                      <UpdateItem />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+            </main>
+
+            <Footer />
+          </div>
+        </Router>
+      </CartProvider>
     </AuthProvider>
   );
 }
+
+/**
+ * Komponent Ndihmës për të vendosur cilin panel të shfaqim
+ * bazuar te roli i përdoruesit që vjen nga localStorage ose Context
+ */
+const AdminDashboardWrapper = () => {
+  const user = JSON.parse(localStorage.getItem('user')); // Ose përdor useAuth() nëse e ke gati
+  
+  if (user?.role === 'admin') {
+    return <AdminPanel />;
+  } else if (user?.role === 'inventory_manager') {
+    return <InventoryManager />;
+  } else {
+    return <div className="text-center mt-5">Duke u ngarkuar ose pa autorizim...</div>;
+  }
+};
 
 export default App;

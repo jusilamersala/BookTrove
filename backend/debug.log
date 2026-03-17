@@ -1,1603 +1,292 @@
-[2026-03-04T14:18:16.776Z] 
+[2026-03-17T09:50:42.346Z] >>> OPTIONS /api/items
+[2026-03-17T09:50:42.348Z] >>> OPTIONS /api/items
+[2026-03-17T09:50:42.349Z] >>> GET /api/items
+[2026-03-17T09:50:42.390Z] >>> GET /api/items
+[2026-03-17T09:50:48.847Z] >>> OPTIONS /api/orders
+[2026-03-17T09:50:48.870Z] >>> POST /api/orders
+[2026-03-17T09:50:53.258Z] >>> POST /api/orders
+[2026-03-17T09:50:58.483Z] >>> POST /api/users/logout
+[2026-03-17T09:51:20.383Z] >>> OPTIONS /api/users/login
+[2026-03-17T09:51:20.388Z] >>> POST /api/users/login
+[2026-03-17T09:51:20.574Z] >>> GET /api/orders
+[2026-03-17T09:51:20.580Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:51:20.588Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:51:20.626Z] >>> GET /api/orders
+[2026-03-17T09:51:27.778Z] >>> OPTIONS /api/orders
+[2026-03-17T09:51:27.782Z] >>> POST /api/orders
+[2026-03-17T09:51:33.134Z] >>> OPTIONS /api/items
+[2026-03-17T09:51:33.137Z] >>> OPTIONS /api/items
+[2026-03-17T09:51:33.139Z] >>> GET /api/items
+[2026-03-17T09:51:33.180Z] >>> GET /api/items
+[2026-03-17T09:51:41.478Z] >>> POST /api/users/logout
+[2026-03-17T09:52:01.319Z] >>> OPTIONS /api/users/login
+[2026-03-17T09:52:01.323Z] >>> POST /api/users/login
+[2026-03-17T09:52:01.480Z] >>> GET /api/orders
+[2026-03-17T09:52:01.485Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:52:01.489Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:52:01.521Z] >>> GET /api/orders
+[2026-03-17T09:52:05.245Z] >>> OPTIONS /api/items
+[2026-03-17T09:52:05.247Z] >>> OPTIONS /api/items
+[2026-03-17T09:52:05.250Z] >>> GET /api/items
+[2026-03-17T09:52:05.290Z] >>> GET /api/items
+[2026-03-17T09:52:11.270Z] >>> OPTIONS /api/orders
+[2026-03-17T09:52:11.272Z] >>> POST /api/orders
+[2026-03-17T09:52:15.681Z] >>> GET /api/orders
+[2026-03-17T09:52:15.684Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:52:15.687Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:52:15.724Z] >>> GET /api/orders
+[2026-03-17T09:52:37.341Z] >>> OPTIONS /api/blog
+[2026-03-17T09:52:37.343Z] >>> OPTIONS /api/blog
+[2026-03-17T09:52:37.344Z] >>> GET /api/blog
+[2026-03-17T09:52:37.392Z] >>> GET /api/blog
+[2026-03-17T09:52:40.385Z] >>> OPTIONS /api/items
+[2026-03-17T09:52:40.387Z] >>> OPTIONS /api/items
+[2026-03-17T09:52:40.388Z] >>> GET /api/items
+[2026-03-17T09:52:40.464Z] >>> GET /api/items
+[2026-03-17T09:52:43.561Z] >>> GET /api/orders
+[2026-03-17T09:52:43.563Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:52:43.566Z] >>> GET /api/users/me/schedule
+[2026-03-17T09:52:43.604Z] >>> GET /api/orders
+[2026-03-17T10:03:38.754Z] >>> GET /api/orders
+[2026-03-17T10:03:38.757Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:03:38.760Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:03:38.800Z] >>> GET /api/orders
+[2026-03-17T10:05:07.584Z] >>> GET /api/orders
+[2026-03-17T10:05:07.588Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:05:07.591Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:05:07.632Z] >>> GET /api/orders
+[2026-03-17T10:05:32.117Z] >>> POST /api/users/logout
+[2026-03-17T10:09:30.200Z] 
 
 ========== SERVER STARTING ==========
-[2026-03-04T14:18:16.780Z] Timestamp: 2026-03-04T14:18:16.780Z
-[2026-03-04T14:18:16.782Z] ================================
+[2026-03-17T10:09:30.201Z] Timestamp: 2026-03-17T10:09:30.201Z
+[2026-03-17T10:09:30.202Z] ================================
 
-[2026-03-04T14:26:52.798Z] 
-
-========== SERVER STARTING ==========
-[2026-03-04T14:26:52.804Z] Timestamp: 2026-03-04T14:26:52.804Z
-[2026-03-04T14:26:52.805Z] ================================
-
-[2026-03-04T14:31:21.660Z] 
-
-========== SERVER STARTING ==========
-[2026-03-04T14:31:21.664Z] Timestamp: 2026-03-04T14:31:21.664Z
-[2026-03-04T14:31:21.666Z] ================================
-
-[2026-03-04T14:31:27.404Z] >>> GET /api/users/me
-[2026-03-04T14:31:27.420Z] >>> GET /api/users/me
-[2026-03-04T14:31:36.017Z] >>> GET /api/items
-[2026-03-04T14:31:36.075Z] >>> GET /api/items
-[2026-03-04T14:31:48.562Z] >>> OPTIONS /api/items
-[2026-03-04T14:31:48.567Z] >>> POST /api/items
-[2026-03-04T14:31:48.597Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:31:48.597Z] Cookie token present: true
-[2026-03-04T14:31:48.598Z] Header token present: false
-[2026-03-04T14:31:48.599Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:31:48.609Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:31:48.610Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:31:48.610Z] ✓ Admin verification PASSED
-[2026-03-04T14:31:48.611Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:31:48.612Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-04T14:31:48.612Z] Request body: {"titulli":"The secret","autori":"Rhonda Byrne","cmimi":4,"kategoria":"Sci-fi","imazhi":"https://bukharibooks.com/wp-content/uploads/2019/07/The-secret-250.jpg"}
-[2026-03-04T14:31:48.613Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772633689,"exp":1772720089}
-[2026-03-04T14:31:48.613Z] ✓ All fields present and valid
-[2026-03-04T14:31:48.614Z] Converting cmimi to Number: 4 => 4
-[2026-03-04T14:31:48.622Z] Saving item to database...
-[2026-03-04T14:31:48.667Z] ✓ Item saved successfully: 69a842544364f06551cfe692
-[2026-03-04T14:31:48.669Z] === CREATE ITEM SUCCESS ===
-[2026-03-04T14:31:48.676Z] >>> GET /api/items
-[2026-03-04T14:31:49.598Z] >>> POST /api/items
-[2026-03-04T14:31:49.601Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:31:49.602Z] Cookie token present: true
-[2026-03-04T14:31:49.602Z] Header token present: false
-[2026-03-04T14:31:49.603Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:31:49.604Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:31:49.604Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:31:49.605Z] ✓ Admin verification PASSED
-[2026-03-04T14:31:49.606Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:31:49.606Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-04T14:31:49.607Z] Request body: {"titulli":"The secret","autori":"Rhonda Byrne","cmimi":4,"kategoria":"Sci-fi","imazhi":"https://bukharibooks.com/wp-content/uploads/2019/07/The-secret-250.jpg"}
-[2026-03-04T14:31:49.608Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772633689,"exp":1772720089}
-[2026-03-04T14:31:49.609Z] ✓ All fields present and valid
-[2026-03-04T14:31:49.610Z] Converting cmimi to Number: 4 => 4
-[2026-03-04T14:31:49.611Z] Saving item to database...
-[2026-03-04T14:31:49.654Z] ✓ Item saved successfully: 69a842554364f06551cfe695
-[2026-03-04T14:31:49.655Z] === CREATE ITEM SUCCESS ===
-[2026-03-04T14:31:49.659Z] >>> GET /api/items
-[2026-03-04T14:31:49.765Z] >>> POST /api/items
-[2026-03-04T14:31:49.766Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:31:49.767Z] Cookie token present: true
-[2026-03-04T14:31:49.768Z] Header token present: false
-[2026-03-04T14:31:49.769Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:31:49.770Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:31:49.771Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:31:49.772Z] ✓ Admin verification PASSED
-[2026-03-04T14:31:49.772Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:31:49.773Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-04T14:31:49.774Z] Request body: {"titulli":"The secret","autori":"Rhonda Byrne","cmimi":4,"kategoria":"Sci-fi","imazhi":"https://bukharibooks.com/wp-content/uploads/2019/07/The-secret-250.jpg"}
-[2026-03-04T14:31:49.775Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772633689,"exp":1772720089}
-[2026-03-04T14:31:49.776Z] ✓ All fields present and valid
-[2026-03-04T14:31:49.776Z] Converting cmimi to Number: 4 => 4
-[2026-03-04T14:31:49.777Z] Saving item to database...
-[2026-03-04T14:31:49.815Z] ✓ Item saved successfully: 69a842554364f06551cfe698
-[2026-03-04T14:31:49.816Z] === CREATE ITEM SUCCESS ===
-[2026-03-04T14:31:49.823Z] >>> GET /api/items
-[2026-03-04T14:31:49.949Z] >>> POST /api/items
-[2026-03-04T14:31:49.951Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:31:49.952Z] Cookie token present: true
-[2026-03-04T14:31:49.952Z] Header token present: false
-[2026-03-04T14:31:49.953Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:31:49.954Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:31:49.954Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:31:49.955Z] ✓ Admin verification PASSED
-[2026-03-04T14:31:49.956Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:31:49.956Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-04T14:31:49.957Z] Request body: {"titulli":"The secret","autori":"Rhonda Byrne","cmimi":4,"kategoria":"Sci-fi","imazhi":"https://bukharibooks.com/wp-content/uploads/2019/07/The-secret-250.jpg"}
-[2026-03-04T14:31:49.958Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772633689,"exp":1772720089}
-[2026-03-04T14:31:49.959Z] ✓ All fields present and valid
-[2026-03-04T14:31:49.960Z] Converting cmimi to Number: 4 => 4
-[2026-03-04T14:31:49.961Z] Saving item to database...
-[2026-03-04T14:31:49.998Z] ✓ Item saved successfully: 69a842554364f06551cfe69b
-[2026-03-04T14:31:49.998Z] === CREATE ITEM SUCCESS ===
-[2026-03-04T14:31:50.007Z] >>> GET /api/items
-[2026-03-04T14:31:50.218Z] >>> POST /api/items
-[2026-03-04T14:31:50.221Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:31:50.222Z] Cookie token present: true
-[2026-03-04T14:31:50.223Z] Header token present: false
-[2026-03-04T14:31:50.224Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:31:50.225Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:31:50.227Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:31:50.228Z] ✓ Admin verification PASSED
-[2026-03-04T14:31:50.229Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:31:50.230Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-04T14:31:50.231Z] Request body: {"titulli":"The secret","autori":"Rhonda Byrne","cmimi":4,"kategoria":"Sci-fi","imazhi":"https://bukharibooks.com/wp-content/uploads/2019/07/The-secret-250.jpg"}
-[2026-03-04T14:31:50.232Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772633689,"exp":1772720089}
-[2026-03-04T14:31:50.234Z] ✓ All fields present and valid
-[2026-03-04T14:31:50.235Z] Converting cmimi to Number: 4 => 4
-[2026-03-04T14:31:50.237Z] Saving item to database...
-[2026-03-04T14:31:50.278Z] ✓ Item saved successfully: 69a842564364f06551cfe69e
-[2026-03-04T14:31:50.278Z] === CREATE ITEM SUCCESS ===
-[2026-03-04T14:31:50.282Z] >>> GET /api/items
-[2026-03-04T14:32:00.579Z] >>> OPTIONS /api/items/69a842554364f06551cfe695
-[2026-03-04T14:32:00.585Z] >>> DELETE /api/items/69a842554364f06551cfe695
-[2026-03-04T14:32:00.587Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:32:00.588Z] Cookie token present: true
-[2026-03-04T14:32:00.590Z] Header token present: false
-[2026-03-04T14:32:00.591Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:32:00.593Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:32:00.594Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:32:00.595Z] ✓ Admin verification PASSED
-[2026-03-04T14:32:00.596Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:32:00.653Z] >>> GET /api/items
-[2026-03-04T14:32:05.127Z] >>> OPTIONS /api/items/69a842554364f06551cfe698
-[2026-03-04T14:32:05.130Z] >>> DELETE /api/items/69a842554364f06551cfe698
-[2026-03-04T14:32:05.132Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:32:05.133Z] Cookie token present: true
-[2026-03-04T14:32:05.134Z] Header token present: false
-[2026-03-04T14:32:05.135Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:32:05.136Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:32:05.137Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:32:05.138Z] ✓ Admin verification PASSED
-[2026-03-04T14:32:05.139Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:32:05.224Z] >>> GET /api/items
-[2026-03-04T14:32:07.925Z] >>> OPTIONS /api/items/69a842554364f06551cfe69b
-[2026-03-04T14:32:07.928Z] >>> DELETE /api/items/69a842554364f06551cfe69b
-[2026-03-04T14:32:07.929Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:32:07.929Z] Cookie token present: true
-[2026-03-04T14:32:07.930Z] Header token present: false
-[2026-03-04T14:32:07.930Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:32:07.931Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:32:07.932Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:32:07.933Z] ✓ Admin verification PASSED
-[2026-03-04T14:32:07.933Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:32:07.991Z] >>> GET /api/items
-[2026-03-04T14:32:09.625Z] >>> OPTIONS /api/items/69a842564364f06551cfe69e
-[2026-03-04T14:32:09.636Z] >>> DELETE /api/items/69a842564364f06551cfe69e
-[2026-03-04T14:32:09.637Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:32:09.638Z] Cookie token present: true
-[2026-03-04T14:32:09.638Z] Header token present: false
-[2026-03-04T14:32:09.640Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:32:09.643Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:32:09.646Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:32:09.647Z] ✓ Admin verification PASSED
-[2026-03-04T14:32:09.649Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:32:09.720Z] >>> GET /api/items
-[2026-03-04T14:32:17.397Z] >>> OPTIONS /api/items/69a842544364f06551cfe692
-[2026-03-04T14:32:17.400Z] >>> PUT /api/items/69a842544364f06551cfe692
-[2026-03-04T14:32:17.402Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:32:17.402Z] Cookie token present: true
-[2026-03-04T14:32:17.403Z] Header token present: false
-[2026-03-04T14:32:17.404Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:32:17.406Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:32:17.406Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:32:17.407Z] ✓ Admin verification PASSED
-[2026-03-04T14:32:17.408Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:32:17.464Z] >>> GET /api/items
-[2026-03-04T14:32:20.488Z] >>> GET /api/items
-[2026-03-04T14:32:20.530Z] >>> GET /api/items
-[2026-03-04T14:37:42.771Z] >>> GET /api/items
-[2026-03-04T14:37:42.871Z] >>> GET /api/items
-[2026-03-04T14:39:38.632Z] >>> OPTIONS /api/items
-[2026-03-04T14:39:38.639Z] >>> POST /api/items
-[2026-03-04T14:39:38.641Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:39:38.643Z] Cookie token present: true
-[2026-03-04T14:39:38.644Z] Header token present: false
-[2026-03-04T14:39:38.645Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:39:38.647Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:39:38.648Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:39:38.649Z] ✓ Admin verification PASSED
-[2026-03-04T14:39:38.650Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:39:38.651Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-04T14:39:38.651Z] Request body: {"titulli":"Cfare te ka ndodhur?","autori":"Bruce D.Perry  and Oprah Winfrey","cmimi":10,"kategoria":"Psikologjik","imazhi":"https://www.amazon.com.au/What-Happened-You-Understanding-Resilience/dp/1250223180"}
-[2026-03-04T14:39:38.653Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772633689,"exp":1772720089}
-[2026-03-04T14:39:38.656Z] ✓ All fields present and valid
-[2026-03-04T14:39:38.657Z] Converting cmimi to Number: 10 => 10
-[2026-03-04T14:39:38.658Z] Saving item to database...
-[2026-03-04T14:39:38.753Z] ✓ Item saved successfully: 69a8442a4364f06551cfe6af
-[2026-03-04T14:39:38.755Z] === CREATE ITEM SUCCESS ===
-[2026-03-04T14:39:38.760Z] >>> GET /api/items
-[2026-03-04T14:39:53.796Z] >>> GET /api/items
-[2026-03-04T14:39:53.838Z] >>> GET /api/items
-[2026-03-04T14:39:58.928Z] >>> GET /api/items
-[2026-03-04T14:39:58.970Z] >>> GET /api/items
-[2026-03-04T14:40:25.052Z] >>> OPTIONS /api/items/69a8442a4364f06551cfe6af
-[2026-03-04T14:40:25.055Z] >>> PUT /api/items/69a8442a4364f06551cfe6af
-[2026-03-04T14:40:25.057Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:40:25.057Z] Cookie token present: true
-[2026-03-04T14:40:25.058Z] Header token present: false
-[2026-03-04T14:40:25.059Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:40:25.060Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:40:25.060Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:40:25.061Z] ✓ Admin verification PASSED
-[2026-03-04T14:40:25.062Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:40:25.114Z] >>> GET /api/items
-[2026-03-04T14:40:31.002Z] >>> GET /api/items
-[2026-03-04T14:40:31.048Z] >>> GET /api/items
-[2026-03-04T14:40:40.112Z] >>> GET /api/items
-[2026-03-04T14:40:40.151Z] >>> GET /api/items
-[2026-03-04T14:40:50.793Z] >>> OPTIONS /api/items/69a842544364f06551cfe692
-[2026-03-04T14:40:50.795Z] >>> PUT /api/items/69a842544364f06551cfe692
-[2026-03-04T14:40:50.797Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T14:40:50.797Z] Cookie token present: true
-[2026-03-04T14:40:50.798Z] Header token present: false
-[2026-03-04T14:40:50.798Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T14:40:50.799Z] ✓ JWT verification SUCCESS
-[2026-03-04T14:40:50.800Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T14:40:50.801Z] ✓ Admin verification PASSED
-[2026-03-04T14:40:50.802Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T14:40:50.860Z] >>> GET /api/items
-[2026-03-04T14:41:09.160Z] >>> GET /api/items
-[2026-03-04T14:41:09.213Z] >>> GET /api/items
-[2026-03-04T14:41:17.080Z] >>> POST /api/users/logout
-[2026-03-04T14:41:21.800Z] >>> GET /api/items
-[2026-03-04T14:41:21.846Z] >>> GET /api/items
-[2026-03-04T14:59:23.643Z] >>> GET /api/items
-[2026-03-04T14:59:24.192Z] >>> GET /api/items
-[2026-03-04T15:05:59.628Z] >>> OPTIONS /api/users/login
-[2026-03-04T15:05:59.634Z] >>> POST /api/users/login
-[2026-03-04T15:06:00.124Z] >>> GET /api/orders
-[2026-03-04T15:06:00.173Z] >>> GET /api/orders
-[2026-03-04T15:06:01.968Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:01.975Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:01.980Z] >>> GET /api/items
-[2026-03-04T15:06:02.034Z] >>> GET /api/items
-[2026-03-04T15:06:11.693Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:11.700Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:11.705Z] >>> GET /api/items
-[2026-03-04T15:06:11.761Z] >>> GET /api/items
-[2026-03-04T15:06:17.819Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:17.825Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:17.829Z] >>> GET /api/items
-[2026-03-04T15:06:17.882Z] >>> GET /api/items
-[2026-03-04T15:06:21.146Z] >>> OPTIONS /api/items/69a842544364f06551cfe692
-[2026-03-04T15:06:21.156Z] >>> DELETE /api/items/69a842544364f06551cfe692
-[2026-03-04T15:06:21.159Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-04T15:06:21.162Z] Cookie token present: true
-[2026-03-04T15:06:21.164Z] Header token present: true
-[2026-03-04T15:06:21.171Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-04T15:06:21.179Z] ✓ JWT verification SUCCESS
-[2026-03-04T15:06:21.182Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-04T15:06:21.191Z] ✓ Admin verification PASSED
-[2026-03-04T15:06:21.195Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-04T15:06:21.282Z] >>> GET /api/items
-[2026-03-04T15:06:23.819Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:23.824Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:23.830Z] >>> GET /api/items
-[2026-03-04T15:06:23.881Z] >>> GET /api/items
-[2026-03-04T15:06:46.221Z] >>> OPTIONS /api/items
-[2026-03-04T15:06:46.232Z] >>> GET /api/items
-[2026-03-04T15:06:46.287Z] >>> GET /api/items
-[2026-03-05T09:23:33.311Z] >>> POST /api/users/logout
-[2026-03-05T09:23:43.342Z] >>> GET /api/items
-[2026-03-05T09:23:43.867Z] >>> GET /api/items
-[2026-03-05T09:26:58.866Z] >>> GET /api/items
-[2026-03-05T09:26:58.911Z] >>> GET /api/items
-[2026-03-05T09:27:12.882Z] >>> GET /api/items
-[2026-03-05T09:27:12.927Z] >>> GET /api/items
-[2026-03-05T11:51:45.118Z] 
+[2026-03-17T10:10:02.144Z] >>> OPTIONS /api/users/login
+[2026-03-17T10:10:02.149Z] >>> POST /api/users/login
+[2026-03-17T10:10:02.366Z] >>> GET /api/orders
+[2026-03-17T10:10:02.372Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:10:02.383Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:10:02.416Z] >>> GET /api/orders
+[2026-03-17T10:12:42.805Z] >>> OPTIONS /api/items
+[2026-03-17T10:12:42.808Z] >>> GET /api/items
+[2026-03-17T10:12:45.811Z] >>> GET /api/orders
+[2026-03-17T10:12:45.816Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:12:45.819Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:12:45.860Z] >>> GET /api/orders
+[2026-03-17T10:13:13.793Z] >>> OPTIONS /api/items
+[2026-03-17T10:13:13.799Z] >>> OPTIONS /api/items
+[2026-03-17T10:13:13.800Z] >>> GET /api/items
+[2026-03-17T10:13:13.848Z] >>> GET /api/items
+[2026-03-17T10:13:15.784Z] >>> GET /api/orders
+[2026-03-17T10:13:15.786Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:15:02.794Z] >>> OPTIONS /api/items
+[2026-03-17T10:15:02.796Z] >>> GET /api/items
+[2026-03-17T10:15:02.840Z] >>> GET /api/items
+[2026-03-17T10:16:12.801Z] >>> OPTIONS /api/items
+[2026-03-17T10:16:12.802Z] >>> OPTIONS /api/items
+[2026-03-17T10:16:12.804Z] >>> GET /api/items
+[2026-03-17T10:16:12.884Z] >>> GET /api/items
+[2026-03-17T10:16:26.415Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:16:26.417Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:16:40.667Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:16:40.670Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:16:51.901Z] >>> GET /api/items
+[2026-03-17T10:16:51.905Z] >>> OPTIONS /api/items
+[2026-03-17T10:16:51.973Z] >>> GET /api/items
+[2026-03-17T10:16:53.718Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:16:53.720Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:20:36.774Z] >>> OPTIONS /api/items
+[2026-03-17T10:20:36.777Z] >>> GET /api/items
+[2026-03-17T10:20:40.670Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:20:40.675Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:20:50.571Z] >>> GET /api/items
+[2026-03-17T10:20:50.576Z] >>> OPTIONS /api/items
+[2026-03-17T10:20:50.616Z] >>> GET /api/items
+[2026-03-17T10:20:52.454Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:20:52.457Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:21:01.664Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:21:01.667Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:22:48.836Z] >>> OPTIONS /api/items
+[2026-03-17T10:22:48.839Z] >>> GET /api/items
+[2026-03-17T10:22:48.885Z] >>> GET /api/items
+[2026-03-17T10:23:45.917Z] 
 
 ========== SERVER STARTING ==========
-[2026-03-05T11:51:45.122Z] Timestamp: 2026-03-05T11:51:45.122Z
-[2026-03-05T11:51:45.123Z] ================================
+[2026-03-17T10:23:45.919Z] Timestamp: 2026-03-17T10:23:45.919Z
+[2026-03-17T10:23:45.919Z] ================================
 
-[2026-03-05T11:53:10.217Z] >>> GET /api/users/me
-[2026-03-05T11:53:10.229Z] >>> GET /api/users/me
-[2026-03-05T11:53:43.102Z] >>> POST /api/users/login
-[2026-03-05T11:53:43.689Z] >>> POST /api/items
-[2026-03-05T11:53:43.691Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-05T11:53:43.692Z] Cookie token present: true
-[2026-03-05T11:53:43.693Z] Header token present: false
-[2026-03-05T11:53:43.694Z] Cookies: ["accessToken"]
-[2026-03-05T11:53:43.696Z] ✓ JWT verification SUCCESS
-[2026-03-05T11:53:43.697Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-05T11:53:43.697Z] ✓ Admin verification PASSED
-[2026-03-05T11:53:43.698Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-05T11:53:43.699Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-05T11:53:43.699Z] Request body: {"titulli":"Test Script Book","autori":"Script Author","cmimi":5.99,"kategoria":"Fantazi","imazhi":"https://via.placeholder.com/150"}
-[2026-03-05T11:53:43.700Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1772711623,"exp":1772798023}
-[2026-03-05T11:53:43.701Z] ✓ All fields present and valid
-[2026-03-05T11:53:43.702Z] Converting cmimi to Number: 5.99 => 5.99
-[2026-03-05T11:53:43.704Z] Saving item to database...
-[2026-03-05T11:53:43.750Z] ✓ Item saved successfully: 69a96ec74364f06551cfe6da
-[2026-03-05T11:53:43.751Z] === CREATE ITEM SUCCESS ===
-[2026-03-05T11:53:43.759Z] >>> GET /api/items
-[2026-03-05T11:54:47.793Z] >>> OPTIONS /api/users/login
-[2026-03-05T11:54:47.797Z] >>> POST /api/users/login
-[2026-03-05T11:54:48.037Z] >>> GET /api/orders
-[2026-03-05T11:54:48.119Z] >>> GET /api/orders
-[2026-03-05T11:54:49.984Z] >>> OPTIONS /api/items
-[2026-03-05T11:54:49.986Z] >>> OPTIONS /api/items
-[2026-03-05T11:54:49.988Z] >>> GET /api/items
-[2026-03-05T11:54:50.036Z] >>> GET /api/items
-[2026-03-05T12:00:33.594Z] >>> GET /api/users/me
-[2026-03-05T12:00:33.598Z] >>> GET /api/users/me
-[2026-03-05T12:03:01.010Z] 
+[2026-03-17T10:29:35.448Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:29:35.453Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:29:37.890Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:29:44.177Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:29:44.184Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T10:35:56.759Z] 
 
 ========== SERVER STARTING ==========
-[2026-03-05T12:03:01.014Z] Timestamp: 2026-03-05T12:03:01.014Z
-[2026-03-05T12:03:01.015Z] ================================
+[2026-03-17T10:35:56.761Z] Timestamp: 2026-03-17T10:35:56.761Z
+[2026-03-17T10:35:56.761Z] ================================
 
-[2026-03-05T12:04:03.399Z] >>> OPTIONS /api/users/login
-[2026-03-05T12:04:03.410Z] >>> POST /api/users/login
-[2026-03-05T12:04:03.631Z] >>> GET /api/orders
-[2026-03-05T12:04:03.715Z] >>> GET /api/orders
-[2026-03-05T12:04:11.234Z] >>> OPTIONS /api/items
-[2026-03-05T12:04:11.236Z] >>> OPTIONS /api/items
-[2026-03-05T12:04:11.237Z] >>> GET /api/items
-[2026-03-05T12:04:11.309Z] >>> GET /api/items
-[2026-03-05T12:10:05.654Z] >>> GET /api/users/me
-[2026-03-05T12:10:05.659Z] >>> GET /api/users/me
-[2026-03-05T12:10:26.590Z] 
+[2026-03-17T10:42:51.963Z] 
 
 ========== SERVER STARTING ==========
-[2026-03-05T12:10:26.592Z] Timestamp: 2026-03-05T12:10:26.591Z
-[2026-03-05T12:10:26.592Z] ================================
+[2026-03-17T10:42:51.965Z] Timestamp: 2026-03-17T10:42:51.965Z
+[2026-03-17T10:42:51.966Z] ================================
 
-[2026-03-05T12:11:02.824Z] 
-
-========== SERVER STARTING ==========
-[2026-03-05T12:11:02.827Z] Timestamp: 2026-03-05T12:11:02.827Z
-[2026-03-05T12:11:02.828Z] ================================
-
-[2026-03-05T12:11:04.933Z] >>> POST /api/users/register
-[2026-03-05T12:11:16.467Z] >>> GET /api/items
-[2026-03-05T12:14:47.446Z] >>> OPTIONS /api/items
-[2026-03-05T12:14:47.448Z] >>> OPTIONS /api/items
-[2026-03-05T12:14:47.449Z] >>> GET /api/items
-[2026-03-05T12:14:47.597Z] >>> GET /api/items
-[2026-03-05T12:15:07.683Z] >>> POST /api/users/logout
-[2026-03-05T12:16:17.300Z] >>> GET /api/users/me
-[2026-03-05T12:16:17.304Z] >>> GET /api/users/me
-[2026-03-05T12:17:37.766Z] >>> GET /api/items
-[2026-03-05T12:17:37.838Z] >>> GET /api/items
-[2026-03-05T12:18:25.224Z] >>> GET /api/items
-[2026-03-05T12:18:25.292Z] >>> GET /api/items
-[2026-03-05T12:22:23.636Z] 
-
-========== SERVER STARTING ==========
-[2026-03-05T12:22:23.639Z] Timestamp: 2026-03-05T12:22:23.639Z
-[2026-03-05T12:22:23.640Z] ================================
-
-[2026-03-05T12:22:29.984Z] >>> GET /api/users/me
-[2026-03-05T12:22:30.002Z] >>> GET /api/users/me
-[2026-03-05T12:22:37.252Z] >>> GET /api/items
-[2026-03-05T12:22:37.304Z] >>> GET /api/items
-[2026-03-05T12:25:21.882Z] >>> GET /api/items
-[2026-03-05T12:25:58.185Z] >>> OPTIONS /api/items
-[2026-03-05T12:25:58.188Z] >>> OPTIONS /api/items
-[2026-03-05T12:25:58.190Z] >>> GET /api/items
-[2026-03-05T12:25:58.233Z] >>> GET /api/items
-[2026-03-05T12:28:04.261Z] >>> GET /api/items
-[2026-03-05T12:28:04.266Z] >>> OPTIONS /api/items
-[2026-03-05T12:28:04.270Z] >>> GET /api/items
-[2026-03-05T12:28:10.250Z] >>> OPTIONS /api/items
-[2026-03-05T12:28:10.252Z] >>> GET /api/items
-[2026-03-05T12:28:10.254Z] >>> GET /api/items
-[2026-03-05T12:29:06.581Z] >>> GET /api/users/me
-[2026-03-05T12:29:06.587Z] >>> GET /api/users/me
-[2026-03-05T12:29:29.750Z] 
+[2026-03-17T10:43:01.113Z] >>> POST /api/users/logout
+[2026-03-17T10:43:25.369Z] >>> OPTIONS /api/users/login
+[2026-03-17T10:43:25.375Z] >>> POST /api/users/login
+[2026-03-17T10:43:25.571Z] >>> GET /api/orders
+[2026-03-17T10:43:25.585Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:43:25.592Z] >>> GET /api/users/me/schedule
+[2026-03-17T10:43:25.634Z] >>> GET /api/orders
+[2026-03-17T10:43:28.000Z] >>> OPTIONS /api/items
+[2026-03-17T10:43:28.002Z] >>> OPTIONS /api/items
+[2026-03-17T10:43:28.004Z] >>> GET /api/items
+[2026-03-17T10:43:28.054Z] >>> GET /api/items
+[2026-03-17T10:43:34.564Z] >>> OPTIONS /api/orders
+[2026-03-17T10:43:34.571Z] >>> POST /api/orders
+[2026-03-17T10:43:34.838Z] >>> GET /invoices/invoice_69b930564c90f0255107c9d4.pdf
+[2026-03-17T10:44:52.795Z] >>> OPTIONS /api/items
+[2026-03-17T10:44:52.798Z] >>> OPTIONS /api/items
+[2026-03-17T10:44:52.802Z] >>> GET /api/items
+[2026-03-17T10:44:52.846Z] >>> GET /api/items
+[2026-03-17T10:45:00.803Z] >>> OPTIONS /api/orders
+[2026-03-17T10:45:00.813Z] >>> POST /api/orders
+[2026-03-17T10:45:01.053Z] >>> GET /invoices/invoice_69b930ac4c90f0255107c9db.pdf
+[2026-03-17T10:45:29.270Z] >>> GET /invoices/invoice_69b930ac4c90f0255107c9db.pdf
+[2026-03-17T10:45:30.191Z] >>> GET /invoices/invoice_69b930ac4c90f0255107c9db.pdf
+[2026-03-17T10:47:57.891Z] >>> OPTIONS /api/items
+[2026-03-17T10:47:57.893Z] >>> OPTIONS /api/items
+[2026-03-17T10:47:57.895Z] >>> GET /api/items
+[2026-03-17T10:47:57.944Z] >>> GET /api/items
+[2026-03-17T10:48:06.561Z] >>> OPTIONS /api/orders
+[2026-03-17T10:48:06.564Z] >>> POST /api/orders
+[2026-03-17T10:48:06.741Z] >>> GET /invoices/invoice_69b931664c90f0255107c9e2.pdf
+[2026-03-17T10:48:32.498Z] 
 
 ========== SERVER STARTING ==========
-[2026-03-05T12:29:29.752Z] Timestamp: 2026-03-05T12:29:29.752Z
-[2026-03-05T12:29:29.753Z] ================================
+[2026-03-17T10:48:32.500Z] Timestamp: 2026-03-17T10:48:32.500Z
+[2026-03-17T10:48:32.500Z] ================================
 
-[2026-03-05T12:30:15.086Z] >>> GET /api/users/me
-[2026-03-05T12:30:15.092Z] >>> GET /api/items
-[2026-03-05T12:30:15.099Z] >>> GET /api/users/me
-[2026-03-05T12:30:15.148Z] >>> GET /api/items
-[2026-03-05T12:34:25.907Z] >>> GET /api/items
-[2026-03-05T12:34:25.966Z] >>> GET /api/items
-[2026-03-05T12:34:41.062Z] >>> GET /api/items
-[2026-03-05T12:34:41.115Z] >>> GET /api/items
-[2026-03-05T12:34:58.603Z] >>> GET /api/items
-[2026-03-05T12:34:58.657Z] >>> GET /api/items
-[2026-03-05T12:37:01.258Z] >>> GET /api/items
-[2026-03-05T12:37:51.994Z] >>> GET /api/items
-[2026-03-05T12:37:52.055Z] >>> GET /api/items
-[2026-03-05T12:37:57.900Z] >>> GET /api/items
-[2026-03-05T12:37:57.976Z] >>> GET /api/items
-[2026-03-05T12:40:45.249Z] >>> GET /api/items
-[2026-03-05T12:48:02.346Z] >>> GET /api/items
-[2026-03-05T12:48:02.416Z] >>> GET /api/items
-[2026-03-05T12:48:09.655Z] >>> GET /api/items
-[2026-03-05T12:48:09.741Z] >>> GET /api/items
-[2026-03-05T12:59:08.089Z] >>> GET /api/items
-[2026-03-05T12:59:08.285Z] >>> GET /api/items
-[2026-03-05T12:59:57.745Z] >>> OPTIONS /api/users/login
-[2026-03-05T12:59:57.755Z] >>> POST /api/users/login
-[2026-03-05T12:59:58.286Z] >>> GET /api/orders
-[2026-03-05T12:59:58.341Z] >>> GET /api/orders
-[2026-03-05T13:00:00.380Z] >>> OPTIONS /api/items
-[2026-03-05T13:00:00.389Z] >>> OPTIONS /api/items
-[2026-03-05T13:00:00.393Z] >>> GET /api/items
-[2026-03-05T13:00:00.443Z] >>> GET /api/items
-[2026-03-05T13:00:37.002Z] >>> POST /api/users/logout
-[2026-03-06T11:38:53.241Z] >>> GET /api/items
-[2026-03-06T11:38:53.880Z] >>> GET /api/items
-[2026-03-06T11:53:57.779Z] 
-
-========== SERVER STARTING ==========
-[2026-03-06T11:53:57.781Z] Timestamp: 2026-03-06T11:53:57.781Z
-[2026-03-06T11:53:57.782Z] ================================
-
-[2026-03-06T11:53:59.850Z] >>> OPTIONS /api/items
-[2026-03-06T11:53:59.862Z] >>> GET /api/items
-[2026-03-06T11:53:59.876Z] >>> OPTIONS /api/items
-[2026-03-06T11:53:59.933Z] >>> GET /api/items
-[2026-03-06T11:54:08.558Z] >>> GET /api/users/me
-[2026-03-06T11:54:08.564Z] >>> GET /api/users/me
-[2026-03-06T11:54:19.917Z] 
-
-========== SERVER STARTING ==========
-[2026-03-06T11:54:19.919Z] Timestamp: 2026-03-06T11:54:19.919Z
-[2026-03-06T11:54:19.920Z] ================================
-
-[2026-03-06T11:54:39.634Z] >>> OPTIONS /api/users/login
-[2026-03-06T11:54:39.639Z] >>> POST /api/users/login
-[2026-03-06T11:54:39.856Z] >>> GET /api/orders
-[2026-03-06T11:54:39.903Z] >>> GET /api/orders
-[2026-03-06T11:54:45.018Z] >>> OPTIONS /api/items
-[2026-03-06T11:54:45.021Z] >>> OPTIONS /api/items
-[2026-03-06T11:54:45.022Z] >>> GET /api/items
-[2026-03-06T11:54:45.064Z] >>> GET /api/items
-[2026-03-06T11:54:53.803Z] >>> OPTIONS /api/items
-[2026-03-06T11:54:53.806Z] >>> OPTIONS /api/items
-[2026-03-06T11:54:53.807Z] >>> GET /api/items
-[2026-03-06T11:54:53.863Z] >>> GET /api/items
-[2026-03-06T12:27:27.068Z] >>> OPTIONS /api/items
-[2026-03-06T12:27:27.079Z] >>> OPTIONS /api/items
-[2026-03-06T12:27:27.088Z] >>> GET /api/items
-[2026-03-06T12:27:27.151Z] >>> GET /api/items
-[2026-03-06T12:31:22.429Z] >>> OPTIONS /api/items
-[2026-03-06T12:31:22.436Z] >>> OPTIONS /api/items
-[2026-03-06T12:31:22.441Z] >>> GET /api/items
-[2026-03-06T12:31:22.512Z] >>> GET /api/items
-[2026-03-06T12:31:30.983Z] >>> OPTIONS /api/items
-[2026-03-06T12:31:30.993Z] >>> OPTIONS /api/items
-[2026-03-06T12:31:30.998Z] >>> GET /api/items
-[2026-03-06T12:31:31.057Z] >>> GET /api/items
-[2026-03-06T12:31:55.778Z] >>> OPTIONS /api/items
-[2026-03-06T12:31:55.783Z] >>> OPTIONS /api/items
-[2026-03-06T12:31:55.787Z] >>> GET /api/items
-[2026-03-06T12:31:55.836Z] >>> GET /api/items
-[2026-03-06T12:33:43.256Z] >>> OPTIONS /api/items
-[2026-03-06T12:33:43.262Z] >>> OPTIONS /api/items
-[2026-03-06T12:33:43.267Z] >>> GET /api/items
-[2026-03-06T12:33:43.332Z] >>> GET /api/items
-[2026-03-06T12:33:49.516Z] >>> OPTIONS /api/items
-[2026-03-06T12:33:49.524Z] >>> OPTIONS /api/items
-[2026-03-06T12:33:49.529Z] >>> GET /api/items
-[2026-03-06T12:33:49.610Z] >>> GET /api/items
-[2026-03-10T09:21:19.727Z] 
-
-========== SERVER STARTING ==========
-[2026-03-10T09:21:19.734Z] Timestamp: 2026-03-10T09:21:19.734Z
-[2026-03-10T09:21:19.735Z] ================================
-
-[2026-03-10T09:21:47.477Z] >>> GET /api/users/me
-[2026-03-10T09:21:47.608Z] >>> GET /api/users/me
-[2026-03-10T09:29:50.440Z] >>> OPTIONS /api/items
-[2026-03-10T09:29:50.443Z] >>> OPTIONS /api/items
-[2026-03-10T09:29:50.445Z] >>> GET /api/items
-[2026-03-10T09:29:50.979Z] >>> GET /api/items
-[2026-03-10T09:31:24.335Z] >>> OPTIONS /api/items
-[2026-03-10T09:31:24.337Z] >>> OPTIONS /api/items
-[2026-03-10T09:31:24.339Z] >>> GET /api/items
-[2026-03-10T09:31:24.417Z] >>> GET /api/items
-[2026-03-10T09:32:16.361Z] >>> OPTIONS /api/items
-[2026-03-10T09:32:16.365Z] >>> OPTIONS /api/items
-[2026-03-10T09:32:16.367Z] >>> GET /api/items
-[2026-03-10T09:32:16.428Z] >>> GET /api/items
-[2026-03-10T09:49:00.612Z] >>> GET /api/users/me
-[2026-03-10T09:49:00.628Z] >>> GET /api/users/me
-[2026-03-10T09:49:22.768Z] >>> OPTIONS /api/items
-[2026-03-10T09:49:22.771Z] >>> OPTIONS /api/users/employees
-[2026-03-10T09:49:22.774Z] >>> GET /api/items
-[2026-03-10T09:49:22.780Z] >>> OPTIONS /api/users/employees
-[2026-03-10T09:49:22.783Z] >>> GET /api/users/employees
-[2026-03-10T09:49:22.793Z] >>> GET /api/users/employees
-[2026-03-10T09:49:22.841Z] >>> GET /api/items
-[2026-03-10T09:50:49.381Z] >>> POST /api/users/logout
-[2026-03-10T09:51:07.481Z] >>> OPTIONS /api/users/login
-[2026-03-10T09:51:07.487Z] >>> POST /api/users/login
-[2026-03-10T09:51:43.357Z] >>> OPTIONS /api/users/register
-[2026-03-10T09:51:43.359Z] >>> POST /api/users/register
-[2026-03-10T09:51:44.574Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:51:44.577Z] >>> GET /api/orders
-[2026-03-10T09:51:44.585Z] >>> GET /api/orders
-[2026-03-10T09:51:44.591Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:51:51.371Z] >>> POST /api/users/logout
-[2026-03-10T09:52:13.477Z] >>> OPTIONS /api/users/login
-[2026-03-10T09:52:13.480Z] >>> POST /api/users/login
-[2026-03-10T09:52:13.842Z] >>> GET /api/orders
-[2026-03-10T09:52:13.849Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:52:13.858Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:52:13.904Z] >>> GET /api/orders
-[2026-03-10T09:53:16.059Z] 
-
-========== SERVER STARTING ==========
-[2026-03-10T09:53:16.063Z] Timestamp: 2026-03-10T09:53:16.063Z
-[2026-03-10T09:53:16.065Z] ================================
-
-[2026-03-10T09:53:18.271Z] >>> POST /api/users/register
-[2026-03-10T09:54:32.465Z] >>> POST /api/users/logout
-[2026-03-10T09:54:35.876Z] >>> GET /api/users/me
-[2026-03-10T09:54:35.884Z] >>> GET /api/users/me
-[2026-03-10T09:54:38.704Z] >>> GET /api/users/me
-[2026-03-10T09:54:38.712Z] >>> GET /api/users/me
-[2026-03-10T09:55:20.717Z] >>> OPTIONS /api/users/login
-[2026-03-10T09:55:20.721Z] >>> POST /api/users/login
-[2026-03-10T09:55:21.038Z] >>> GET /api/orders
-[2026-03-10T09:55:21.043Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:55:21.048Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:55:21.137Z] >>> GET /api/orders
-[2026-03-10T09:55:39.925Z] >>> POST /api/users/me/checkin
-[2026-03-10T09:55:42.013Z] >>> POST /api/users/me/checkin
-[2026-03-10T09:55:48.392Z] >>> POST /api/users/logout
-[2026-03-10T09:56:10.530Z] >>> OPTIONS /api/users/login
-[2026-03-10T09:56:10.534Z] >>> POST /api/users/login
-[2026-03-10T09:56:10.805Z] >>> GET /api/orders
-[2026-03-10T09:56:10.813Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:56:10.824Z] >>> GET /api/users/me/schedule
-[2026-03-10T09:56:10.867Z] >>> GET /api/orders
-[2026-03-10T09:56:13.385Z] >>> OPTIONS /api/items
-[2026-03-10T09:56:13.388Z] >>> OPTIONS /api/users/employees
-[2026-03-10T09:56:13.390Z] >>> GET /api/items
-[2026-03-10T09:56:13.395Z] >>> OPTIONS /api/users/employees
-[2026-03-10T09:56:13.397Z] >>> GET /api/users/employees
-[2026-03-10T09:56:13.402Z] >>> GET /api/users/employees
-[2026-03-10T09:56:13.655Z] >>> GET /api/items
-[2026-03-10T09:58:01.517Z] >>> POST /api/users/login
-[2026-03-10T09:58:01.860Z] >>> GET /api/users/employees
-[2026-03-10T09:58:41.107Z] >>> POST /api/users/login
-[2026-03-10T09:58:41.317Z] >>> GET /api/users
-[2026-03-10T09:59:33.228Z] >>> GET /api/items
-[2026-03-10T09:59:33.234Z] >>> OPTIONS /api/users/employees
-[2026-03-10T09:59:33.238Z] >>> OPTIONS /api/items
-[2026-03-10T09:59:33.242Z] >>> OPTIONS /api/users/employees
-[2026-03-10T09:59:33.246Z] >>> GET /api/users/employees
-[2026-03-10T09:59:33.250Z] >>> GET /api/users/employees
-[2026-03-10T09:59:33.348Z] >>> GET /api/items
-[2026-03-10T10:00:26.418Z] >>> GET /api/items
-[2026-03-10T10:00:26.423Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:00:26.429Z] >>> OPTIONS /api/items
-[2026-03-10T10:00:26.433Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:00:26.435Z] >>> GET /api/users/employees
-[2026-03-10T10:00:26.441Z] >>> GET /api/users/employees
-[2026-03-10T10:00:26.487Z] >>> GET /api/items
-[2026-03-10T10:00:38.549Z] >>> OPTIONS /api/items
-[2026-03-10T10:00:38.553Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:00:38.555Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:00:38.558Z] >>> GET /api/items
-[2026-03-10T10:00:38.561Z] >>> GET /api/users/employees
-[2026-03-10T10:00:38.566Z] >>> GET /api/users/employees
-[2026-03-10T10:00:38.951Z] >>> GET /api/items
-[2026-03-10T10:01:38.430Z] 
-
-========== SERVER STARTING ==========
-[2026-03-10T10:01:38.434Z] Timestamp: 2026-03-10T10:01:38.434Z
-[2026-03-10T10:01:38.434Z] ================================
-
-[2026-03-10T10:27:42.585Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:27:42.590Z] >>> GET /api/items
-[2026-03-10T10:27:42.596Z] >>> OPTIONS /api/items
-[2026-03-10T10:27:42.598Z] >>> GET /api/users/employees
-[2026-03-10T10:27:42.601Z] >>> GET /api/users/employees
-[2026-03-10T10:27:42.670Z] >>> GET /api/items
-[2026-03-10T10:29:33.367Z] >>> OPTIONS /api/items
-[2026-03-10T10:29:33.370Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:29:33.372Z] >>> OPTIONS /api/items
-[2026-03-10T10:29:33.373Z] >>> OPTIONS /api/users/employees
-[2026-03-10T10:29:33.375Z] >>> GET /api/users/employees
-[2026-03-10T10:29:33.378Z] >>> GET /api/items
-[2026-03-10T10:29:33.382Z] >>> GET /api/users/employees
-[2026-03-10T10:29:33.466Z] >>> GET /api/items
-[2026-03-10T10:32:56.710Z] >>> POST /api/users/logout
-[2026-03-10T10:33:26.372Z] >>> OPTIONS /api/users/login
-[2026-03-10T10:33:26.375Z] >>> POST /api/users/login
-[2026-03-10T10:33:26.590Z] >>> GET /api/orders
-[2026-03-10T10:33:26.592Z] >>> GET /api/users/me/schedule
-[2026-03-10T10:33:26.595Z] >>> GET /api/users/me/schedule
-[2026-03-10T10:33:26.645Z] >>> GET /api/orders
-[2026-03-10T10:33:35.161Z] >>> POST /api/users/logout
-[2026-03-10T12:34:21.622Z] 
-
-========== SERVER STARTING ==========
-[2026-03-10T12:34:21.629Z] Timestamp: 2026-03-10T12:34:21.629Z
-[2026-03-10T12:34:21.630Z] ================================
-
-[2026-03-10T12:34:35.368Z] >>> GET /api/users/me
-[2026-03-10T12:34:35.422Z] >>> GET /api/users/me
-[2026-03-10T12:34:41.391Z] >>> GET /api/items
-[2026-03-10T12:34:41.628Z] >>> GET /api/items
-[2026-03-10T12:35:00.530Z] >>> OPTIONS /api/users/login
-[2026-03-10T12:35:00.556Z] >>> POST /api/users/login
-[2026-03-10T12:35:01.353Z] >>> GET /api/orders
-[2026-03-10T12:35:01.365Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:35:01.436Z] >>> GET /api/orders
-[2026-03-10T12:35:01.449Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:35:08.094Z] >>> POST /api/users/me/checkin
-[2026-03-10T12:35:16.552Z] >>> POST /api/users/me/checkout
-[2026-03-10T12:35:43.925Z] >>> POST /api/users/logout
-[2026-03-10T12:36:10.170Z] >>> OPTIONS /api/users/login
-[2026-03-10T12:36:10.187Z] >>> POST /api/users/login
-[2026-03-10T12:36:10.923Z] >>> GET /api/orders
-[2026-03-10T12:36:10.934Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:36:11.073Z] >>> GET /api/orders
-[2026-03-10T12:36:11.095Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:36:15.211Z] >>> OPTIONS /api/items
-[2026-03-10T12:36:15.224Z] >>> OPTIONS /api/users/employees
-[2026-03-10T12:36:15.237Z] >>> OPTIONS /api/items
-[2026-03-10T12:36:15.254Z] >>> OPTIONS /api/users/employees
-[2026-03-10T12:36:15.264Z] >>> GET /api/items
-[2026-03-10T12:36:15.275Z] >>> GET /api/users/employees
-[2026-03-10T12:36:15.341Z] >>> GET /api/items
-[2026-03-10T12:36:15.354Z] >>> GET /api/users/employees
-[2026-03-10T12:37:49.941Z] >>> OPTIONS /api/users/69afe9af020b2a57df67aecd/schedule
-[2026-03-10T12:37:49.953Z] >>> POST /api/users/69afe9af020b2a57df67aecd/schedule
-[2026-03-10T12:37:50.113Z] >>> OPTIONS /api/users/employees
-[2026-03-10T12:37:50.124Z] >>> GET /api/users/employees
-[2026-03-10T12:37:56.839Z] >>> GET /api/orders
-[2026-03-10T12:37:56.866Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:37:57.184Z] >>> GET /api/orders
-[2026-03-10T12:37:57.196Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:37:58.761Z] >>> POST /api/users/logout
-[2026-03-10T12:38:28.825Z] >>> OPTIONS /api/users/login
-[2026-03-10T12:38:28.841Z] >>> POST /api/users/login
-[2026-03-10T12:38:29.503Z] >>> GET /api/orders
-[2026-03-10T12:38:29.509Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:38:29.592Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:38:29.625Z] >>> GET /api/orders
-[2026-03-10T12:38:45.537Z] >>> GET /api/orders
-[2026-03-10T12:38:45.546Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:38:45.628Z] >>> GET /api/orders
-[2026-03-10T12:38:45.705Z] >>> GET /api/users/me/schedule
-[2026-03-10T12:38:58.865Z] >>> POST /api/users/logout
-[2026-03-11T10:40:34.012Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T10:40:34.014Z] Timestamp: 2026-03-11T10:40:34.014Z
-[2026-03-11T10:40:34.015Z] ================================
-
-[2026-03-11T10:42:02.039Z] >>> GET /api/items
-[2026-03-11T10:42:02.101Z] >>> GET /api/items
-[2026-03-11T10:42:19.009Z] >>> GET /api/items
-[2026-03-11T10:42:19.077Z] >>> GET /api/items
-[2026-03-11T10:42:39.080Z] >>> GET /api/items
-[2026-03-11T10:42:39.130Z] >>> GET /api/items
-[2026-03-11T10:43:03.243Z] >>> GET /api/items
-[2026-03-11T10:43:03.290Z] >>> GET /api/items
-[2026-03-11T12:36:52.000Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T12:36:52.006Z] Timestamp: 2026-03-11T12:36:52.006Z
-[2026-03-11T12:36:52.007Z] ================================
-
-[2026-03-11T12:37:35.716Z] >>> GET /api/items
-[2026-03-11T12:37:36.040Z] >>> GET /api/items
-[2026-03-11T12:38:52.834Z] >>> OPTIONS /api/contact/sendMessage
-[2026-03-11T12:38:52.866Z] >>> POST /api/contact/sendMessage
-[2026-03-11T12:39:28.525Z] >>> GET /api/items
-[2026-03-11T12:39:28.898Z] >>> GET /api/items
-[2026-03-11T12:40:21.565Z] >>> OPTIONS /api/users/login
-[2026-03-11T12:40:21.574Z] >>> POST /api/users/login
-[2026-03-11T12:40:22.457Z] >>> GET /api/orders
-[2026-03-11T12:40:22.468Z] >>> GET /api/users/me/schedule
-[2026-03-11T12:40:22.635Z] >>> GET /api/orders
-[2026-03-11T12:40:22.651Z] >>> GET /api/users/me/schedule
-[2026-03-11T12:40:25.805Z] >>> OPTIONS /api/items
-[2026-03-11T12:40:25.811Z] >>> OPTIONS /api/users/employees
-[2026-03-11T12:40:25.815Z] >>> OPTIONS /api/items
-[2026-03-11T12:40:25.820Z] >>> OPTIONS /api/users/employees
-[2026-03-11T12:40:25.826Z] >>> GET /api/items
-[2026-03-11T12:40:25.844Z] >>> GET /api/users/employees
-[2026-03-11T12:40:26.198Z] >>> GET /api/items
-[2026-03-11T12:40:26.205Z] >>> GET /api/users/employees
-[2026-03-11T12:40:41.620Z] >>> OPTIONS /api/items/69a8442a4364f06551cfe6af
-[2026-03-11T12:40:41.634Z] >>> PUT /api/items/69a8442a4364f06551cfe6af
-[2026-03-11T12:40:41.646Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-11T12:40:41.651Z] Cookie token present: true
-[2026-03-11T12:40:41.656Z] Header token present: true
-[2026-03-11T12:40:41.662Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-11T12:40:41.668Z] ✓ JWT verification SUCCESS
-[2026-03-11T12:40:41.670Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-11T12:40:41.674Z] ✓ Admin verification PASSED
-[2026-03-11T12:40:41.677Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-11T12:40:42.174Z] >>> OPTIONS /api/items
-[2026-03-11T12:40:42.184Z] >>> GET /api/items
-[2026-03-11T12:43:55.754Z] >>> OPTIONS /api/items
-[2026-03-11T12:43:55.766Z] >>> POST /api/items
-[2026-03-11T12:43:55.772Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-11T12:43:55.775Z] Cookie token present: true
-[2026-03-11T12:43:55.777Z] Header token present: true
-[2026-03-11T12:43:55.779Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-11T12:43:55.785Z] ✓ JWT verification SUCCESS
-[2026-03-11T12:43:55.787Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-11T12:43:55.790Z] ✓ Admin verification PASSED
-[2026-03-11T12:43:55.796Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-11T12:43:55.803Z] 
-=== CREATE ITEM REQUEST ===
-[2026-03-11T12:43:55.809Z] Request body: {"titulli":"Notes and Queries and Historic Magazine","autori":"University of Illinois at Urbana-Champaign","cmimi":30,"kategoria":"Histori","imazhi":"https://www.gutenberg.org/cache/epub/72940/pg72940.cover.medium.jpg"}
-[2026-03-11T12:43:55.811Z] Request user from token: {"id":"69a825a565067a0fd06d140a","username":"admin","role":"admin","iat":1773232822,"exp":1773319222}
-[2026-03-11T12:43:55.813Z] ✓ All fields present and valid
-[2026-03-11T12:43:55.817Z] Converting cmimi to Number: 30 => 30
-[2026-03-11T12:43:55.819Z] Saving item to database...
-[2026-03-11T12:43:55.907Z] ✓ Item saved successfully: 69b1638b6b70e6d80875da74
-[2026-03-11T12:43:55.909Z] === CREATE ITEM SUCCESS ===
-[2026-03-11T12:43:55.917Z] >>> GET /api/items
-[2026-03-11T12:45:08.356Z] >>> OPTIONS /api/items
-[2026-03-11T12:45:08.365Z] >>> OPTIONS /api/items
-[2026-03-11T12:45:08.371Z] >>> GET /api/items
-[2026-03-11T12:45:08.510Z] >>> GET /api/items
-[2026-03-11T12:45:44.065Z] >>> OPTIONS /api/items
-[2026-03-11T12:45:44.075Z] >>> OPTIONS /api/users/employees
-[2026-03-11T12:45:44.084Z] >>> OPTIONS /api/items
-[2026-03-11T12:45:44.092Z] >>> OPTIONS /api/users/employees
-[2026-03-11T12:45:44.102Z] >>> GET /api/items
-[2026-03-11T12:45:44.115Z] >>> GET /api/users/employees
-[2026-03-11T12:45:44.556Z] >>> GET /api/items
-[2026-03-11T12:45:44.568Z] >>> GET /api/users/employees
-[2026-03-11T12:45:56.974Z] >>> OPTIONS /api/items
-[2026-03-11T12:45:56.978Z] >>> OPTIONS /api/items
-[2026-03-11T12:45:56.981Z] >>> GET /api/items
-[2026-03-11T12:45:57.056Z] >>> GET /api/items
-[2026-03-11T12:47:26.267Z] >>> OPTIONS /api/items
-[2026-03-11T12:47:26.269Z] >>> OPTIONS /api/users/employees
-[2026-03-11T12:47:26.274Z] >>> OPTIONS /api/items
-[2026-03-11T12:47:26.276Z] >>> OPTIONS /api/users/employees
-[2026-03-11T12:47:26.279Z] >>> GET /api/items
-[2026-03-11T12:47:26.284Z] >>> GET /api/users/employees
-[2026-03-11T12:47:26.378Z] >>> GET /api/items
-[2026-03-11T12:47:26.386Z] >>> GET /api/users/employees
-[2026-03-11T12:47:44.425Z] >>> OPTIONS /api/items/69b1638b6b70e6d80875da74
-[2026-03-11T12:47:44.430Z] >>> PUT /api/items/69b1638b6b70e6d80875da74
-[2026-03-11T12:47:44.433Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-11T12:47:44.435Z] Cookie token present: true
-[2026-03-11T12:47:44.436Z] Header token present: true
-[2026-03-11T12:47:44.438Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-11T12:47:44.442Z] ✓ JWT verification SUCCESS
-[2026-03-11T12:47:44.443Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-11T12:47:44.444Z] ✓ Admin verification PASSED
-[2026-03-11T12:47:44.445Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-11T12:47:44.680Z] >>> OPTIONS /api/items
-[2026-03-11T12:47:44.692Z] >>> GET /api/items
-[2026-03-11T13:05:39.389Z] >>> OPTIONS /api/items
-[2026-03-11T13:05:39.391Z] >>> OPTIONS /api/users/employees
-[2026-03-11T13:05:39.394Z] >>> OPTIONS /api/events
-[2026-03-11T13:05:39.397Z] >>> GET /api/items
-[2026-03-11T13:05:39.400Z] >>> GET /api/users/employees
-[2026-03-11T13:05:39.403Z] >>> GET /api/events
-[2026-03-11T13:05:39.411Z] >>> GET /api/events
-[2026-03-11T13:05:39.477Z] >>> GET /api/items
-[2026-03-11T13:05:39.487Z] >>> GET /api/users/employees
-[2026-03-11T13:05:58.066Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T13:05:58.070Z] Timestamp: 2026-03-11T13:05:58.070Z
-[2026-03-11T13:05:58.071Z] ================================
-
-[2026-03-11T13:09:52.235Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T13:09:52.241Z] Timestamp: 2026-03-11T13:09:52.241Z
-[2026-03-11T13:09:52.243Z] ================================
-
-[2026-03-11T13:10:56.410Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T13:10:56.415Z] Timestamp: 2026-03-11T13:10:56.415Z
-[2026-03-11T13:10:56.417Z] ================================
-
-[2026-03-11T13:13:33.323Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T13:13:33.328Z] Timestamp: 2026-03-11T13:13:33.328Z
-[2026-03-11T13:13:33.330Z] ================================
-
-[2026-03-11T13:13:42.599Z] >>> OPTIONS /api/items
-[2026-03-11T13:13:42.611Z] >>> GET /api/items
-[2026-03-11T13:13:42.639Z] >>> OPTIONS /api/users/employees
-[2026-03-11T13:13:42.641Z] >>> OPTIONS /api/events
-[2026-03-11T13:13:42.644Z] >>> OPTIONS /api/items
-[2026-03-11T13:13:42.649Z] >>> OPTIONS /api/users/employees
-[2026-03-11T13:13:42.653Z] >>> OPTIONS /api/events
-[2026-03-11T13:13:42.656Z] >>> GET /api/events
-[2026-03-11T13:13:42.664Z] >>> GET /api/users/employees
-[2026-03-11T13:13:42.732Z] >>> GET /api/items
-[2026-03-11T13:13:42.738Z] >>> GET /api/events
-[2026-03-11T13:13:42.760Z] >>> GET /api/users/employees
-[2026-03-11T13:15:39.545Z] >>> OPTIONS /api/events
-[2026-03-11T13:15:39.559Z] >>> POST /api/events
-[2026-03-11T13:15:39.856Z] >>> GET /api/events
-[2026-03-11T13:15:45.324Z] >>> OPTIONS /api/events
-[2026-03-11T13:15:45.334Z] >>> OPTIONS /api/events
-[2026-03-11T13:15:45.346Z] >>> GET /api/events
-[2026-03-11T13:15:45.455Z] >>> GET /api/events
-[2026-03-11T13:15:53.239Z] >>> OPTIONS /api/items
-[2026-03-11T13:15:53.247Z] >>> OPTIONS /api/users/employees
-[2026-03-11T13:15:53.251Z] >>> OPTIONS /api/events
-[2026-03-11T13:15:53.259Z] >>> OPTIONS /api/events
-[2026-03-11T13:15:53.270Z] >>> OPTIONS /api/users/employees
-[2026-03-11T13:15:53.277Z] >>> GET /api/items
-[2026-03-11T13:15:53.288Z] >>> GET /api/events
-[2026-03-11T13:15:53.303Z] >>> GET /api/users/employees
-[2026-03-11T13:15:53.365Z] >>> GET /api/items
-[2026-03-11T13:15:53.386Z] >>> GET /api/events
-[2026-03-11T13:15:53.391Z] >>> GET /api/users/employees
-[2026-03-11T13:18:33.332Z] >>> OPTIONS /api/items
-[2026-03-11T13:18:33.336Z] >>> OPTIONS /api/users/employees
-[2026-03-11T13:18:33.338Z] >>> OPTIONS /api/events
-[2026-03-11T13:18:33.341Z] >>> GET /api/items
-[2026-03-11T13:18:33.349Z] >>> GET /api/events
-[2026-03-11T13:18:33.353Z] >>> GET /api/users/employees
-[2026-03-11T13:20:52.923Z] >>> OPTIONS /api/events
-[2026-03-11T13:20:52.934Z] >>> POST /api/events
-[2026-03-11T13:20:53.026Z] >>> GET /api/events
-[2026-03-11T13:20:55.904Z] >>> GET /api/events
-[2026-03-11T13:20:55.989Z] >>> GET /api/events
-[2026-03-11T13:35:45.270Z] >>> OPTIONS /api/events
-[2026-03-11T13:35:45.278Z] >>> GET /api/events
-[2026-03-11T13:37:43.332Z] >>> OPTIONS /api/events
-[2026-03-11T13:37:43.341Z] >>> OPTIONS /api/events
-[2026-03-11T13:37:43.351Z] >>> GET /api/events
-[2026-03-11T13:37:43.426Z] >>> GET /api/events
-[2026-03-11T13:37:54.569Z] >>> OPTIONS /api/items
-[2026-03-11T13:37:54.577Z] >>> OPTIONS /api/items
-[2026-03-11T13:37:54.587Z] >>> GET /api/items
-[2026-03-11T13:37:54.651Z] >>> GET /api/items
-[2026-03-11T13:37:56.464Z] >>> OPTIONS /api/events
-[2026-03-11T13:37:56.470Z] >>> OPTIONS /api/events
-[2026-03-11T13:37:56.477Z] >>> GET /api/events
-[2026-03-11T13:37:56.536Z] >>> GET /api/events
-[2026-03-11T13:38:00.405Z] >>> GET /api/events
-[2026-03-11T13:38:00.464Z] >>> GET /api/events
-[2026-03-11T13:38:20.189Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T13:38:20.194Z] Timestamp: 2026-03-11T13:38:20.194Z
-[2026-03-11T13:38:20.195Z] ================================
-
-[2026-03-11T13:38:35.693Z] >>> OPTIONS /api/events
-[2026-03-11T13:38:35.729Z] >>> GET /api/events
-[2026-03-11T13:38:35.783Z] >>> OPTIONS /api/events
-[2026-03-11T13:38:35.920Z] >>> GET /api/events
-[2026-03-11T13:41:23.270Z] >>> GET /api/events
-[2026-03-11T13:41:23.340Z] >>> GET /api/events
-[2026-03-11T13:41:26.306Z] >>> GET /api/events
-[2026-03-11T13:41:26.396Z] >>> GET /api/events
-[2026-03-11T13:41:38.193Z] >>> GET /api/items
-[2026-03-11T13:41:38.253Z] >>> GET /api/items
-[2026-03-11T13:44:33.361Z] >>> GET /api/items
-[2026-03-11T13:44:33.473Z] >>> GET /api/items
-[2026-03-11T13:46:27.884Z] >>> GET /api/items
-[2026-03-11T13:46:28.003Z] >>> GET /api/items
-[2026-03-11T13:46:32.586Z] >>> GET /api/items
-[2026-03-11T13:46:32.670Z] >>> GET /api/items
-[2026-03-11T13:46:43.441Z] >>> GET /api/items
-[2026-03-11T13:46:43.496Z] >>> GET /api/items
-[2026-03-11T13:46:47.577Z] >>> GET /api/items
-[2026-03-11T13:46:47.820Z] >>> GET /api/items
-[2026-03-11T13:48:33.921Z] >>> OPTIONS /api/items
-[2026-03-11T13:48:33.928Z] >>> OPTIONS /api/items
-[2026-03-11T13:48:33.934Z] >>> GET /api/items
-[2026-03-11T13:48:33.995Z] >>> GET /api/items
-[2026-03-11T13:48:38.906Z] >>> GET /api/items
-[2026-03-11T13:48:38.971Z] >>> GET /api/items
-[2026-03-11T13:48:40.779Z] >>> OPTIONS /api/items
-[2026-03-11T13:48:40.786Z] >>> OPTIONS /api/items
-[2026-03-11T13:48:40.797Z] >>> GET /api/items
-[2026-03-11T13:48:40.906Z] >>> GET /api/items
-[2026-03-11T13:48:55.646Z] >>> OPTIONS /api/items
-[2026-03-11T13:48:55.656Z] >>> OPTIONS /api/items
-[2026-03-11T13:48:55.663Z] >>> GET /api/items
-[2026-03-11T13:48:55.716Z] >>> GET /api/items
-[2026-03-11T13:52:59.410Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T13:52:59.415Z] Timestamp: 2026-03-11T13:52:59.414Z
-[2026-03-11T13:52:59.416Z] ================================
-
-[2026-03-11T13:53:29.611Z] >>> OPTIONS /api/items
-[2026-03-11T13:53:29.621Z] >>> GET /api/items
-[2026-03-11T13:53:29.649Z] >>> OPTIONS /api/items
-[2026-03-11T13:53:30.100Z] >>> GET /api/items
-[2026-03-11T13:53:41.733Z] >>> OPTIONS /api/items
-[2026-03-11T13:53:41.742Z] >>> OPTIONS /api/items
-[2026-03-11T13:53:41.753Z] >>> GET /api/items
-[2026-03-11T13:53:41.843Z] >>> GET /api/items
-[2026-03-11T13:59:56.038Z] >>> OPTIONS /api/items
-[2026-03-11T13:59:56.049Z] >>> OPTIONS /api/items
-[2026-03-11T13:59:56.056Z] >>> GET /api/items
-[2026-03-11T13:59:56.115Z] >>> GET /api/items
-[2026-03-11T14:01:10.279Z] >>> OPTIONS /api/items
-[2026-03-11T14:01:10.283Z] >>> GET /api/items
-[2026-03-11T14:01:10.481Z] >>> GET /api/items
-[2026-03-11T14:01:37.826Z] >>> OPTIONS /api/items
-[2026-03-11T14:01:37.833Z] >>> OPTIONS /api/items
-[2026-03-11T14:01:37.840Z] >>> GET /api/items
-[2026-03-11T14:01:38.107Z] >>> GET /api/items
-[2026-03-11T14:01:42.178Z] >>> GET /api/items
-[2026-03-11T14:01:42.426Z] >>> GET /api/items
-[2026-03-11T14:07:10.407Z] >>> OPTIONS /api/items
-[2026-03-11T14:07:10.411Z] >>> OPTIONS /api/items
-[2026-03-11T14:07:10.414Z] >>> GET /api/items
-[2026-03-11T14:07:10.620Z] >>> GET /api/items
-[2026-03-11T14:12:09.695Z] >>> OPTIONS /api/items
-[2026-03-11T14:12:09.698Z] >>> OPTIONS /api/items
-[2026-03-11T14:12:09.700Z] >>> GET /api/items
-[2026-03-11T14:12:10.143Z] >>> GET /api/items
-[2026-03-11T14:12:14.962Z] >>> OPTIONS /api/items
-[2026-03-11T14:12:14.971Z] >>> OPTIONS /api/items
-[2026-03-11T14:12:14.985Z] >>> GET /api/items
-[2026-03-11T14:12:15.458Z] >>> GET /api/items
-[2026-03-11T14:12:28.517Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:28.524Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:28.529Z] >>> GET /api/events
-[2026-03-11T14:12:29.042Z] >>> GET /api/events
-[2026-03-11T14:12:38.090Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:38.098Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:38.104Z] >>> GET /api/events
-[2026-03-11T14:12:38.207Z] >>> GET /api/events
-[2026-03-11T14:12:45.527Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:45.532Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:45.536Z] >>> GET /api/events
-[2026-03-11T14:12:45.843Z] >>> GET /api/events
-[2026-03-11T14:12:55.005Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:55.013Z] >>> OPTIONS /api/events
-[2026-03-11T14:12:55.017Z] >>> GET /api/events
-[2026-03-11T14:12:55.230Z] >>> GET /api/events
-[2026-03-11T14:13:02.690Z] >>> OPTIONS /api/items
-[2026-03-11T14:13:02.697Z] >>> OPTIONS /api/items
-[2026-03-11T14:13:02.701Z] >>> GET /api/items
-[2026-03-11T14:13:02.928Z] >>> GET /api/items
-[2026-03-11T14:15:09.168Z] >>> OPTIONS /api/items
-[2026-03-11T14:15:09.172Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:15:09.175Z] >>> OPTIONS /api/events
-[2026-03-11T14:15:09.178Z] >>> OPTIONS /api/items
-[2026-03-11T14:15:09.186Z] >>> GET /api/items
-[2026-03-11T14:15:09.194Z] >>> OPTIONS /api/events
-[2026-03-11T14:15:09.199Z] >>> GET /api/events
-[2026-03-11T14:15:09.213Z] >>> GET /api/users/employees
-[2026-03-11T14:15:10.291Z] >>> GET /api/users/employees
-[2026-03-11T14:15:10.298Z] >>> GET /api/events
-[2026-03-11T14:15:10.303Z] >>> GET /api/items
-[2026-03-11T14:21:40.615Z] >>> OPTIONS /api/blog
-[2026-03-11T14:21:40.638Z] >>> GET /api/blog
-[2026-03-11T14:23:05.158Z] >>> OPTIONS /api/blog
-[2026-03-11T14:23:05.165Z] >>> OPTIONS /api/blog
-[2026-03-11T14:23:05.170Z] >>> GET /api/blog
-[2026-03-11T14:23:05.186Z] >>> GET /api/blog
-[2026-03-11T14:23:12.414Z] >>> OPTIONS /api/items
-[2026-03-11T14:23:12.419Z] >>> OPTIONS /api/items
-[2026-03-11T14:23:12.422Z] >>> GET /api/items
-[2026-03-11T14:23:12.481Z] >>> GET /api/items
-[2026-03-11T14:23:12.490Z] >>> OPTIONS /api/events
-[2026-03-11T14:23:12.498Z] >>> GET /api/events
-[2026-03-11T14:23:12.567Z] >>> GET /api/events
-[2026-03-11T14:23:12.574Z] >>> OPTIONS /api/blog
-[2026-03-11T14:23:12.584Z] >>> GET /api/blog
-[2026-03-11T14:23:12.628Z] >>> GET /api/blog
-[2026-03-11T14:23:25.342Z] >>> OPTIONS /api/items
-[2026-03-11T14:23:25.370Z] >>> OPTIONS /api/events
-[2026-03-11T14:23:25.381Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:23:25.398Z] >>> GET /api/items
-[2026-03-11T14:23:25.406Z] >>> GET /api/events
-[2026-03-11T14:23:25.417Z] >>> GET /api/users/employees
-[2026-03-11T14:23:39.949Z] >>> OPTIONS /api/blog
-[2026-03-11T14:23:39.956Z] >>> OPTIONS /api/blog
-[2026-03-11T14:23:39.959Z] >>> GET /api/blog
-[2026-03-11T14:23:39.972Z] >>> GET /api/blog
-[2026-03-11T14:23:41.693Z] >>> OPTIONS /api/items
-[2026-03-11T14:23:41.699Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:23:41.706Z] >>> GET /api/items
-[2026-03-11T14:23:41.715Z] >>> OPTIONS /api/events
-[2026-03-11T14:23:41.722Z] >>> OPTIONS /api/events
-[2026-03-11T14:23:41.725Z] >>> GET /api/users/employees
-[2026-03-11T14:23:41.732Z] >>> GET /api/events
-[2026-03-11T14:23:41.765Z] >>> GET /api/items
-[2026-03-11T14:23:41.813Z] >>> GET /api/users/employees
-[2026-03-11T14:23:41.835Z] >>> GET /api/events
-[2026-03-11T14:26:34.574Z] >>> OPTIONS /api/items
-[2026-03-11T14:26:34.577Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:26:34.583Z] >>> OPTIONS /api/events
-[2026-03-11T14:26:34.585Z] >>> OPTIONS /api/blog
-[2026-03-11T14:26:34.587Z] >>> GET /api/items
-[2026-03-11T14:26:34.593Z] >>> GET /api/users/employees
-[2026-03-11T14:26:34.599Z] >>> GET /api/events
-[2026-03-11T14:26:34.604Z] >>> GET /api/blog
-[2026-03-11T14:26:34.615Z] >>> GET /api/blog
-[2026-03-11T14:26:34.668Z] >>> GET /api/items
-[2026-03-11T14:26:34.679Z] >>> GET /api/users/employees
-[2026-03-11T14:26:34.686Z] >>> GET /api/events
-[2026-03-11T14:29:02.028Z] >>> OPTIONS /api/items
-[2026-03-11T14:29:02.034Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:29:02.040Z] >>> OPTIONS /api/events
-[2026-03-11T14:29:02.050Z] >>> GET /api/items
-[2026-03-11T14:29:02.060Z] >>> OPTIONS /api/blog
-[2026-03-11T14:29:02.064Z] >>> GET /api/users/employees
-[2026-03-11T14:29:02.074Z] >>> OPTIONS /api/blog
-[2026-03-11T14:29:02.082Z] >>> GET /api/blog
-[2026-03-11T14:29:02.088Z] >>> GET /api/events
-[2026-03-11T14:29:02.106Z] >>> GET /api/blog
-[2026-03-11T14:29:02.114Z] >>> GET /api/items
-[2026-03-11T14:29:02.133Z] >>> GET /api/users/employees
-[2026-03-11T14:29:02.149Z] >>> GET /api/events
-[2026-03-11T14:29:04.536Z] >>> GET /api/items
-[2026-03-11T14:29:04.632Z] >>> GET /api/items
-[2026-03-11T14:29:10.557Z] >>> OPTIONS /api/events
-[2026-03-11T14:29:10.561Z] >>> OPTIONS /api/events
-[2026-03-11T14:29:10.565Z] >>> GET /api/events
-[2026-03-11T14:29:10.616Z] >>> GET /api/events
-[2026-03-11T14:29:13.832Z] >>> OPTIONS /api/blog
-[2026-03-11T14:29:13.837Z] >>> OPTIONS /api/blog
-[2026-03-11T14:29:13.841Z] >>> GET /api/blog
-[2026-03-11T14:29:13.855Z] >>> GET /api/blog
-[2026-03-11T14:29:16.651Z] >>> OPTIONS /api/items
-[2026-03-11T14:29:16.658Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:29:16.666Z] >>> OPTIONS /api/events
-[2026-03-11T14:29:16.679Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:29:16.684Z] >>> GET /api/items
-[2026-03-11T14:29:16.693Z] >>> GET /api/blog
-[2026-03-11T14:29:16.717Z] >>> GET /api/events
-[2026-03-11T14:29:16.726Z] >>> GET /api/users/employees
-[2026-03-11T14:29:16.737Z] >>> GET /api/blog
-[2026-03-11T14:29:16.834Z] >>> GET /api/items
-[2026-03-11T14:29:17.056Z] >>> GET /api/events
-[2026-03-11T14:29:17.063Z] >>> GET /api/users/employees
-[2026-03-11T14:31:46.097Z] >>> OPTIONS /api/blog
-[2026-03-11T14:31:46.105Z] >>> POST /api/blog
-[2026-03-11T14:32:57.203Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T14:32:57.207Z] Timestamp: 2026-03-11T14:32:57.207Z
-[2026-03-11T14:32:57.208Z] ================================
-
-[2026-03-11T14:33:12.575Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T14:33:12.580Z] Timestamp: 2026-03-11T14:33:12.580Z
-[2026-03-11T14:33:12.581Z] ================================
-
-[2026-03-11T14:35:57.329Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T14:35:57.335Z] Timestamp: 2026-03-11T14:35:57.335Z
-[2026-03-11T14:35:57.336Z] ================================
-
-[2026-03-11T14:36:01.692Z] >>> OPTIONS /api/blog
-[2026-03-11T14:36:01.719Z] >>> POST /api/blog
-[2026-03-11T14:36:06.442Z] >>> GET /api/items
-[2026-03-11T14:36:06.520Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:36:06.540Z] >>> GET /api/events
-[2026-03-11T14:36:06.575Z] >>> GET /api/blog
-[2026-03-11T14:36:06.579Z] >>> OPTIONS /api/items
-[2026-03-11T14:36:06.587Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:36:06.609Z] >>> OPTIONS /api/events
-[2026-03-11T14:36:06.672Z] >>> GET /api/users/employees
-[2026-03-11T14:36:06.695Z] >>> GET /api/blog
-[2026-03-11T14:36:06.700Z] >>> GET /api/items
-[2026-03-11T14:36:06.708Z] >>> GET /api/events
-[2026-03-11T14:36:06.761Z] >>> GET /api/users/employees
-[2026-03-11T14:36:35.442Z] >>> OPTIONS /api/blog
-[2026-03-11T14:36:35.454Z] >>> POST /api/blog
-[2026-03-11T14:39:05.372Z] >>> OPTIONS /api/blog
-[2026-03-11T14:39:05.382Z] >>> POST /api/blog
-[2026-03-11T14:40:29.945Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T14:40:29.949Z] Timestamp: 2026-03-11T14:40:29.949Z
-[2026-03-11T14:40:29.951Z] ================================
-
-[2026-03-11T14:40:35.916Z] >>> OPTIONS /api/blog
-[2026-03-11T14:40:35.939Z] >>> POST /api/blog
-[2026-03-11T14:41:10.153Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T14:41:10.158Z] Timestamp: 2026-03-11T14:41:10.158Z
-[2026-03-11T14:41:10.159Z] ================================
-
-[2026-03-11T14:41:22.195Z] >>> OPTIONS /api/items
-[2026-03-11T14:41:22.218Z] >>> OPTIONS /api/events
-[2026-03-11T14:41:22.227Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:41:22.231Z] >>> OPTIONS /api/events
-[2026-03-11T14:41:22.238Z] >>> OPTIONS /api/blog
-[2026-03-11T14:41:22.241Z] >>> OPTIONS /api/items
-[2026-03-11T14:41:22.246Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:41:22.248Z] >>> OPTIONS /api/blog
-[2026-03-11T14:41:22.250Z] >>> GET /api/items
-[2026-03-11T14:41:22.270Z] >>> GET /api/events
-[2026-03-11T14:41:22.279Z] >>> GET /api/blog
-[2026-03-11T14:41:22.283Z] >>> GET /api/users/employees
-[2026-03-11T14:41:22.378Z] >>> GET /api/items
-[2026-03-11T14:41:22.398Z] >>> GET /api/events
-[2026-03-11T14:41:22.405Z] >>> GET /api/blog
-[2026-03-11T14:41:23.210Z] >>> GET /api/users/employees
-[2026-03-11T14:41:43.735Z] >>> OPTIONS /api/blog
-[2026-03-11T14:41:43.749Z] >>> POST /api/blog
-[2026-03-11T14:47:56.150Z] >>> OPTIONS /api/blog
-[2026-03-11T14:47:56.155Z] >>> POST /api/blog
-[2026-03-11T14:47:56.159Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-11T14:47:56.167Z] Cookie token present: true
-[2026-03-11T14:47:56.172Z] Header token present: true
-[2026-03-11T14:47:56.178Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-11T14:47:56.183Z] ✓ JWT verification SUCCESS
-[2026-03-11T14:47:56.189Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-11T14:47:56.191Z] ✓ Admin verification PASSED
-[2026-03-11T14:47:56.192Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-11T14:47:56.286Z] >>> GET /api/blog
-[2026-03-11T14:48:02.031Z] >>> OPTIONS /api/blog
-[2026-03-11T14:48:02.039Z] >>> OPTIONS /api/blog
-[2026-03-11T14:48:02.047Z] >>> GET /api/blog
-[2026-03-11T14:48:02.119Z] >>> GET /api/blog
-[2026-03-11T14:48:11.901Z] >>> OPTIONS /api/items
-[2026-03-11T14:48:11.914Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:48:11.920Z] >>> OPTIONS /api/events
-[2026-03-11T14:48:11.926Z] >>> OPTIONS /api/blog
-[2026-03-11T14:48:11.935Z] >>> GET /api/items
-[2026-03-11T14:48:11.950Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:48:11.957Z] >>> OPTIONS /api/events
-[2026-03-11T14:48:11.965Z] >>> GET /api/events
-[2026-03-11T14:48:11.974Z] >>> GET /api/blog
-[2026-03-11T14:48:11.981Z] >>> GET /api/users/employees
-[2026-03-11T14:48:12.001Z] >>> GET /api/items
-[2026-03-11T14:48:12.029Z] >>> GET /api/events
-[2026-03-11T14:48:12.034Z] >>> GET /api/blog
-[2026-03-11T14:48:12.051Z] >>> GET /api/users/employees
-[2026-03-11T14:48:21.566Z] >>> OPTIONS /api/blog/69b1809ccb3ed5c891f63245
-[2026-03-11T14:48:21.582Z] >>> DELETE /api/blog/69b1809ccb3ed5c891f63245
-[2026-03-11T14:48:21.608Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-11T14:48:21.615Z] Cookie token present: true
-[2026-03-11T14:48:21.619Z] Header token present: true
-[2026-03-11T14:48:21.629Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-11T14:48:21.634Z] ✓ JWT verification SUCCESS
-[2026-03-11T14:48:21.639Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-11T14:48:21.643Z] ✓ Admin verification PASSED
-[2026-03-11T14:48:21.650Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-11T14:48:21.772Z] >>> OPTIONS /api/blog
-[2026-03-11T14:48:21.791Z] >>> GET /api/blog
-[2026-03-11T14:48:31.222Z] >>> OPTIONS /api/blog
-[2026-03-11T14:48:31.232Z] >>> OPTIONS /api/blog
-[2026-03-11T14:48:31.241Z] >>> GET /api/blog
-[2026-03-11T14:48:31.316Z] >>> GET /api/blog
-[2026-03-11T14:48:34.522Z] >>> OPTIONS /api/items
-[2026-03-11T14:48:34.533Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:48:34.540Z] >>> GET /api/items
-[2026-03-11T14:48:34.556Z] >>> OPTIONS /api/events
-[2026-03-11T14:48:34.564Z] >>> OPTIONS /api/users/employees
-[2026-03-11T14:48:34.577Z] >>> GET /api/blog
-[2026-03-11T14:48:34.586Z] >>> OPTIONS /api/events
-[2026-03-11T14:48:34.597Z] >>> GET /api/users/employees
-[2026-03-11T14:48:34.609Z] >>> GET /api/events
-[2026-03-11T14:48:34.624Z] >>> GET /api/items
-[2026-03-11T14:48:34.633Z] >>> GET /api/blog
-[2026-03-11T14:48:34.651Z] >>> GET /api/users/employees
-[2026-03-11T14:48:34.670Z] >>> GET /api/events
-[2026-03-11T15:00:16.742Z] >>> OPTIONS /api/blog
-[2026-03-11T15:00:16.752Z] >>> OPTIONS /api/blog
-[2026-03-11T15:00:16.760Z] >>> GET /api/blog
-[2026-03-11T15:00:16.847Z] >>> GET /api/blog
-[2026-03-11T15:01:34.523Z] >>> OPTIONS /api/items
-[2026-03-11T15:01:34.530Z] >>> OPTIONS /api/items
-[2026-03-11T15:01:34.534Z] >>> GET /api/items
-[2026-03-11T15:01:34.594Z] >>> GET /api/items
-[2026-03-11T15:01:39.824Z] >>> OPTIONS /api/blog
-[2026-03-11T15:01:39.828Z] >>> OPTIONS /api/blog
-[2026-03-11T15:01:39.830Z] >>> GET /api/blog
-[2026-03-11T15:01:39.986Z] >>> GET /api/blog
-[2026-03-11T15:01:46.618Z] >>> OPTIONS /api/items
-[2026-03-11T15:01:46.627Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:01:46.632Z] >>> OPTIONS /api/events
-[2026-03-11T15:01:46.637Z] >>> OPTIONS /api/blog
-[2026-03-11T15:01:46.647Z] >>> GET /api/items
-[2026-03-11T15:01:46.655Z] >>> GET /api/events
-[2026-03-11T15:01:46.662Z] >>> OPTIONS /api/blog
-[2026-03-11T15:01:46.666Z] >>> GET /api/blog
-[2026-03-11T15:01:46.674Z] >>> GET /api/users/employees
-[2026-03-11T15:01:46.751Z] >>> GET /api/items
-[2026-03-11T15:01:46.817Z] >>> GET /api/events
-[2026-03-11T15:01:46.829Z] >>> GET /api/blog
-[2026-03-11T15:01:46.870Z] >>> GET /api/users/employees
-[2026-03-11T15:01:58.960Z] >>> OPTIONS /api/blog
-[2026-03-11T15:01:58.969Z] >>> OPTIONS /api/blog
-[2026-03-11T15:01:58.979Z] >>> GET /api/blog
-[2026-03-11T15:01:59.142Z] >>> GET /api/blog
-[2026-03-11T15:02:01.774Z] >>> OPTIONS /api/items
-[2026-03-11T15:02:01.776Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:02:01.779Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:01.781Z] >>> GET /api/items
-[2026-03-11T15:02:01.786Z] >>> GET /api/blog
-[2026-03-11T15:02:01.790Z] >>> GET /api/events
-[2026-03-11T15:02:01.803Z] >>> GET /api/users/employees
-[2026-03-11T15:02:01.837Z] >>> GET /api/blog
-[2026-03-11T15:02:01.842Z] >>> GET /api/items
-[2026-03-11T15:02:01.853Z] >>> GET /api/events
-[2026-03-11T15:02:01.862Z] >>> GET /api/users/employees
-[2026-03-11T15:02:10.995Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:11.006Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:11.014Z] >>> GET /api/events
-[2026-03-11T15:02:11.132Z] >>> GET /api/events
-[2026-03-11T15:02:17.243Z] >>> OPTIONS /api/items
-[2026-03-11T15:02:17.249Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:02:17.252Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:17.256Z] >>> OPTIONS /api/blog
-[2026-03-11T15:02:17.260Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:02:17.263Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:17.267Z] >>> GET /api/items
-[2026-03-11T15:02:17.274Z] >>> GET /api/events
-[2026-03-11T15:02:17.278Z] >>> GET /api/blog
-[2026-03-11T15:02:17.282Z] >>> GET /api/users/employees
-[2026-03-11T15:02:17.456Z] >>> GET /api/blog
-[2026-03-11T15:02:17.671Z] >>> GET /api/events
-[2026-03-11T15:02:17.677Z] >>> GET /api/items
-[2026-03-11T15:02:17.683Z] >>> GET /api/users/employees
-[2026-03-11T15:02:30.903Z] >>> OPTIONS /api/items
-[2026-03-11T15:02:30.909Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:02:30.911Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:30.914Z] >>> OPTIONS /api/blog
-[2026-03-11T15:02:30.919Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:02:30.923Z] >>> OPTIONS /api/events
-[2026-03-11T15:02:30.926Z] >>> GET /api/items
-[2026-03-11T15:02:30.930Z] >>> GET /api/events
-[2026-03-11T15:02:30.936Z] >>> GET /api/blog
-[2026-03-11T15:02:30.943Z] >>> GET /api/users/employees
-[2026-03-11T15:02:31.023Z] >>> GET /api/items
-[2026-03-11T15:02:31.031Z] >>> GET /api/events
-[2026-03-11T15:02:31.041Z] >>> GET /api/blog
-[2026-03-11T15:02:31.047Z] >>> GET /api/users/employees
-[2026-03-11T15:04:49.369Z] >>> OPTIONS /api/events
-[2026-03-11T15:04:49.375Z] >>> OPTIONS /api/events
-[2026-03-11T15:04:49.379Z] >>> GET /api/events
-[2026-03-11T15:04:49.462Z] >>> GET /api/events
-[2026-03-11T15:04:54.592Z] >>> OPTIONS /api/blog
-[2026-03-11T15:04:54.597Z] >>> OPTIONS /api/blog
-[2026-03-11T15:04:54.604Z] >>> GET /api/blog
-[2026-03-11T15:04:54.697Z] >>> GET /api/blog
-[2026-03-11T15:04:56.051Z] >>> OPTIONS /api/items
-[2026-03-11T15:04:56.085Z] >>> OPTIONS /api/items
-[2026-03-11T15:04:56.093Z] >>> GET /api/items
-[2026-03-11T15:04:56.154Z] >>> GET /api/items
-[2026-03-11T15:04:58.360Z] >>> OPTIONS /api/events
-[2026-03-11T15:04:58.363Z] >>> OPTIONS /api/events
-[2026-03-11T15:04:58.369Z] >>> GET /api/events
-[2026-03-11T15:04:58.427Z] >>> GET /api/events
-[2026-03-11T15:05:23.626Z] >>> OPTIONS /api/events
-[2026-03-11T15:05:23.630Z] >>> OPTIONS /api/events
-[2026-03-11T15:05:23.634Z] >>> GET /api/events
-[2026-03-11T15:05:23.683Z] >>> GET /api/events
-[2026-03-11T15:05:26.676Z] >>> OPTIONS /api/items
-[2026-03-11T15:05:26.681Z] >>> OPTIONS /api/items
-[2026-03-11T15:05:26.688Z] >>> GET /api/items
-[2026-03-11T15:05:26.746Z] >>> GET /api/items
-[2026-03-11T15:05:34.374Z] >>> OPTIONS /api/events
-[2026-03-11T15:05:34.379Z] >>> OPTIONS /api/events
-[2026-03-11T15:05:34.386Z] >>> GET /api/events
-[2026-03-11T15:05:34.505Z] >>> GET /api/events
-[2026-03-11T15:05:37.103Z] >>> OPTIONS /api/blog
-[2026-03-11T15:05:37.109Z] >>> OPTIONS /api/blog
-[2026-03-11T15:05:37.113Z] >>> GET /api/blog
-[2026-03-11T15:05:37.277Z] >>> GET /api/blog
-[2026-03-11T15:05:40.022Z] >>> OPTIONS /api/items
-[2026-03-11T15:05:40.030Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:05:40.039Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:05:40.044Z] >>> OPTIONS /api/events
-[2026-03-11T15:05:40.057Z] >>> GET /api/items
-[2026-03-11T15:05:40.066Z] >>> GET /api/blog
-[2026-03-11T15:05:40.071Z] >>> OPTIONS /api/events
-[2026-03-11T15:05:40.075Z] >>> GET /api/events
-[2026-03-11T15:05:40.086Z] >>> GET /api/users/employees
-[2026-03-11T15:05:40.323Z] >>> GET /api/blog
-[2026-03-11T15:05:40.347Z] >>> GET /api/items
-[2026-03-11T15:05:40.361Z] >>> GET /api/events
-[2026-03-11T15:05:40.376Z] >>> GET /api/users/employees
-[2026-03-11T15:08:21.408Z] >>> OPTIONS /api/items
-[2026-03-11T15:08:21.418Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:08:21.422Z] >>> OPTIONS /api/events
-[2026-03-11T15:08:21.427Z] >>> OPTIONS /api/blog
-[2026-03-11T15:08:21.437Z] >>> GET /api/events
-[2026-03-11T15:08:21.442Z] >>> GET /api/items
-[2026-03-11T15:08:21.452Z] >>> GET /api/users/employees
-[2026-03-11T15:08:21.457Z] >>> GET /api/blog
-[2026-03-11T15:08:21.498Z] >>> GET /api/events
-[2026-03-11T15:08:21.503Z] >>> GET /api/items
-[2026-03-11T15:08:21.535Z] >>> GET /api/users/employees
-[2026-03-11T15:08:21.549Z] >>> GET /api/blog
-[2026-03-11T15:09:01.913Z] >>> OPTIONS /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:09:01.925Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:09:04.425Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:12:03.050Z] >>> OPTIONS /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:12:03.077Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:12:04.810Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:15:47.289Z] >>> OPTIONS /api/items
-[2026-03-11T15:15:47.296Z] >>> OPTIONS /api/events
-[2026-03-11T15:15:47.307Z] >>> OPTIONS /api/blog
-[2026-03-11T15:15:47.313Z] >>> GET /api/items
-[2026-03-11T15:15:47.323Z] >>> GET /api/events
-[2026-03-11T15:15:47.329Z] >>> GET /api/blog
-[2026-03-11T15:15:47.337Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:15:47.345Z] >>> GET /api/users/employees
-[2026-03-11T15:16:12.457Z] >>> OPTIONS /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:16:12.469Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:16:41.431Z] 
-
-========== SERVER STARTING ==========
-[2026-03-11T15:16:41.435Z] Timestamp: 2026-03-11T15:16:41.435Z
-[2026-03-11T15:16:41.436Z] ================================
-
-[2026-03-11T15:17:13.009Z] >>> OPTIONS /api/items
-[2026-03-11T15:17:13.018Z] >>> OPTIONS /api/blog
-[2026-03-11T15:17:13.024Z] >>> OPTIONS /api/events
-[2026-03-11T15:17:13.027Z] >>> OPTIONS /api/blog
-[2026-03-11T15:17:13.030Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:17:13.033Z] >>> OPTIONS /api/items
-[2026-03-11T15:17:13.040Z] >>> OPTIONS /api/events
-[2026-03-11T15:17:13.042Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:17:13.045Z] >>> GET /api/items
-[2026-03-11T15:17:13.079Z] >>> GET /api/blog
-[2026-03-11T15:17:13.088Z] >>> GET /api/events
-[2026-03-11T15:17:13.096Z] >>> GET /api/users/employees
-[2026-03-11T15:17:13.151Z] >>> GET /api/items
-[2026-03-11T15:17:13.156Z] >>> GET /api/blog
-[2026-03-11T15:17:13.160Z] >>> GET /api/events
-[2026-03-11T15:17:13.480Z] >>> GET /api/users/employees
-[2026-03-11T15:17:25.721Z] >>> OPTIONS /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:17:25.732Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:17:25.981Z] >>> OPTIONS /api/items
-[2026-03-11T15:17:25.991Z] >>> OPTIONS /api/events
-[2026-03-11T15:17:25.997Z] >>> OPTIONS /api/blog
-[2026-03-11T15:17:26.006Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:17:26.012Z] >>> GET /api/items
-[2026-03-11T15:17:26.026Z] >>> GET /api/events
-[2026-03-11T15:17:26.037Z] >>> GET /api/blog
-[2026-03-11T15:17:26.046Z] >>> GET /api/users/employees
-[2026-03-11T15:17:58.658Z] >>> GET /api/items
-[2026-03-11T15:17:58.662Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:17:58.666Z] >>> GET /api/events
-[2026-03-11T15:17:58.674Z] >>> GET /api/blog
-[2026-03-11T15:17:58.679Z] >>> OPTIONS /api/items
-[2026-03-11T15:17:58.683Z] >>> GET /api/users/employees
-[2026-03-11T15:17:58.692Z] >>> OPTIONS /api/events
-[2026-03-11T15:17:58.696Z] >>> OPTIONS /api/blog
-[2026-03-11T15:17:58.756Z] >>> GET /api/items
-[2026-03-11T15:17:58.767Z] >>> GET /api/events
-[2026-03-11T15:17:58.777Z] >>> GET /api/blog
-[2026-03-11T15:17:58.789Z] >>> GET /api/users/employees
-[2026-03-11T15:18:20.751Z] >>> OPTIONS /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:18:20.761Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
-[2026-03-11T15:18:20.886Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:18:20.895Z] >>> GET /api/users/employees
-[2026-03-11T15:18:44.963Z] >>> OPTIONS /api/events
-[2026-03-11T15:18:44.968Z] >>> OPTIONS /api/events
-[2026-03-11T15:18:44.974Z] >>> GET /api/events
-[2026-03-11T15:18:45.047Z] >>> GET /api/events
-[2026-03-11T15:18:48.434Z] >>> OPTIONS /api/blog
-[2026-03-11T15:18:48.439Z] >>> OPTIONS /api/blog
-[2026-03-11T15:18:48.443Z] >>> GET /api/blog
-[2026-03-11T15:18:48.605Z] >>> GET /api/blog
-[2026-03-11T15:18:50.753Z] >>> OPTIONS /api/items
-[2026-03-11T15:18:50.758Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:18:50.768Z] >>> GET /api/items
-[2026-03-11T15:18:50.785Z] >>> OPTIONS /api/events
-[2026-03-11T15:18:50.793Z] >>> GET /api/blog
-[2026-03-11T15:18:50.805Z] >>> GET /api/users/employees
-[2026-03-11T15:18:50.814Z] >>> OPTIONS /api/events
-[2026-03-11T15:18:50.822Z] >>> GET /api/events
-[2026-03-11T15:18:50.845Z] >>> GET /api/items
-[2026-03-11T15:18:50.864Z] >>> GET /api/users/employees
-[2026-03-11T15:18:50.880Z] >>> GET /api/blog
-[2026-03-11T15:18:50.887Z] >>> GET /api/events
-[2026-03-11T15:21:21.533Z] >>> OPTIONS /api/blog
-[2026-03-11T15:21:21.544Z] >>> POST /api/blog
-[2026-03-11T15:21:21.554Z] === ADMIN ONLY MIDDLEWARE CHECK ===
-[2026-03-11T15:21:21.557Z] Cookie token present: true
-[2026-03-11T15:21:21.561Z] Header token present: true
-[2026-03-11T15:21:21.564Z] Cookies: ["Phpstorm-f62fe88","accessToken"]
-[2026-03-11T15:21:21.569Z] ✓ JWT verification SUCCESS
-[2026-03-11T15:21:21.573Z] User decoded: id=69a825a565067a0fd06d140a role=admin
-[2026-03-11T15:21:21.575Z] ✓ Admin verification PASSED
-[2026-03-11T15:21:21.577Z] === ADMIN ONLY MIDDLEWARE PASSED ===
-[2026-03-11T15:21:21.732Z] >>> GET /api/blog
-[2026-03-11T15:21:25.460Z] >>> GET /api/blog
-[2026-03-11T15:21:25.500Z] >>> GET /api/blog
-[2026-03-11T15:21:47.316Z] >>> OPTIONS /api/items
-[2026-03-11T15:21:47.322Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:21:47.325Z] >>> OPTIONS /api/events
-[2026-03-11T15:21:47.327Z] >>> OPTIONS /api/blog
-[2026-03-11T15:21:47.330Z] >>> OPTIONS /api/users/employees
-[2026-03-11T15:21:47.333Z] >>> OPTIONS /api/events
-[2026-03-11T15:21:47.335Z] >>> GET /api/items
-[2026-03-11T15:21:47.338Z] >>> GET /api/events
-[2026-03-11T15:21:47.341Z] >>> GET /api/blog
-[2026-03-11T15:21:47.345Z] >>> GET /api/users/employees
-[2026-03-11T15:21:47.486Z] >>> GET /api/items
-[2026-03-11T15:21:47.596Z] >>> GET /api/events
-[2026-03-11T15:21:47.604Z] >>> GET /api/blog
-[2026-03-11T15:21:47.613Z] >>> GET /api/users/employees
-[2026-03-12T09:23:51.015Z] 
-
-========== SERVER STARTING ==========
-[2026-03-12T09:23:51.022Z] Timestamp: 2026-03-12T09:23:51.022Z
-[2026-03-12T09:23:51.027Z] ================================
-
-[2026-03-12T09:24:07.135Z] >>> OPTIONS /api/items
-[2026-03-12T09:24:07.151Z] >>> OPTIONS /api/events
-[2026-03-12T09:24:07.158Z] >>> OPTIONS /api/users/employees
-[2026-03-12T09:24:07.166Z] >>> OPTIONS /api/events
-[2026-03-12T09:24:07.170Z] >>> OPTIONS /api/blog
-[2026-03-12T09:24:07.174Z] >>> OPTIONS /api/items
-[2026-03-12T09:24:07.179Z] >>> OPTIONS /api/users/employees
-[2026-03-12T09:24:07.186Z] >>> OPTIONS /api/blog
-[2026-03-12T09:24:07.191Z] >>> GET /api/items
-[2026-03-12T09:24:07.258Z] >>> GET /api/events
-[2026-03-12T09:24:07.275Z] >>> GET /api/blog
-[2026-03-12T09:24:07.284Z] >>> GET /api/users/employees
-[2026-03-12T09:24:07.357Z] >>> GET /api/items
-[2026-03-12T09:24:07.369Z] >>> GET /api/events
-[2026-03-12T09:24:07.389Z] >>> GET /api/blog
-[2026-03-12T09:24:07.724Z] >>> GET /api/users/employees
-[2026-03-12T09:24:18.469Z] >>> POST /api/users/logout
-[2026-03-12T09:24:22.019Z] >>> GET /api/items
-[2026-03-12T09:24:22.200Z] >>> GET /api/items
-[2026-03-12T09:24:29.388Z] >>> GET /api/events
-[2026-03-12T09:24:29.452Z] >>> GET /api/events
-[2026-03-12T09:24:50.485Z] >>> GET /api/blog
-[2026-03-12T09:24:50.538Z] >>> GET /api/blog
-[2026-03-12T09:25:05.298Z] >>> GET /api/blog
-[2026-03-12T09:25:05.348Z] >>> GET /api/blog
-[2026-03-12T09:25:57.367Z] >>> GET /api/blog
-[2026-03-12T09:25:57.430Z] >>> GET /api/blog
-[2026-03-12T09:26:29.238Z] >>> OPTIONS /api/users/login
-[2026-03-12T09:26:29.261Z] >>> POST /api/users/login
-[2026-03-12T09:26:29.944Z] >>> GET /api/orders
-[2026-03-12T09:26:29.969Z] >>> GET /api/users/me/schedule
-[2026-03-12T09:26:29.996Z] >>> GET /api/users/me/schedule
-[2026-03-12T09:26:30.033Z] >>> GET /api/orders
-[2026-03-12T09:26:34.787Z] >>> OPTIONS /api/items
-[2026-03-12T09:26:34.793Z] >>> OPTIONS /api/users/employees
-[2026-03-12T09:26:34.796Z] >>> GET /api/items
-[2026-03-12T09:26:34.807Z] >>> OPTIONS /api/blog
-[2026-03-12T09:26:34.813Z] >>> OPTIONS /api/events
-[2026-03-12T09:26:34.818Z] >>> GET /api/users/employees
-[2026-03-12T09:26:34.828Z] >>> OPTIONS /api/events
-[2026-03-12T09:26:34.835Z] >>> GET /api/events
-[2026-03-12T09:26:34.840Z] >>> GET /api/blog
-[2026-03-12T09:26:34.869Z] >>> GET /api/items
-[2026-03-12T09:26:34.881Z] >>> GET /api/users/employees
-[2026-03-12T09:26:34.971Z] >>> GET /api/blog
-[2026-03-12T09:26:34.986Z] >>> GET /api/events
-[2026-03-12T09:27:17.956Z] >>> GET /api/orders
-[2026-03-12T09:27:17.961Z] >>> GET /api/users/me/schedule
-[2026-03-12T09:27:17.970Z] >>> GET /api/users/me/schedule
-[2026-03-12T09:27:18.008Z] >>> GET /api/orders
-[2026-03-12T09:27:20.964Z] >>> POST /api/users/logout
-[2026-03-12T09:32:04.333Z] >>> GET /api/blog
-[2026-03-12T09:32:04.393Z] >>> GET /api/blog
-[2026-03-12T09:42:07.584Z] 
-
-========== SERVER STARTING ==========
-[2026-03-12T09:42:07.589Z] Timestamp: 2026-03-12T09:42:07.589Z
-[2026-03-12T09:42:07.591Z] ================================
-
-[2026-03-12T09:42:12.144Z] >>> GET /api/users/me
-[2026-03-12T09:42:12.182Z] >>> GET /api/users/me
-[2026-03-12T09:42:32.748Z] >>> OPTIONS /api/users/login
-[2026-03-12T09:42:32.764Z] >>> POST /api/users/login
-[2026-03-12T09:42:33.780Z] >>> GET /api/orders
-[2026-03-12T09:42:33.798Z] >>> GET /api/users/me/schedule
-[2026-03-12T09:42:33.812Z] >>> GET /api/users/me/schedule
-[2026-03-12T09:42:33.863Z] >>> GET /api/orders
-[2026-03-12T09:42:35.723Z] >>> OPTIONS /api/items
-[2026-03-12T09:42:35.737Z] >>> OPTIONS /api/users/employees
-[2026-03-12T09:42:35.754Z] >>> OPTIONS /api/events
-[2026-03-12T09:42:35.769Z] >>> OPTIONS /api/blog
-[2026-03-12T09:42:35.779Z] >>> GET /api/items
-[2026-03-12T09:42:35.794Z] >>> OPTIONS /api/events
-[2026-03-12T09:42:35.807Z] >>> OPTIONS /api/users/employees
-[2026-03-12T09:42:35.814Z] >>> GET /api/users/employees
-[2026-03-12T09:42:35.830Z] >>> OPTIONS /api/blog
-[2026-03-12T09:42:35.834Z] >>> GET /api/blog
-[2026-03-12T09:42:35.842Z] >>> GET /api/events
-[2026-03-12T09:42:35.860Z] >>> GET /api/items
-[2026-03-12T09:42:35.913Z] >>> GET /api/blog
-[2026-03-12T09:42:35.918Z] >>> GET /api/users/employees
-[2026-03-12T09:42:36.345Z] >>> GET /api/events
-[2026-03-12T09:49:07.962Z] >>> OPTIONS /api/items
-[2026-03-12T09:49:07.972Z] >>> OPTIONS /api/items
-[2026-03-12T09:49:07.977Z] >>> GET /api/items
-[2026-03-12T09:49:08.068Z] >>> GET /api/items
-[2026-03-12T09:49:16.441Z] >>> OPTIONS /api/items
-[2026-03-12T09:49:16.448Z] >>> OPTIONS /api/items
-[2026-03-12T09:49:16.457Z] >>> GET /api/items
-[2026-03-12T09:49:16.534Z] >>> GET /api/items
-[2026-03-12T09:50:00.523Z] >>> OPTIONS /api/items
-[2026-03-12T09:50:00.532Z] >>> OPTIONS /api/items
-[2026-03-12T09:50:00.540Z] >>> GET /api/items
-[2026-03-12T09:50:00.740Z] >>> GET /api/items
-[2026-03-12T09:50:02.913Z] >>> OPTIONS /api/events
-[2026-03-12T09:50:02.920Z] >>> OPTIONS /api/events
-[2026-03-12T09:50:02.926Z] >>> GET /api/events
-[2026-03-12T09:50:03.261Z] >>> GET /api/events
-[2026-03-12T12:14:47.288Z] >>> OPTIONS /api/items
-[2026-03-12T12:14:50.522Z] >>> OPTIONS /api/blog
-[2026-03-12T12:14:57.006Z] >>> OPTIONS /api/events
-[2026-03-12T12:14:59.696Z] >>> OPTIONS /api/users/employees
-[2026-03-12T12:15:02.616Z] >>> OPTIONS /api/blog
-[2026-03-12T12:15:05.571Z] >>> OPTIONS /api/items
-[2026-03-12T12:15:14.106Z] >>> GET /api/items
-[2026-03-12T12:15:14.549Z] >>> GET /api/blog
-[2026-03-12T12:15:14.871Z] >>> GET /api/events
-[2026-03-12T12:15:15.023Z] >>> GET /api/users/employees
-[2026-03-12T12:15:24.752Z] >>> GET /api/blog
-[2026-03-12T12:15:25.530Z] >>> GET /api/items
-[2026-03-12T12:15:29.934Z] >>> OPTIONS /api/users/employees
-[2026-03-12T12:15:29.965Z] >>> GET /api/items
-[2026-03-12T12:15:30.051Z] >>> OPTIONS /api/users/employees
-[2026-03-12T12:15:30.119Z] >>> OPTIONS /api/items
-[2026-03-12T12:15:30.153Z] >>> GET /api/events
-[2026-03-12T12:15:30.201Z] >>> OPTIONS /api/events
-[2026-03-12T12:15:30.232Z] >>> GET /api/blog
-[2026-03-12T12:15:30.259Z] >>> OPTIONS /api/blog
-[2026-03-12T12:15:30.361Z] >>> GET /api/users/employees
-[2026-03-12T12:15:30.510Z] >>> GET /api/items
-[2026-03-12T12:15:30.596Z] >>> GET /api/events
-[2026-03-12T12:15:30.615Z] >>> GET /api/blog
-[2026-03-12T12:15:30.734Z] >>> GET /api/users/employees
-[2026-03-12T12:21:18.583Z] >>> OPTIONS /api/events
-[2026-03-12T12:21:18.587Z] >>> OPTIONS /api/events
-[2026-03-12T12:21:18.588Z] >>> GET /api/events
-[2026-03-12T12:21:19.153Z] >>> GET /api/events
-[2026-03-12T12:21:19.941Z] >>> OPTIONS /api/items
-[2026-03-12T12:21:19.942Z] >>> OPTIONS /api/items
-[2026-03-12T12:21:19.943Z] >>> GET /api/items
-[2026-03-12T12:21:20.032Z] >>> GET /api/items
-[2026-03-12T12:21:22.803Z] >>> GET /api/items
-[2026-03-12T12:21:22.927Z] >>> GET /api/items
-[2026-03-12T12:21:24.816Z] >>> OPTIONS /api/events
-[2026-03-12T12:21:24.818Z] >>> OPTIONS /api/events
-[2026-03-12T12:21:24.820Z] >>> GET /api/events
-[2026-03-12T12:21:24.901Z] >>> GET /api/events
-[2026-03-12T12:21:26.834Z] >>> OPTIONS /api/blog
-[2026-03-12T12:21:26.835Z] >>> OPTIONS /api/blog
-[2026-03-12T12:21:26.836Z] >>> GET /api/blog
-[2026-03-12T12:21:26.951Z] >>> GET /api/blog
-[2026-03-12T12:23:42.298Z] >>> OPTIONS /api/items
-[2026-03-12T12:23:42.302Z] >>> OPTIONS /api/users/employees
-[2026-03-12T12:23:42.303Z] >>> OPTIONS /api/events
-[2026-03-12T12:23:42.305Z] >>> OPTIONS /api/blog
-[2026-03-12T12:23:42.307Z] >>> OPTIONS /api/users/employees
-[2026-03-12T12:23:42.310Z] >>> GET /api/items
-[2026-03-12T12:23:42.316Z] >>> GET /api/users/employees
-[2026-03-12T12:23:42.322Z] >>> GET /api/events
-[2026-03-12T12:23:42.330Z] >>> GET /api/blog
-[2026-03-12T12:23:42.387Z] >>> GET /api/items
-[2026-03-12T12:23:42.446Z] >>> GET /api/blog
-[2026-03-12T12:23:42.861Z] >>> GET /api/users/employees
-[2026-03-12T12:23:42.876Z] >>> GET /api/events
-[2026-03-12T12:23:48.370Z] >>> POST /api/users/logout
-[2026-03-13T09:34:20.487Z] 
-
-========== SERVER STARTING ==========
-[2026-03-13T09:34:20.490Z] Timestamp: 2026-03-13T09:34:20.490Z
-[2026-03-13T09:34:20.491Z] ================================
-
-[2026-03-13T09:34:40.375Z] >>> GET /api/users/me
-[2026-03-13T09:34:40.405Z] >>> GET /api/users/me
-[2026-03-13T09:36:55.297Z] >>> GET /api/items
-[2026-03-13T09:36:55.366Z] >>> GET /api/items
-[2026-03-13T09:37:03.115Z] >>> GET /api/events
-[2026-03-13T09:37:03.173Z] >>> GET /api/events
-[2026-03-13T09:37:14.181Z] >>> GET /api/blog
-[2026-03-13T09:37:14.223Z] >>> GET /api/blog
-[2026-03-13T09:44:40.912Z] 
-
-========== SERVER STARTING ==========
-[2026-03-13T09:44:40.916Z] Timestamp: 2026-03-13T09:44:40.916Z
-[2026-03-13T09:44:40.919Z] ================================
-
-[2026-03-13T09:44:58.195Z] >>> GET /api/users/me
-[2026-03-13T09:44:58.219Z] >>> GET /api/users/me
-[2026-03-13T09:56:45.792Z] 
-
-========== SERVER STARTING ==========
-[2026-03-13T09:56:45.794Z] Timestamp: 2026-03-13T09:56:45.794Z
-[2026-03-13T09:56:45.795Z] ================================
-
+[2026-03-17T10:48:57.291Z] >>> GET /invoices/invoice_69b931664c90f0255107c9e2.pdf
+[2026-03-17T10:48:57.349Z] >>> GET /favicon.ico
+[2026-03-17T10:49:21.213Z] >>> OPTIONS /api/items
+[2026-03-17T10:49:21.215Z] >>> OPTIONS /api/items
+[2026-03-17T10:49:21.217Z] >>> GET /api/items
+[2026-03-17T10:49:21.282Z] >>> GET /api/items
+[2026-03-17T10:49:26.940Z] >>> OPTIONS /api/orders
+[2026-03-17T10:49:26.942Z] >>> POST /api/orders
+[2026-03-17T10:49:27.191Z] >>> GET /invoices/invoice_69b931b6c58ca96e80813630.pdf
+[2026-03-17T10:50:11.519Z] >>> OPTIONS /api/items
+[2026-03-17T10:50:11.523Z] >>> OPTIONS /api/items
+[2026-03-17T10:50:11.525Z] >>> GET /api/items
+[2026-03-17T10:50:11.566Z] >>> GET /api/items
+[2026-03-17T12:21:05.681Z] >>> GET /api/orders
+[2026-03-17T12:21:05.759Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:21:05.785Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:21:05.967Z] >>> GET /api/orders
+[2026-03-17T12:21:32.032Z] >>> OPTIONS /api/items
+[2026-03-17T12:21:32.039Z] >>> OPTIONS /api/items
+[2026-03-17T12:21:32.045Z] >>> GET /api/items
+[2026-03-17T12:21:33.294Z] >>> GET /api/items
+[2026-03-17T12:21:34.235Z] >>> GET /api/items
+[2026-03-17T12:21:35.033Z] >>> GET /api/items
+[2026-03-17T12:21:36.263Z] >>> OPTIONS /api/events
+[2026-03-17T12:21:36.269Z] >>> OPTIONS /api/events
+[2026-03-17T12:21:36.277Z] >>> GET /api/events
+[2026-03-17T12:21:36.454Z] >>> GET /api/events
+[2026-03-17T12:21:40.942Z] >>> OPTIONS /api/items
+[2026-03-17T12:21:40.947Z] >>> OPTIONS /api/items
+[2026-03-17T12:21:40.952Z] >>> GET /api/items
+[2026-03-17T12:21:41.272Z] >>> GET /api/items
+[2026-03-17T12:22:59.905Z] >>> POST /api/users/logout
+[2026-03-17T12:23:22.728Z] >>> OPTIONS /api/users/login
+[2026-03-17T12:23:22.741Z] >>> POST /api/users/login
+[2026-03-17T12:23:23.336Z] >>> GET /api/orders
+[2026-03-17T12:23:23.343Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:23:23.349Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:23:23.441Z] >>> GET /api/orders
+[2026-03-17T12:23:25.817Z] >>> OPTIONS /api/items
+[2026-03-17T12:23:25.820Z] >>> OPTIONS /api/users/employees
+[2026-03-17T12:23:25.823Z] >>> OPTIONS /api/events
+[2026-03-17T12:23:25.824Z] >>> OPTIONS /api/blog
+[2026-03-17T12:23:25.826Z] >>> GET /api/items
+[2026-03-17T12:23:25.828Z] >>> GET /api/users/employees
+[2026-03-17T12:23:25.834Z] >>> GET /api/events
+[2026-03-17T12:23:25.837Z] >>> GET /api/blog
+[2026-03-17T12:23:25.881Z] >>> GET /api/items
+[2026-03-17T12:23:25.893Z] >>> GET /api/users/employees
+[2026-03-17T12:23:25.901Z] >>> GET /api/events
+[2026-03-17T12:23:26.540Z] >>> GET /api/blog
+[2026-03-17T12:24:30.575Z] >>> OPTIONS /api/users/employees/69b3ff228f38b30e7f2aeeff/schedule
+[2026-03-17T12:24:30.585Z] >>> PUT /api/users/employees/69b3ff228f38b30e7f2aeeff/schedule
+[2026-03-17T12:24:30.759Z] >>> OPTIONS /api/users/employees
+[2026-03-17T12:24:30.768Z] >>> GET /api/users/employees
+[2026-03-17T12:24:53.887Z] >>> OPTIONS /api/users/employees/69afe9af020b2a57df67aecd/schedule
+[2026-03-17T12:24:53.897Z] >>> PUT /api/users/employees/69afe9af020b2a57df67aecd/schedule
+[2026-03-17T12:24:54.275Z] >>> OPTIONS /api/users/employees
+[2026-03-17T12:24:54.283Z] >>> GET /api/users/employees
+[2026-03-17T12:25:06.513Z] >>> POST /api/users/logout
+[2026-03-17T12:25:22.361Z] >>> OPTIONS /api/users/login
+[2026-03-17T12:25:22.371Z] >>> POST /api/users/login
+[2026-03-17T12:25:22.874Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:22.878Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:22.882Z] >>> GET /api/items
+[2026-03-17T12:25:23.096Z] >>> GET /api/items
+[2026-03-17T12:25:33.139Z] >>> OPTIONS /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T12:25:33.152Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T12:25:34.349Z] >>> PUT /api/items/69b3f6ab2e8b2d6ae0668f1c
+[2026-03-17T12:25:36.654Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:36.660Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:36.665Z] >>> GET /api/items
+[2026-03-17T12:25:36.774Z] >>> GET /api/items
+[2026-03-17T12:25:42.652Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:42.658Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:42.662Z] >>> GET /api/items
+[2026-03-17T12:25:42.728Z] >>> GET /api/items
+[2026-03-17T12:25:50.875Z] >>> OPTIONS /api/items
+[2026-03-17T12:25:50.883Z] >>> GET /api/items
+[2026-03-17T12:25:57.997Z] >>> POST /api/users/logout
+[2026-03-17T12:26:02.005Z] >>> GET /api/items
+[2026-03-17T12:26:02.064Z] >>> GET /api/items
+[2026-03-17T12:26:08.884Z] >>> GET /api/items
+[2026-03-17T12:26:08.952Z] >>> GET /api/items
+[2026-03-17T12:29:45.539Z] >>> OPTIONS /api/users/login
+[2026-03-17T12:29:45.544Z] >>> POST /api/users/login
+[2026-03-17T12:29:45.906Z] >>> GET /api/orders
+[2026-03-17T12:29:45.910Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:29:45.915Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:29:45.970Z] >>> GET /api/orders
+[2026-03-17T12:29:48.443Z] >>> OPTIONS /api/items
+[2026-03-17T12:29:48.448Z] >>> OPTIONS /api/items
+[2026-03-17T12:29:48.453Z] >>> GET /api/items
+[2026-03-17T12:29:48.533Z] >>> GET /api/items
+[2026-03-17T12:29:50.949Z] >>> GET /api/items
+[2026-03-17T12:29:51.007Z] >>> GET /api/items
+[2026-03-17T12:30:03.934Z] >>> OPTIONS /api/orders
+[2026-03-17T12:30:03.944Z] >>> POST /api/orders
+[2026-03-17T12:30:04.397Z] >>> GET /invoices/invoice_69b9494cc58ca96e8081369b.pdf
+[2026-03-17T12:30:21.091Z] >>> OPTIONS /api/items
+[2026-03-17T12:30:21.099Z] >>> OPTIONS /api/items
+[2026-03-17T12:30:21.109Z] >>> GET /api/items
+[2026-03-17T12:30:21.165Z] >>> GET /api/items
+[2026-03-17T12:30:50.940Z] >>> OPTIONS /api/events
+[2026-03-17T12:30:50.946Z] >>> OPTIONS /api/events
+[2026-03-17T12:30:50.951Z] >>> GET /api/events
+[2026-03-17T12:30:51.007Z] >>> GET /api/events
+[2026-03-17T12:30:58.628Z] >>> OPTIONS /api/blog
+[2026-03-17T12:30:58.634Z] >>> OPTIONS /api/blog
+[2026-03-17T12:30:58.639Z] >>> GET /api/blog
+[2026-03-17T12:30:58.695Z] >>> GET /api/blog
+[2026-03-17T12:45:31.620Z] >>> OPTIONS /api/items
+[2026-03-17T12:45:31.629Z] >>> OPTIONS /api/items
+[2026-03-17T12:45:31.633Z] >>> GET /api/items
+[2026-03-17T12:45:31.874Z] >>> GET /api/items
+[2026-03-17T12:45:34.598Z] >>> GET /api/orders
+[2026-03-17T12:45:34.611Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:45:34.629Z] >>> GET /api/users/me/schedule
+[2026-03-17T12:45:34.723Z] >>> GET /api/orders
+[2026-03-17T12:45:51.498Z] >>> POST /api/users/logout
+[2026-03-17T12:46:08.188Z] >>> GET /api/blog
+[2026-03-17T12:46:08.241Z] >>> GET /api/blog
