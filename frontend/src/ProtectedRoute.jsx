@@ -5,16 +5,12 @@ import { AuthContext } from './AuthContext';
 const ProtectedRoute = ({ children, requiredRole = 'user' }) => {
   const { user } = useContext(AuthContext);
 
-  // 1. Nëse përdoruesi nuk është i loguar, dërgoje te Login
   if (!user) {
     return <Navigate to="/login" replace />;
   }
 
-  // 2. Logjika e kontrollit të roleve
-  // Kontrollojmë nëse requiredRole është një listë (Array) apo një String i vetëm
   const rolesToMatch = Array.isArray(requiredRole) ? requiredRole : [requiredRole];
   
-  // Kontrollojmë nëse roli i përdoruesit është në listën e lejuar
   const hasAccess = rolesToMatch.includes(user.role);
 
   if (!hasAccess) {
@@ -38,7 +34,6 @@ const ProtectedRoute = ({ children, requiredRole = 'user' }) => {
     );
   }
 
-  // 3. Nëse çdo gjë është OK, shfaq faqen
   return children;
 };
 

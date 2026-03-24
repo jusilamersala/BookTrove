@@ -25,11 +25,23 @@ import Profile from './Profile';
 import AdminPanel from './AdminPanel';
 import InventoryManager from './InventoryManager';
 
-//  CRUD
+// CRUD
 import CreateItem from './CRUD/CreateItem';
 import ReadAll from './CRUD/ReadAll';
 import ReadOne from './CRUD/ReadOne';
 import UpdateItem from './CRUD/UpdateItem';
+
+const AdminDashboardWrapper = () => {
+  const user = JSON.parse(localStorage.getItem('user')); 
+  
+  if (user?.role === 'admin') {
+    return <AdminPanel />;
+  } else if (user?.role === 'inventory_manager') {
+    return <InventoryManager />;
+  } else {
+    return <div className="text-center mt-5">Duke u ngarkuar ose pa autorizim...</div>;
+  }
+};
 
 function App() {
   return (
@@ -54,20 +66,15 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/profile" element={<Profile />} />
 
-                {/* DASHBOARD-I DINAMIK 
-                   Kjo rrugë pranon të dy rolet, por brenda ProtectedRoute 
-                   ose te komponenti vetë bëhet ndarja e pamjes.
-                */}
                 <Route 
                   path="/admin" 
                   element={
                     <ProtectedRoute requiredRole={["admin", "inventory_manager"]}>
-                       <AdminPanel />
+                       <AdminDashboardWrapper />
                     </ProtectedRoute>
                   } 
                 />
-                
-                {/* Legacy CRUD - I mbrojtur vetëm për Admin ose Inventory Manager */}
+ 
                 <Route
                   path="/add"
                   element={
@@ -113,21 +120,5 @@ function App() {
     </AuthProvider>
   );
 }
-
-/**
- * Komponent Ndihmës për të vendosur cilin panel të shfaqim
- * bazuar te roli i përdoruesit që vjen nga localStorage ose Context
- */
-const AdminDashboardWrapper = () => {
-  const user = JSON.parse(localStorage.getItem('user')); // Ose përdor useAuth() nëse e ke gati
-  
-  if (user?.role === 'admin') {
-    return <AdminPanel />;
-  } else if (user?.role === 'inventory_manager') {
-    return <InventoryManager />;
-  } else {
-    return <div className="text-center mt-5">Duke u ngarkuar ose pa autorizim...</div>;
-  }
-};
 
 export default App;

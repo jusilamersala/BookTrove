@@ -1,339 +1,41 @@
+/* --- Konfigurimet Kryesore & Fontet --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+
 .blog-page-wrapper {
   background-color: #fdfaf6;
-  padding: 60px 8%;
+  padding: 40px 8%;
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #3d2b1f;
 }
 
+/* --- Intro Section (Faqja Kryesore) --- */
 .blog-intro-section {
   text-align: center;
   margin-bottom: 60px;
+  animation: fadeInDown 0.8s ease-out;
 }
 
-.blog-subtitle {
+.blog-intro-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  color: #3d2b1f;
+  margin-bottom: 15px;
+}
+
+.subtitle {
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #8b5e3c;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
-.blog-intro-section h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  color: #3d2b1f;
-  margin-top: 10px;
-}
-
-.blog-divider {
-  width: 80px;
-  height: 4px;
-  background: #3d2b1f;
-  margin: 20px auto;
-}
-
-/* Featured Card */
-.featured-post-container {
-  margin-bottom: 80px;
-}
-
-.featured-card {
-  display: flex;
-  background: white;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(61, 43, 31, 0.1);
-  align-items: center;
-}
-
-.featured-img {
-  flex: 1.2;
-  height: 450px;
-  position: relative;
-}
-
-.featured-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.featured-tag {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #3d2b1f;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
-
-.featured-content {
-  flex: 1;
-  padding: 50px;
-}
-
-.post-tag {
-  color: #8b5e3c;
-  font-weight: 800;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-}
-
-.featured-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #3d2b1f;
-  margin: 20px 0;
-}
-
-.featured-content p {
-  color: #666;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
-.read-more-btn {
-  background: #3d2b1f;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.read-more-btn:hover {
-  background: #5a4030;
-  padding-right: 40px;
-}
-
-/* Grid */
-.blog-grid-modern {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.modern-article-card {
-  background: white;
-  border-radius: 25px;
-  overflow: hidden;
-  transition: 0.4s;
-  border: 1px solid #f0f0f0;
-}
-
-.modern-article-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.article-img-holder {
-  height: 250px;
-}
-
-.article-img-holder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.article-details {
-  padding: 30px;
-}
-
-.post-tag-small {
-  color: #8b5e3c;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
-
-.article-details h3 {
-  color: #3d2b1f;
-  margin: 10px 0;
-  font-size: 1.5rem;
-}
-
-.article-details p {
-  color: #777;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.article-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-  align-items: center;
-}
-
-.simple-link {
-  background: none;
-  border: none;
-  color: #3d2b1f;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-}
-
-/* Community Section */
-.blog-community-section {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.community-card {
-  background: white;
-  border-radius: 30px;
-  padding: 40px;
-  box-shadow: 0 15px 40px rgba(61, 43, 31, 0.08);
-  border: 1px solid #f0ece8;
-}
-
-.community-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.comm-icon {
-  font-size: 2.5rem;
-  color: #8b5e3c;
-  margin-bottom: 15px;
-}
-
-.community-header h2 {
-  color: #3d2b1f;
-  font-family: 'Playfair Display', serif;
-}
-
-.comment-input-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #fdfaf6;
-  padding: 10px 20px;
-  border-radius: 50px;
-  margin-bottom: 40px;
-  border: 1px solid #eee;
-}
-
-.user-avatar-icon {
-  font-size: 2rem;
-  color: #ccc;
-}
-
-.comment-input-wrapper input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  outline: none;
-  padding: 10px 0;
-  font-size: 1rem;
-}
-
-.send-comment-btn {
-  background: #3d2b1f;
-  color: white;
-  border: none;
-  /* Madhësi fikse që të mos rritet */
-  width: 40px !important; 
-  height: 40px !important;
-  border-radius: 50% !important; /* Siguron që të mbetet i rrumbullakët */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0; /* Heqim çdo padding që mund ta zmadhojë */
-  flex-shrink: 0; /* Parandalon që Flexbox ta shtypë butonin */
-}
-
-.recent-comments {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-height: 300px;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.single-comment {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #f5f0eb;
-}
-
-.single-comment strong { color: #3d2b1f; }
-.single-comment p { color: #555; margin: 5px 0; font-size: 0.95rem; }
-.single-comment span { font-size: 0.8rem; color: #999; }
-
-.blog-page-wrapper {
-  padding: 40px 5%; /* Më pak padding anash */
-}
-
-.comment-input-wrapper input {
-  flex: 1; /* Zë gjithë hapësirën */
-  border: none;
-  background: transparent;
-  outline: none;
-  padding: 10px;
-  font-size: 1rem;
-  width: 100%; /* Për t'u siguruar në celular */
-}
-
-.blog-intro-section h1 {
-  font-size: clamp(2rem, 7vw, 3.5rem);
-}
-
-/* Featured Card - Ky është ndryshimi kryesor */
-.featured-card {
-  display: flex;
-  flex-direction: column; /* Default për celular */
-  height: auto;
-}
-
-.featured-img {
-  width: 100%;
-  height: 250px;
-}
-
-@media (min-width: 992px) {
-  .featured-card { flex-direction: row; }
-  .featured-img { height: 450px; flex: 1.2; }
-  .featured-content { flex: 1; padding: 50px; }
-}
-
-/* Grid-i i artikujve */
-.blog-grid-modern {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Më fleksibël se 400px */
-  gap: 20px;
-}
-
-/* Community Section */
-.comment-input-wrapper {
-  flex-direction: column; /* Inputi dhe butoni njëri mbi tjetrin në celular */
-  border-radius: 15px;
-  padding: 15px;
-}
-
-@media (min-width: 600px) {
-  .comment-input-wrapper { flex-direction: row; border-radius: 50px; }
-}
-
-/* Search Container */
+/* --- Search Box --- */
 .blog-search-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 60px;
-  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .search-box {
@@ -349,133 +51,328 @@
   transform: translateY(-50%);
   color: #8b5e3c;
   font-size: 1.2rem;
-  pointer-events: none;
 }
 
 .search-box input {
   width: 100%;
-  padding: 15px 20px 15px 50px;
+  padding: 15px 20px 15px 55px;
   border: 2px solid #e0d5cf;
   border-radius: 50px;
   font-size: 1rem;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   background: white;
 }
 
 .search-box input:focus {
   outline: none;
   border-color: #8b5e3c;
-  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.1);
+  box-shadow: 0 10px 25px rgba(139, 94, 60, 0.1);
 }
 
-.clear-search-btn {
+/* --- Grid i Artikujve (Karta) --- */
+.blog-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.modern-article-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.modern-article-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(61, 43, 31, 0.12);
+}
+
+.article-img-holder {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-img-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.modern-article-card:hover .article-img-holder img {
+  transform: scale(1.1);
+}
+
+.badge-tag {
   position: absolute;
+  top: 15px;
   right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  background: rgba(61, 43, 31, 0.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.article-details {
+  padding: 25px;
+}
+
+.article-details h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.short-desc {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-mini-highlights {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.card-mini-highlights span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  background: #f5f0eb;
+  color: #8b5e3c;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.simple-link {
   background: none;
   border: none;
-  color: #999;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.clear-search-btn:hover {
   color: #3d2b1f;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  transition: gap 0.3s;
 }
 
-.search-results-count {
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: 10px;
+.modern-article-card:hover .simple-link {
+  gap: 15px;
 }
 
-/* No Results & Empty States */
-.no-results-container,
-.no-comments {
-  text-align: center;
-  padding: 40px 20px;
-  color: #999;
+/* --- Pamja e Plotë (SIDEBAR FIX - PA "SHTEPI" TË BARDHA) --- */
+.full-article-view {
+  max-width: 1250px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.article-layout-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .article-layout-container {
+    grid-template-columns: 2.5fr 1fr;
+    align-items: start;
+  }
+}
+
+.article-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* --- Artikulli Majtas (I HAPUR) --- */
+.article-main-content {
+  background: transparent; /* HIQET SFOndi I BARDHE */
+  padding: 0; /* HIQET PADDING QE E SHTYNTE NE CEP */
+  box-shadow: none; /* HIQET HIJA */
+}
+
+.full-article-img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.lead-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #3d2b1f;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-left: 5px solid #8b5e3c;
+  padding-left: 25px;
+}
+
+.main-content {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #4a4a4a;
+  white-space: pre-wrap;
+}
+
+/* --- SIDEBAR-I (I PASTER) --- */
+.article-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: sticky;
+  top: 30px;
+}
+
+.sidebar-box {
+  padding: 25px;
+  border-radius: 25px;
+  border: 1px solid #e0d5cf;
+  background: white; /* Sidebar mund te kete pak fond qe te dallohet */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.sidebar-box h4 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 800;
 }
 
-.reset-search-btn {
+/* --- SEKSIONI I KOMENTEVE (I HAPUR) --- */
+.community-card {
+  background: transparent; /* HIQET KORNIZA E BARDHE */
+  border-radius: 0;
+  padding: 40px 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid #e0d5cf; /* Vetem nje vije ndarese */
+}
+
+.comment-input-wrapper {
+  display: flex;
+  gap: 12px;
+  background: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid #e0d5cf;
+  margin-bottom: 40px;
+}
+
+.comment-input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+}
+
+.send-comment-btn {
   background: #3d2b1f;
   color: white;
   border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  margin-top: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.reset-search-btn:hover {
-  background: #5a4030;
-}
-
-/* Improved Comment Section */
-.comment-header {
+  transition: 0.3s;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  justify-content: center;
+}
+
+.send-comment-btn:hover { background: #8b5e3c; transform: scale(1.1); }
+
+/* Komentet Individuale */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.comment-item {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(224, 213, 207, 0.4);
+}
+
+.comment-avatar {
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d6c2b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3d2b1f;
+  font-weight: 800;
+}
+
+.comment-name { font-weight: 700; color: #3d2b1f; font-size: 1rem; }
+.comment-date { font-size: 0.8rem; color: #aaa; margin-left: 10px; }
+.comment-text { font-size: 1rem; line-height: 1.6; color: #555; margin-top: 5px; }
+
+/* --- Butoni Kthehu --- */
+.back-btn {
+  background: none;
+  border: 1px solid #8b5e3c;
+  color: #8b5e3c;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   gap: 10px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
-.comment-time {
-  font-size: 0.75rem;
-  color: #aaa;
+.back-btn:hover { background: #8b5e3c; color: white; }
+
+/* --- ANIMACIONET (Origjinale) --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.send-comment-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.send-comment-btn:hover:not(:disabled) {
-  background: #5a4030;
-  transform: scale(1.05);
+/* --- RESPONSIVITETI --- */
+@media (max-width: 991px) {
+  .blog-page-wrapper { padding: 40px 5%; }
+  .article-layout-container { grid-template-columns: 1fr; }
+  .article-sidebar { position: static; }
 }
 
-.comment-input-wrapper input:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .blog-page-wrapper {
-    padding: 40px 5%;
-  }
-
-  .blog-intro-section h1 {
-    font-size: 2.5rem;
-  }
-
-  .blog-grid-modern {
-    grid-template-columns: 1fr;
-  }
-
-  .featured-card {
-    flex-direction: column;
-  }
-
-  .featured-img {
-    width: 100%;
-    height: 300px;
-  }
-
-  .featured-content {
-    padding: 30px;
-  }
-
-  .featured-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .recent-comments {
-    max-height: 400px;
-  }
+  .article-main-title { font-size: 2.2rem; }
+  .full-article-img { height: 350px; }
 }

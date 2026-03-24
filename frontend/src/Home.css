@@ -29,7 +29,7 @@
   margin-top: 30px;
   border-radius: 40px;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-              url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000');
+              url('https:images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -80,12 +80,11 @@
   box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }
 
-/* --- KATEGORITË (E rregulluar që të rrijë në një rresht) --- */
 .categories-section {
   margin: 60px 0;
   background: var(--white);
   padding: 20px 40px;
-  border-radius: 100px; /* Stil i rrumbullakosur (Pill style) */
+  border-radius: 100px; 
   box-shadow: var(--shadow);
 }
 
@@ -202,7 +201,7 @@
   display: block;
 }
 
-/* --- RESPONSIVITY (Celulari & Tableti) --- */
+/* --- RESPONSIVITY --- */
 
 @media (max-width: 1024px) {
   .categories-section {
@@ -211,7 +210,7 @@
   }
   
   .categories-flex-wrapper {
-    flex-direction: column; /* Në tablet dalin njëri nën tjetrin */
+    flex-direction: column; 
     gap: 20px;
   }
 }
@@ -229,7 +228,7 @@
   align-items: center;
   gap: 12px;
   padding: 14px 32px;
-  background-color: #2d3436; /* Ngjyrë e errët elegante */
+  background-color: #2d3436; 
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -243,21 +242,20 @@
   transition: transform 0.3s ease;
 }
 
-/* Efekti kur kalon mausin (Hover) */
 .btn-explore-more:hover {
   background-color: #000;
   color: #fff;
-  transform: translateY(-3px); /* Ngrihet pak lart */
+  transform: translateY(-3px); 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   text-decoration: none;
 }
 
-/* Animacioni i shigjetës */
+
 .btn-explore-more:hover svg {
-  transform: translateX(8px); /* Shigjeta lëviz djathtas */
+  transform: translateX(8px); 
 }
 
-/* Efekti kur klikohet */
+
 .btn-explore-more:active {
   transform: translateY(-1px);
 }
@@ -268,7 +266,7 @@
     border-radius: 20px;
   }
 
-  /* Kategoritë në celular bëhen që mund t'i lëvizësh anash (Horizontal Scroll) */
+
   .categories-buttons-group {
     overflow-x: auto;
     width: 100%;

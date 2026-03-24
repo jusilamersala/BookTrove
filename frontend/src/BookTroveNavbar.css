@@ -1,5 +1,3 @@
-/* --- STILIMI KRYESOR (DESKTOP) --- */
-
 .navbar-container {
   display: flex !important;
   align-items: center;
@@ -11,14 +9,12 @@
   padding: 10px 20px !important;
 }
 
-/* Linket në qendër */
 .navbar-links-center {
   flex-grow: 1;
   display: flex;
   justify-content: center;
 }
 
-/* GRUPI I DJATHTË */
 .navbar-right-final {
   display: flex !important;
   flex-direction: row !important;
@@ -38,7 +34,6 @@
   transition: width 0.3s ease;
 }
 
-/* Fokusimi i search-it (e bën më të gjerë kur klikon) */
 .navbar-search-input:focus {
   width: 200px !important;
   outline: none;
@@ -50,13 +45,12 @@
   gap: 10px !important;
 }
 
-/* Stilimi i linkeve dhe dropdown-it */
 .booktrove-navbar .nav-link, 
 .booktrove-navbar .dropdown-toggle {
   color: #f5efe6 !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
-  text-transform: uppercase; /* I jep pamje më profesionale */
+  text-transform: uppercase; 
   letter-spacing: 0.5px;
 }
 
@@ -75,10 +69,9 @@
   margin-left: 10px;
 }
 
-/* --- RREGULLIMI RESPONSIVE (MOBILE & TABLET) --- */
+/* --- RESPONSIVE --- */
 
 @media (max-width: 991px) {
-  /* Kur hapet menuja, detyrojmë elementet të renditen në kolonë */
   .navbar-collapse {
     background-color: #3b261a;
     padding: 20px;
@@ -95,7 +88,7 @@
   }
 
   .navbar-right-final {
-    flex-direction: column !important; /* Elementet njëri nën tjetrin në mobile */
+    flex-direction: column !important; 
     align-items: center !important;
     width: 100%;
     gap: 20px;
@@ -109,7 +102,7 @@
   }
 
   .navbar-search-input {
-    width: 90% !important; /* Më i gjerë në mobile */
+    width: 90% !important; 
     max-width: 400px;
     height: 40px;
   }
@@ -126,7 +119,6 @@
     text-align: center;
   }
 
-  /* Rregullim për dropdown-in në mobile që të mos hapet anash */
   .dropdown-menu {
     background-color: #4a3224 !important;
     border: none !important;
@@ -148,7 +140,7 @@
   position: absolute;
   top: -8px;
   right: -10px;
-  background-color: #e74c3c; /* Ngjyrë e kuqe */
+  background-color: #e74c3c; 
   color: white;
   font-size: 11px;
   font-weight: bold;
@@ -163,8 +155,6 @@
 }
 
 
-
-/* Rregullim shtesë për ekranet shumë të vogla (iPhone etj.) */
 @media (max-width: 480px) {
   .booktrove-navbar {
     padding: 10px 10px !important;

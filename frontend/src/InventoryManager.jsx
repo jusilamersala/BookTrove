@@ -12,11 +12,17 @@ const InventoryManager = () => {
   const fetchBooks = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:5000/api/items');
+      const token = localStorage.getItem('token');
+      
+      const res = await axios.get('http://localhost:5000/api/items', {
+        headers: { Authorization: `Bearer ${token}` } 
+      });
+      
       setBooks(Array.isArray(res.data) ? res.data : []);
       setError(null);
     } catch (err) {
-      setError("Nuk u mundësua lidhja me serverin.");
+      setError("Nuk u mundësua ngarkimi i librave.");
+      console.error(err);
     } finally {
       setLoading(false);
     }
@@ -27,18 +33,24 @@ const InventoryManager = () => {
   const changeStock = async (id, current, delta) => {
     const newStock = Math.max(0, current + delta);
     try {
+      const token = localStorage.getItem('token'); // Merr token-in
+      
       await axios.put(`http://localhost:5000/api/items/${id}`, 
-        { stoku: newStock }, { withCredentials: true }
+        { stoku: newStock }, 
+        { 
+          withCredentials: true,
+          headers: { Authorization: `Bearer ${token}` } // KRITIKE: Shto këtë për të shmangur 401
+        }
       );
       
-      // Update local state
+      // Update local state (Optimistic update)
       setBooks(prev => prev.map(b => b._id === id ? { ...b, stoku: newStock } : b));
       
-      // Success feedback
       setSuccessMsg("Stoku u përditësua!");
       setTimeout(() => setSuccessMsg(""), 2000);
     } catch (err) {
-      alert("Gabim gjatë përditësimit: " + (err.response?.data?.message || err.message));
+      const msg = err.response?.data?.message || "Gabim gjatë përditësimit.";
+      alert(msg);
     }
   };
 
@@ -57,6 +69,7 @@ const InventoryManager = () => {
     <div>
       {/* Feedback Alert */}
       {successMsg && <Alert variant="success" className="position-fixed top-0 start-50 translate-middle-x mt-3 shadow" style={{ zIndex: 9999 }}>{successMsg}</Alert>}
+      {error && <Alert variant="danger" className="mb-3">{error}</Alert>}
 
       <Row className="mb-4 g-3">
         <Col md={4}><Card className="bg-primary text-white border-0 shadow-sm"><Card.Body><h6>Total Libra</h6><h3>{totalItems}</h3></Card.Body></Card></Col>
@@ -83,7 +96,7 @@ const InventoryManager = () => {
             </tr>
           </thead>
           <tbody>
-            {filtered.map(book => (
+            {filtered.length > 0 ? filtered.map(book => (
               <tr key={book._id} className="align-middle">
                 <td className="ps-3">
                   <div className="fw-bold">{book.titulli}</div>
@@ -96,12 +109,31 @@ const InventoryManager = () => {
                 </td>
                 <td>
                   <div className="d-flex justify-content-center gap-2">
-                    <Button variant="danger" size="sm" className="px-3" onClick={() => changeStock(book._id, book.stoku, -1)} disabled={book.stoku === 0}>-</Button>
-                    <Button variant="success" size="sm" className="px-3" onClick={() => changeStock(book._id, book.stoku, 1)}>+</Button>
+                    <Button 
+                      variant="danger" 
+                      size="sm" 
+                      className="px-3" 
+                      onClick={() => changeStock(book._id, book.stoku, -1)} 
+                      disabled={book.stoku === 0}
+                    >
+                      -
+                    </Button>
+                    <Button 
+                      variant="success" 
+                      size="sm" 
+                      className="px-3" 
+                      onClick={() => changeStock(book._id, book.stoku, 1)}
+                    >
+                      +
+                    </Button>
                   </div>
                 </td>
               </tr>
-            ))}
+            )) : (
+                <tr>
+                    <td colSpan="3" className="text-center py-4 text-muted">Nuk u gjet asnjë libër.</td>
+                </tr>
+            )}
           </tbody>
         </Table>
       </Card>

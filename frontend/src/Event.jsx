@@ -24,7 +24,6 @@ const Event = () => {
   }, []);
 
   const handleInterest = (titulli) => {
-    // KUJDES: Duhet '/kontakt' sepse ashtu e ke te App.js
     navigate('/kontakt', { state: { eventTitle: titulli } });
   };
 

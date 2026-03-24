@@ -12,7 +12,6 @@ const canManageInventory = (req, res, next) => {
   }
 };
 
-// Middleware: Vetëm Admini mund të fshijë libra
 const adminOnly = (req, res, next) => {
   if (req.user && req.user.role === "admin") {
     next();
@@ -21,9 +20,6 @@ const adminOnly = (req, res, next) => {
   }
 };
 
-// =========================================================
-// 1. GET ALL ITEMS (Publike)
-// =========================================================
 router.get("/", async (req, res) => {
   try {
     const items = await Item.find();
@@ -33,9 +29,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// =========================================================
-// 2. CREATE ITEM
-// =========================================================
+
 router.post("/", authenticate, canManageInventory, async (req, res) => {
   try {
     const { titulli, autori, cmimi, kategoria, imazhi, stoku } = req.body;
@@ -60,9 +54,6 @@ router.post("/", authenticate, canManageInventory, async (req, res) => {
   }
 });
 
-// =========================================================
-// 3. UPDATE ITEM (Updated for Ana's Inventory Dashboard)
-// =========================================================
 router.put("/:id", authenticate, canManageInventory, async (req, res) => {
   try {
     const updateData = {};
@@ -90,7 +81,7 @@ router.put("/:id", authenticate, canManageInventory, async (req, res) => {
 });
 
 // =========================================================
-// 4. DELETE ITEM (Vetëm Admini)
+// 4. DELETE ITEM
 // =========================================================
 router.delete("/:id", authenticate, adminOnly, async (req, res) => {
   try {

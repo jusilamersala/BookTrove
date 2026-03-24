@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Seksioni i Parë: Brand & Socials */}
         <div className="footer-section">
           <Link to="/" className="footer-logo-link">
             <h3 className="footer-logo">BookTrove</h3>
@@ -22,7 +21,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Seksioni i Dytë: Explore */}
         <div className="footer-section">
           <h4>Eksploro</h4>
           <ul>
@@ -32,7 +30,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Seksioni i Tretë: Shërbimet */}
         <div className="footer-section">
           <h4>Shërbimet</h4>
           <ul>
@@ -41,7 +38,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Seksioni i Katërt: Kontakt */}
         <div className="footer-section">
           <h4>Na Vizitoni</h4>
           <p>📍 Tirana, Albania</p>

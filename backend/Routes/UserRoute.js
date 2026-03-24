@@ -4,10 +4,8 @@ const User = require("../models/UserModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { authenticate, adminOnly } = require("../middleware/authMiddleware");
+const secret = process.env.JWT_SECRET || "booktrove_jwt_secret_key_2026";
 
-const secret = "booktrove_jwt_secret_key_2026";
-
-// 1. LOGIN
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -15,7 +13,7 @@ router.post("/login", async (req, res) => {
         
         if (!user) return res.status(404).json({ message: "Përdoruesi nuk u gjet!" });
 
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await user.comparePassword(password);
         if (!isMatch) return res.status(400).json({ message: "Fjalëkalimi i pasaktë!" });
 
         const token = jwt.sign(
@@ -33,14 +31,14 @@ router.post("/login", async (req, res) => {
             token, 
             id: user._id, 
             username: user.username, 
-            role: user.role
+            role: user.role,
+            orari: user.orari 
         });
     } catch (err) {
         res.status(500).json({ message: "Login dështoi!" });
     }
 });
 
-// 2. REGISTER (Public)
 router.post("/register", async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -61,13 +59,12 @@ router.post("/register", async (req, res) => {
     }
 });
 
-// 3. ADMIN: Register Staff
 router.post("/register-employee", authenticate, adminOnly, async (req, res) => {
     try {
         const { username, email, password, role } = req.body;
         const allowedRoles = ['employee', 'inventory_manager'];
         if (!allowedRoles.includes(role)) {
-            return res.status(400).json({ message: "Roli duhet të jetë Punonjës ose Menaxher Inventari" });
+            return res.status(400).json({ message: "Roli i zgjedhur nuk është i vlefshëm" });
         }
 
         const findUser = await User.findOne({ email: email.toLowerCase().trim() });
@@ -77,7 +74,12 @@ router.post("/register-employee", authenticate, adminOnly, async (req, res) => {
             username: username.trim(),
             email: email.toLowerCase().trim(),
             password: password,
-            role: role
+            role: role,
+            orari: {
+                fillimi: "08:00",
+                mbarimi: "16:00",
+                ditet: ["Hënë", "Martë", "Mërkurë", "Enjte", "Premte"]
+            }
         });
 
         await newEmployee.save();
@@ -87,12 +89,11 @@ router.post("/register-employee", authenticate, adminOnly, async (req, res) => {
     }
 });
 
-// 4. ADMIN: Staff List
 router.get("/employees", authenticate, adminOnly, async (req, res) => {
     try {
         const staff = await User.find(
             { role: { $in: ['employee', 'inventory_manager'] } }, 
-            "-password" 
+            "username email role orari" 
         );
         res.json(staff);
     } catch (err) {
@@ -100,33 +101,42 @@ router.get("/employees", authenticate, adminOnly, async (req, res) => {
     }
 });
 
-// 5. ADMIN: Update Schedule
 router.put("/employees/:id/schedule", authenticate, adminOnly, async (req, res) => {
     try {
         const { id } = req.params;
-        const { orari } = req.body;
-        
-        const user = await User.findByIdAndUpdate(
+        const { orari } = req.body; // Pranon objektin { fillimi, mbarimi, ditet }
+
+        if (!orari || !orari.ditet) {
+            return res.status(400).json({ message: "Të dhënat e orarit janë të mangëta" });
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(
             id, 
-            { $set: { "orari": orari } }, 
+            { $set: { orari: orari } }, 
             { new: true }
-        );
+        ).select("-password");
         
-        if (!user) return res.status(404).json({ message: 'Punonjësi nuk u gjet' });
-        res.json({ message: 'Orari u përditësua', user });
+        if (!updatedUser) return res.status(404).json({ message: 'Punonjësi nuk u gjet' });
+        
+        res.json({ message: 'Orari u përditësua me sukses', user: updatedUser });
     } catch (err) {
-        res.status(500).json({ message: 'Gabim gjatë përditësimit' });
+        res.status(500).json({ message: 'Gabim gjatë përditësimit të orarit' });
     }
 });
 
-// 6. AUTH UTILS
-router.get("/me", authenticate, (req, res) => {
-    res.json(req.user);
+router.get("/me", authenticate, async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.user.id).select("-password");
+        if (!currentUser) return res.status(404).json({ message: "Përdoruesi nuk u gjet" });
+        res.json(currentUser);
+    } catch (err) {
+        res.status(500).json({ message: "Gabim në marrjen e të dhënave të profilit" });
+    }
 });
 
 router.post("/logout", (req, res) => {
     res.clearCookie("accessToken");
-    res.json({ message: "U loguat jashtë!" });
+    res.json({ message: "U loguat jashtë me sukses!" });
 });
 
 module.exports = router;

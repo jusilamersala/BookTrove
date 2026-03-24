@@ -2,38 +2,25 @@ const express = require("express");
 const router = express.Router();
 const Order = require("../models/OrderModel");
 const Item = require("../models/ItemModel");
-const jwt = require("jsonwebtoken");
 const path = require("path");
 const fs = require("fs");
 const { generateInvoice } = require("../utils/invoiceGenerator");
-
-const secret = "booktrove_jwt_secret_key_2026";
-
-// Middleware për verifikimin e përdoruesit
-function authMiddleware(req, res, next) {
-  const token = req.cookies?.accessToken;
-  if (!token) {
-    return res.status(401).json({ message: "Duhet të jeni i loguar për të kryer këtë veprim" });
-  }
-  jwt.verify(token, secret, (err, decoded) => {
-    if (err) return res.status(401).json({ message: "Sesioni ka skaduar" });
-    req.user = decoded;
-    next();
-  });
-}
+const { authenticate } = require("../middleware/authMiddleware");
 
 /**
  * @route   POST /api/orders
+ * @desc    Krijon porosinë, zbret stokun dhe gjeneron faturën PDF
+ * @access  Private
  */
-router.post("/", authMiddleware, async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
   try {
-    const { items, total } = req.body;
+    const { items, total, metodaPageses } = req.body;
 
     if (!items || items.length === 0) {
       return res.status(400).json({ message: "Shporta nuk mund të jetë boshe" });
     }
 
-    // 1. KONTROLLI I STOKUT
+    // 1. Kontrolli i stokut përpara procesimit
     for (const item of items) {
       const book = await Item.findById(item._id);
       if (!book || book.stoku < item.sasia) {
@@ -43,32 +30,29 @@ router.post("/", authMiddleware, async (req, res) => {
       }
     }
 
-    // 2. KRIJIMI I POROSISË (Me sigurim që totali është numër)
+    // 2. Ruajtja e porosisë në Databazë
     const newOrder = new Order({
-      user: req.user.id,
+      user: req.user.id, // ID nga token-i i dekoduar
       items: items,
-      total: Number(total), // SHTUAR: Sigurohemi që nuk është NaN
-      status: "Pending",
+      total: Number(total),
+      metodaPageses: metodaPageses || "Cash",
+      status: metodaPageses === "PayPal" ? "Paid" : "Pending",
       createdAt: new Date()
     });
 
     const savedOrder = await newOrder.save();
 
-    // 3. ZBRITJA E STOKUT
+    // 3. Zbritja e stokut (Update automatik)
     const updatePromises = items.map(item => {
       return Item.findByIdAndUpdate(
         item._id,
-        { $inc: { stoku: -item.sasia } }, 
-        { new: true }
+        { $inc: { stoku: -item.sasia } }
       );
     });
     await Promise.all(updatePromises);
 
-    // 4. GJENERIMI I FATURËS PDF
-    // Përdorim path.resolve për të qenë 100% të sigurt për lokacionin
+    // 4. Gjenerimi i faturës fizike
     const invoicesDir = path.resolve(__dirname, "..", "invoices");
-    
-    // Krijo folderin nëse mungon fizikisht
     if (!fs.existsSync(invoicesDir)) {
       fs.mkdirSync(invoicesDir, { recursive: true });
     }
@@ -76,39 +60,72 @@ router.post("/", authMiddleware, async (req, res) => {
     const invoiceName = `invoice_${savedOrder._id}.pdf`;
     const invoicePath = path.join(invoicesDir, invoiceName);
 
-    // Përgatitja e të dhënave për faturën
-    const orderDataForInvoice = {
+    await generateInvoice({
       _id: savedOrder._id,
       items: savedOrder.items,
       total: savedOrder.total,
-      user: { username: req.user.username || "Klient" }
-    };
+      user: { username: req.user.username || "Klient" },
+      date: savedOrder.createdAt
+    }, invoicePath);
 
-    // Gjenerojmë PDF-në
-    generateInvoice(orderDataForInvoice, invoicePath);
-
-    // 5. PËRGJIGJJA (URL duhet të korrespondojë me app.use te server.js)
     res.status(201).json({
       message: "Porosia u krye me sukses!",
-      order: savedOrder,
-      invoiceUrl: `/invoices/${invoiceName}`
+      order: savedOrder
     });
 
   } catch (err) {
-    console.error("❌ Gabim gjatë procesimit të porosisë:", err);
+    console.error("❌ Gabim te POST orders:", err);
     res.status(500).json({ message: "Gabim në server: " + err.message });
   }
 });
 
 /**
- * @route   GET /api/orders
+ * @route   GET /api/orders/user/my-orders
+ * @desc    Merr të gjitha porositë e përdoruesit të loguar (Zgjidh faqen e Profilit boshe)
+ * @access  Private
  */
-router.get("/", authMiddleware, async (req, res) => {
+router.get("/user/my-orders", authenticate, async (req, res) => {
   try {
-    const orders = await Order.find({ user: req.user.id }).sort({ createdAt: -1 });
-    res.json(orders);
+    // Gjen të gjitha porositë ku fusha 'user' është e barabartë me ID-në e personit të loguar
+    const userOrders = await Order.find({ user: req.user.id }).sort({ createdAt: -1 });
+    res.status(200).json(userOrders);
   } catch (err) {
-    res.status(500).json({ message: "Gabim teknik gjatë marrjes së porosive" });
+    console.error("❌ Gabim te marrja e porosive:", err);
+    res.status(500).json({ message: "Nuk u ngarkuan dot porositë." });
+  }
+});
+
+/**
+ * @route   GET /api/orders/:id/invoice
+ * @desc    Shërben skedarin PDF për shkarkim
+ * @access  Private
+ */
+router.get("/:id/invoice", authenticate, async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+    if (!order) return res.status(404).json({ message: "Porosia nuk u gjet" });
+
+    // Siguria: Vetëm pronari i porosisë ose admini mund ta shkarkojë
+    if (order.user.toString() !== req.user.id && req.user.role !== 'admin') {
+      return res.status(403).json({ message: "Pa autorizim" });
+    }
+
+    const invoiceName = `invoice_${order._id}.pdf`;
+    const invoicePath = path.resolve(__dirname, "..", "invoices", invoiceName);
+
+    // Rigjenero faturën nëse mungon fizikisht në server
+    if (!fs.existsSync(invoicePath)) {
+      await generateInvoice({
+        _id: order._id,
+        items: order.items,
+        total: order.total,
+        user: { username: req.user.username || "Klient" }
+      }, invoicePath);
+    }
+
+    res.download(invoicePath, invoiceName);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 

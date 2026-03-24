@@ -14,15 +14,15 @@ const Contact = () => {
 
   const [status, setStatus] = useState({ type: '', msg: '' });
   const [loading, setLoading] = useState(false);
-
-  // Kapim titullin e eventit nëse vjen nga faqja Eventet
+  
+//if comes from event page, prefill comment with interest message
   useEffect(() => {
     if (location.state && location.state.eventTitle) {
       setFormData(prev => ({
         ...prev,
         comment: `Përshëndetje! Jam i interesuar të marr pjesë në eventin: "${location.state.eventTitle}". Ju lutem më konfirmoni regjistrimin.`
       }));
-      window.scrollTo(0, 0); // Dërgoje faqen në fillim
+      window.scrollTo(0, 0); 
     }
   }, [location]);
 

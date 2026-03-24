@@ -25,3 +25,6 @@ yarn-error.log*
 
 logToFiles.js
 debug.log
+
+# Injoro faturat e gjeneruara
+invoices/

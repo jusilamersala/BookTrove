@@ -16,7 +16,6 @@
   font-weight: 700;
 }
 
-/* Toolbar-i i thjeshtuar vetëm me Search */
 .horizontal-toolbar {
   display: flex;
   justify-content: space-between;
@@ -118,7 +117,6 @@
   border-radius: 0 0 10px 10px;
 }
 
-/* Grid-i i Librave */
 .books-grid-full {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -153,7 +151,7 @@
 
 .quick-add {
   position: absolute;
-  bottom: -60px; /* I fshehur */
+  bottom: -60px; 
   left: 0;
   width: 100%;
   transition: 0.3s;
@@ -272,7 +270,6 @@
   border-radius: 4px;
 }
 
-/* SHIRITI I KËRKIMIT - I THJESHTUAR */
 .horizontal-toolbar {
   display: flex;
   justify-content: space-between;
@@ -297,11 +294,9 @@
   font-size: 1.05rem;
   background: transparent;
   color: #3d2b1f;
-  /* Qendërzojmë tekstin për pamje më simetrike */
   text-align: center; 
 }
 
-/* BUTONI HIQ FILTRIN */
 .clear-filter-btn {
   background-color: #f8f1eb;
   color: #8b5e3c;
@@ -320,7 +315,6 @@
   color: white;
 }
 
-/* GRID DHE KARTAT */
 .books-grid-full {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -347,10 +341,6 @@
 .book-price { font-size: 1.3rem; font-weight: 700; color: #3d2b1f; }
 .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
 
-
-
-
-/* Responsiviteti */
 @media (max-width: 768px) {
   .books-grid-full {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));

@@ -60,7 +60,6 @@
 }
 /* --- RESPONSIVE DESIGN --- */
 
-/* Për Tablet (deri në 992px) */
 @media (max-width: 992px) {
   .zhanerat-container h2 {
     font-size: 2.2rem;
@@ -71,14 +70,14 @@
   }
 }
 
-/* Për Celularë të vegjël (deri në 768px) */
+
 @media (max-width: 768px) {
   .zhanerat-container {
-    padding: 30px 15px; /* Më pak hapësirë anash */
+    padding: 30px 15px; 
   }
 
   .zhanerat-container h2 {
-    font-size: 1.8rem; /* Tekst më i vogël */
+    font-size: 1.8rem; 
     margin-bottom: 15px;
   }
 
@@ -93,8 +92,8 @@
 
   .zhaner-item {
     padding: 15px 20px;
-    min-width: 120px; /* Pak më të ngushta */
-    flex: 1 1 calc(45% - 12px); /* E detyron të dalin 2 në rresht */
+    min-width: 120px; 
+    flex: 1 1 calc(45% - 12px); 
     max-width: calc(50% - 12px);
   }
 
@@ -103,10 +102,10 @@
   }
 }
 
-/* Për celularë shumë të vegjël (deri në 480px) */
+
 @media (max-width: 480px) {
   .zhaner-item {
-    flex: 1 1 100%; /* E detyron të dalë 1 në rresht (full width) */
+    flex: 1 1 100%; 
     max-width: 100%;
     padding: 18px;
   }

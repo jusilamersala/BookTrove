@@ -37,11 +37,20 @@ const AdminPanel = () => {
   const [employees, setEmployees] = useState([]);
   const [showEmployeeModal, setShowEmployeeModal] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const [workSchedule, setWorkSchedule] = useState('');
-  // RE RE: State per regjistrimin e punonjesit te ri
+  const [workSchedule, setWorkSchedule] = useState({
+    fillimi: '08:00',
+    mbarimi: '16:00',
+    ditet: []
+  });
+
+  const ditetEPlota = ["Hënë", "Martë", "Mërkurë", "Enjte", "Premte", " E Shtunë", " E Diel"];
+
   const [employeeData, setEmployeeData] = useState({ 
     username: '', email: '', password: '', role: 'employee' 
   });
+
+  // --- NEW: Attendance State for Admin View ---
+  const [attendanceLogs, setAttendanceLogs] = useState([]);
 
   // --- API FETCH FUNCTIONS ---
 
@@ -75,11 +84,22 @@ const AdminPanel = () => {
     } catch (err) { console.error('Gabim në marrjen e punonjësve'); }
   };
 
+  const fetchAttendance = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const res = await axios.get('http://localhost:5000/api/attendance/today', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setAttendanceLogs(res.data);
+    } catch (err) { console.error("Gabim në marrjen e prezencës"); }
+  };
+
   useEffect(() => {
     fetchItems();
     fetchEmployees();
     fetchEvents();
     fetchBlogs();
+    if (isAdmin()) fetchAttendance();
   }, []);
 
   // --- EVENT HANDLERS (BOOKS) ---
@@ -171,7 +191,7 @@ const AdminPanel = () => {
     } catch (err) { setError('Gabim në fshirje'); }
   };
 
-  // --- EMPLOYEE & REGISTER HANDLERS ---
+  // --- EMPLOYEE & ATTENDANCE HANDLERS ---
   const handleRegisterEmployee = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -192,18 +212,46 @@ const AdminPanel = () => {
 
   const handleUpdateSchedule = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const token = localStorage.getItem('token');
       const config = { withCredentials: true, headers: { Authorization: `Bearer ${token}` } };
+      
       await axios.put(`http://localhost:5000/api/users/employees/${selectedEmployee._id}/schedule`, 
         { orari: workSchedule }, config);
+
       setSuccess(`Orari u përditësua për ${selectedEmployee.username}`);
       setShowEmployeeModal(false);
       fetchEmployees();
     } catch (err) { setError('Gabim në përditësimin e orarit'); }
+    setLoading(false);
   };
 
-  // --- FILTER LOGIC ---
+  // --- EXTRA: Ndihmës për të zgjedhur ditët ---
+  const handleDayToggle = (day) => {
+    setWorkSchedule(prev => ({
+      ...prev,
+      ditet: prev.ditet.includes(day) 
+        ? prev.ditet.filter(d => d !== day) 
+        : [...prev.ditet, day]
+    }));
+  };
+
+  const handleCheckAction = async (actionType) => {
+    setLoading(true);
+    try {
+      const token = localStorage.getItem('token');
+      await axios.post(`http://localhost:5000/api/attendance/${actionType}`, {}, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setSuccess(`U krye me sukses: ${actionType === 'checkin' ? 'Hyrja' : 'Dalja'}`);
+      fetchAttendance();
+    } catch (err) {
+      setError(err.response?.data?.message || "Gabim në procesin e prezencës");
+    }
+    setLoading(false);
+  };
+
   const filteredItems = items.filter(item => {
     const matchesSearch = (item.titulli || "").toLowerCase().includes(searchTerm.toLowerCase()) || 
                           (item.autori || "").toLowerCase().includes(searchTerm.toLowerCase());
@@ -219,7 +267,12 @@ const AdminPanel = () => {
     <Container fluid className="admin-panel mt-5 pt-3 mb-5">
       <div className="admin-header mb-4 text-center">
         <h1 className="fw-bold text-danger">Admin Panel</h1>
-        <p className="text-muted">Mirëseerdhët, <span className="text-dark fw-bold">{user?.username}</span>!</p>
+        <p className="text-muted">Mirë se erdhët, <span className="text-dark fw-bold">{user?.username}</span>!</p>
+        
+        <div className="d-flex justify-content-center gap-2 mb-3">
+            <Button variant="outline-success" onClick={() => handleCheckAction('checkin')}>🟢 Hyr në Punë</Button>
+            <Button variant="outline-secondary" onClick={() => handleCheckAction('checkout')}>🔴 Dil nga Puna</Button>
+        </div>
       </div>
 
       {error && <Alert variant="danger" dismissible onClose={() => setError('')}>{error}</Alert>}
@@ -318,109 +371,114 @@ const AdminPanel = () => {
           </Tab.Pane>
 
           <Tab.Pane eventKey="blog">
-             <h3 className="mb-3">Menaxho Blogun</h3>
-             <Form onSubmit={handleBlogSubmit} className="p-4 border rounded shadow-sm mb-4 bg-white">
-               <Row>
-                 <Col md={8}><Form.Group className="mb-2"><Form.Label>Titulli</Form.Label><Form.Control value={blogForm.titulli} onChange={e => setBlogForm({...blogForm, titulli: e.target.value})} required /></Form.Group></Col>
-                 <Col md={4}><Form.Group className="mb-2"><Form.Label>Tag</Form.Label><Form.Select value={blogForm.tag} onChange={e => setBlogForm({...blogForm, tag: e.target.value})}><option>Rekomandime</option><option>Këshilla</option><option>Lajme</option></Form.Select></Form.Group></Col>
-               </Row>
-               <Form.Group className="mb-2"><Form.Label>URL Imazhi</Form.Label><Form.Control value={blogForm.imazhi} onChange={e => setBlogForm({...blogForm, imazhi: e.target.value})} required /></Form.Group>
-               <Form.Group className="mb-2"><Form.Label>Përshkrimi i shkurtër</Form.Label><Form.Control as="textarea" rows={2} value={blogForm.shkurtesa} onChange={e => setBlogForm({...blogForm, shkurtesa: e.target.value})} required /></Form.Group>
-               <Form.Group className="mb-3"><Form.Label>Përmbajtja e plotë</Form.Label><Form.Control as="textarea" rows={5} value={blogForm.permbajtja} onChange={e => setBlogForm({...blogForm, permbajtja: e.target.value})} required /></Form.Group>
-               <Button variant="danger" type="submit" disabled={loading}>{loading ? <Spinner size="sm" /> : "Publiko në Blog"}</Button>
-             </Form>
-             <Table striped bordered hover responsive>
-               <thead className="table-dark"><tr><th>Titulli</th><th>Data</th><th>Veprim</th></tr></thead>
-               <tbody>
-                 {blogs.map(b => (
-                   <tr key={b._id}><td>{b.titulli}</td><td>{new Date(b.data).toLocaleDateString()}</td>
-                   <td><Button variant="outline-danger" size="sm" onClick={() => handleDeleteBlog(b._id)}>Fshi</Button></td></tr>
-                 ))}
-               </tbody>
-             </Table>
+              <h3 className="mb-3">Menaxho Blogun</h3>
+              <Form onSubmit={handleBlogSubmit} className="p-4 border rounded shadow-sm mb-4 bg-white">
+                <Row>
+                  <Col md={8}><Form.Group className="mb-2"><Form.Label>Titulli</Form.Label><Form.Control value={blogForm.titulli} onChange={e => setBlogForm({...blogForm, titulli: e.target.value})} required /></Form.Group></Col>
+                  <Col md={4}><Form.Group className="mb-2"><Form.Label>Tag</Form.Label><Form.Select value={blogForm.tag} onChange={e => setBlogForm({...blogForm, tag: e.target.value})}><option>Rekomandime</option><option>Këshilla</option><option>Lajme</option></Form.Select></Form.Group></Col>
+                </Row>
+                <Form.Group className="mb-2"><Form.Label>URL Imazhi</Form.Label><Form.Control value={blogForm.imazhi} onChange={e => setBlogForm({...blogForm, imazhi: e.target.value})} required /></Form.Group>
+                <Form.Group className="mb-2"><Form.Label>Përshkrimi i shkurtër</Form.Label><Form.Control as="textarea" rows={2} value={blogForm.shkurtesa} onChange={e => setBlogForm({...blogForm, shkurtesa: e.target.value})} required /></Form.Group>
+                <Form.Group className="mb-3"><Form.Label>Përmbajtja e plotë</Form.Label><Form.Control as="textarea" rows={5} value={blogForm.permbajtja} onChange={e => setBlogForm({...blogForm, permbajtja: e.target.value})} required /></Form.Group>
+                <Button variant="danger" type="submit" disabled={loading}>{loading ? <Spinner size="sm" /> : "Publiko në Blog"}</Button>
+              </Form>
+              <Table striped bordered hover responsive>
+                <thead className="table-dark"><tr><th>Titulli</th><th>Data</th><th>Veprim</th></tr></thead>
+                <tbody>
+                  {blogs.map(b => (
+                    <tr key={b._id}><td>{b.titulli}</td><td>{new Date(b.data).toLocaleDateString()}</td>
+                    <td><Button variant="outline-danger" size="sm" onClick={() => handleDeleteBlog(b._id)}>Fshi</Button></td></tr>
+                  ))}
+                </tbody>
+              </Table>
           </Tab.Pane>
 
           <Tab.Pane eventKey="events">
-             <h3 className="mb-3">Publiko Event të Ri</h3>
-             <Form onSubmit={handleEventSubmit} className="p-4 border rounded shadow-sm mb-5 bg-white">
-               <Row>
-                 <Col md={6}><Form.Group className="mb-2"><Form.Label>Titulli</Form.Label><Form.Control value={eventFormData.titulli} onChange={e => setEventFormData({...eventFormData, titulli: e.target.value})} required /></Form.Group></Col>
-                 <Col md={3}><Form.Group className="mb-2"><Form.Label>Data</Form.Label><Form.Control value={eventFormData.data} onChange={e => setEventFormData({...eventFormData, data: e.target.value})} required /></Form.Group></Col>
-                 <Col md={3}><Form.Group className="mb-2"><Form.Label>Ora</Form.Label><Form.Control value={eventFormData.ora} onChange={e => setEventFormData({...eventFormData, ora: e.target.value})} required /></Form.Group></Col>
-               </Row>
-               <Row><Col md={6}><Form.Group className="mb-2"><Form.Label>Lokacioni</Form.Label><Form.Control value={eventFormData.lokacioni} onChange={e => setEventFormData({...eventFormData, lokacioni: e.target.value})} required /></Form.Group></Col>
-               <Col md={6}><Form.Group className="mb-2"><Form.Label>URL Imazhi</Form.Label><Form.Control value={eventFormData.imazhi} onChange={e => setEventFormData({...eventFormData, imazhi: e.target.value})} /></Form.Group></Col></Row>
-               <Form.Group className="mb-3"><Form.Label>Përshkrimi</Form.Label><Form.Control as="textarea" rows={3} value={eventFormData.pershkrimi} onChange={e => setEventFormData({...eventFormData, pershkrimi: e.target.value})} required /></Form.Group>
-               <Button variant="primary" type="submit" disabled={loading}>Shto Eventin</Button>
-             </Form>
-             <Table striped hover responsive>
-               <thead className="table-primary"><tr><th>Titulli</th><th>Data & Ora</th><th>Veprim</th></tr></thead>
-               <tbody>
-                 {events.map(ev => (
-                   <tr key={ev._id}><td>{ev.titulli}</td><td>{ev.data} @ {ev.ora}</td>
-                   <td><Button variant="outline-danger" size="sm" onClick={() => handleDeleteEvent(ev._id)}>Fshi</Button></td></tr>
-                 ))}
-               </tbody>
-             </Table>
+              <h3 className="mb-3">Publiko Event të Ri</h3>
+              <Form onSubmit={handleEventSubmit} className="p-4 border rounded shadow-sm mb-5 bg-white">
+                <Row>
+                  <Col md={6}><Form.Group className="mb-2"><Form.Label>Titulli</Form.Label><Form.Control value={eventFormData.titulli} onChange={e => setEventFormData({...eventFormData, titulli: e.target.value})} required /></Form.Group></Col>
+                  <Col md={3}><Form.Group className="mb-2"><Form.Label>Data</Form.Label><Form.Control value={eventFormData.data} onChange={e => setEventFormData({...eventFormData, data: e.target.value})} required /></Form.Group></Col>
+                  <Col md={3}><Form.Group className="mb-2"><Form.Label>Ora</Form.Label><Form.Control value={eventFormData.ora} onChange={e => setEventFormData({...eventFormData, ora: e.target.value})} required /></Form.Group></Col>
+                </Row>
+                <Row><Col md={6}><Form.Group className="mb-2"><Form.Label>Lokacioni</Form.Label><Form.Control value={eventFormData.lokacioni} onChange={e => setEventFormData({...eventFormData, lokacioni: e.target.value})} required /></Form.Group></Col>
+                <Col md={6}><Form.Group className="mb-2"><Form.Label>URL Imazhi</Form.Label><Form.Control value={eventFormData.imazhi} onChange={e => setEventFormData({...eventFormData, imazhi: e.target.value})} /></Form.Group></Col></Row>
+                <Form.Group className="mb-3"><Form.Label>Përshkrimi</Form.Label><Form.Control as="textarea" rows={3} value={eventFormData.pershkrimi} onChange={e => setEventFormData({...eventFormData, pershkrimi: e.target.value})} required /></Form.Group>
+                <Button variant="primary" type="submit" disabled={loading}>Shto Eventin</Button>
+              </Form>
+              <Table striped hover responsive>
+                <thead className="table-primary"><tr><th>Titulli</th><th>Data & Ora</th><th>Veprim</th></tr></thead>
+                <tbody>
+                  {events.map(ev => (
+                    <tr key={ev._id}><td>{ev.titulli}</td><td>{ev.data} @ {ev.ora}</td>
+                    <td><Button variant="outline-danger" size="sm" onClick={() => handleDeleteEvent(ev._id)}>Fshi</Button></td></tr>
+                  ))}
+                </tbody>
+              </Table>
           </Tab.Pane>
 
           <Tab.Pane eventKey="employees">
-             {/* FORMA E RE PER SHTIMIN E PUNONJESVE */}
              <div className="bg-white p-4 rounded shadow-sm mb-4 border-top border-success border-4">
-               <h4 className="mb-4">➕ Regjistro Staf të Ri</h4>
-               <Form onSubmit={handleRegisterEmployee}>
-                 <Row>
-                   <Col md={3}><Form.Group className="mb-2"><Form.Label>Përdoruesi</Form.Label><Form.Control value={employeeData.username} onChange={e => setEmployeeData({...employeeData, username: e.target.value})} required /></Form.Group></Col>
-                   <Col md={3}><Form.Group className="mb-2"><Form.Label>Email</Form.Label><Form.Control type="email" value={employeeData.email} onChange={e => setEmployeeData({...employeeData, email: e.target.value})} required /></Form.Group></Col>
-                   <Col md={3}><Form.Group className="mb-2"><Form.Label>Fjalëkalimi</Form.Label><Form.Control type="password" value={employeeData.password} onChange={e => setEmployeeData({...employeeData, password: e.target.value})} required /></Form.Group></Col>
-                   <Col md={3}>
-                     <Form.Group className="mb-2">
-                       <Form.Label>Roli</Form.Label>
-                       <Form.Select value={employeeData.role} onChange={e => setEmployeeData({...employeeData, role: e.target.value})}>
-                         <option value="employee">Punonjës</option>
-                         <option value="inventory_manager">Menaxher Inventari</option>
-                       </Form.Select>
-                     </Form.Group>
-                   </Col>
-                 </Row>
-                 <Button variant="success" type="submit" disabled={loading}>Krijo Llogarinë</Button>
-               </Form>
+                <h4 className="mb-4">➕ Regjistro Staf të Ri</h4>
+                <Form onSubmit={handleRegisterEmployee}>
+                  <Row>
+                    <Col md={3}><Form.Group className="mb-2"><Form.Label>Përdoruesi</Form.Label><Form.Control value={employeeData.username} onChange={e => setEmployeeData({...employeeData, username: e.target.value})} required /></Form.Group></Col>
+                    <Col md={3}><Form.Group className="mb-2"><Form.Label>Email</Form.Label><Form.Control type="email" value={employeeData.email} onChange={e => setEmployeeData({...employeeData, email: e.target.value})} required /></Form.Group></Col>
+                    <Col md={3}><Form.Group className="mb-2"><Form.Label>Fjalëkalimi</Form.Label><Form.Control type="password" value={employeeData.password} onChange={e => setEmployeeData({...employeeData, password: e.target.value})} required /></Form.Group></Col>
+                    <Col md={3}>
+                      <Form.Group className="mb-2">
+                        <Form.Label>Roli</Form.Label>
+                        <Form.Select value={employeeData.role} onChange={e => setEmployeeData({...employeeData, role: e.target.value})}>
+                          <option value="employee">Punonjës</option>
+                          <option value="inventory_manager">Menaxher Inventari</option>
+                        </Form.Select>
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <Button variant="success" type="submit" disabled={loading}>Krijo Llogarinë</Button>
+                </Form>
              </div>
 
              <div className="bg-white p-4 rounded shadow-sm">
-               <h4 className="mb-4">Lista e Stafit</h4>
-               <Table striped bordered hover responsive>
-                 <thead className="table-dark">
-                   <tr><th>Përdoruesi</th><th>Email</th><th>Roli</th><th>Orari</th><th>Veprime</th></tr>
-                 </thead>
-                 <tbody>
-                   {employees.map(emp => (
-                     <tr key={emp._id}>
-                       <td>{emp.username}</td>
-                       <td>{emp.email}</td>
-                       <td>
-                         <span className={`badge ${emp.role === 'inventory_manager' ? 'bg-warning text-dark' : 'bg-info'}`}>
-                           {emp.role === 'inventory_manager' ? 'Inventari' : 'Punonjës'}
-                         </span>
-                       </td>
-                       <td>{emp.orari || "Pa caktuar"}</td>
-                       <td>
-                         <Button variant="outline-primary" size="sm" onClick={() => {
-                           setSelectedEmployee(emp);
-                           setWorkSchedule(emp.orari || '');
-                           setShowEmployeeModal(true);
-                         }}>📅 Orari</Button>
-                       </td>
-                     </tr>
-                   ))}
-                 </tbody>
-               </Table>
+                <h4 className="mb-4">Lista e Stafit</h4>
+                <Table striped bordered hover responsive>
+                  <thead className="table-dark">
+                    <tr><th>Përdoruesi</th><th>Email</th><th>Roli</th><th>Orari</th><th>Veprime</th></tr>
+                  </thead>
+                  <tbody>
+                    {employees.map(emp => (
+                      <tr key={emp._id}>
+                        <td>{emp.username}</td>
+                        <td>{emp.email}</td>
+                        <td>
+                          <span className={`badge ${emp.role === 'inventory_manager' ? 'bg-warning text-dark' : 'bg-info'}`}>
+                            {emp.role === 'inventory_manager' ? 'Inventari' : 'Punonjës'}
+                          </span>
+                        </td>
+                        <td>
+                            <span className="fw-bold text-primary">
+                                {emp.orari && typeof emp.orari === 'object' 
+                                ? `${emp.orari.fillimi}-${emp.orari.mbarimi} (${emp.orari.ditet?.length} ditë)` 
+                                : "Pa caktuar"}
+                            </span>
+                        </td>
+                        <td>
+                          <Button variant="outline-primary" size="sm" onClick={() => {
+                            setSelectedEmployee(emp);
+                            setWorkSchedule(emp.orari || { fillimi: '08:00', mbarimi: '16:00', ditet: [] });
+                            setShowEmployeeModal(true);
+                          }}>📅 Cakto Orarin</Button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
              </div>
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>
 
-      {/* MODALET MBETEN TE NJEJTET */}
+      {/* MODAL PER LIBRIN */}
       <Modal show={showModal} onHide={() => { setShowModal(false); setEditingId(null); }} centered>
         <Modal.Header closeButton><Modal.Title>Ndrysho Librin</Modal.Title></Modal.Header>
         <Modal.Body>
@@ -442,21 +500,38 @@ const AdminPanel = () => {
           </Form>
         </Modal.Body>
       </Modal>
-
       <Modal show={showEmployeeModal} onHide={() => setShowEmployeeModal(false)} centered>
         <Modal.Header closeButton><Modal.Title>Cakto Orarin: {selectedEmployee?.username}</Modal.Title></Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleUpdateSchedule}>
-            <Form.Group className="mb-3">
-              <Form.Label>Orari i punës</Form.Label>
-              <Form.Control 
-                placeholder="p.sh. Hën-Pre, 08:00-16:00" 
-                value={workSchedule} 
-                onChange={e => setWorkSchedule(e.target.value)} 
-                required 
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit" className="w-100">Përditëso Orarin</Button>
+            <Row className="mb-3">
+              <Col>
+                <Form.Label>Nga (Ora):</Form.Label>
+                <Form.Control type="time" value={workSchedule.fillimi} onChange={e => setWorkSchedule({...workSchedule, fillimi: e.target.value})} />
+              </Col>
+              <Col>
+                <Form.Label>Deri (Ora):</Form.Label>
+                <Form.Control type="time" value={workSchedule.mbarimi} onChange={e => setWorkSchedule({...workSchedule, mbarimi: e.target.value})} />
+              </Col>
+            </Row>
+            
+            <Form.Label>Ditët e punës:</Form.Label>
+            <div className="d-flex flex-wrap gap-2 mb-4">
+              {ditetEPlota.map(dita => (
+                <Form.Check 
+                  key={dita}
+                  type="checkbox"
+                  label={dita}
+                  checked={workSchedule.ditet?.includes(dita)}
+                  onChange={() => handleDayToggle(dita)}
+                  className="border p-2 rounded"
+                />
+              ))}
+            </div>
+
+            <Button variant="primary" type="submit" className="w-100" disabled={loading}>
+                {loading ? "Duke u ruajtur..." : "Përditëso Orarin"}
+            </Button>
           </Form>
         </Modal.Body>
       </Modal>

@@ -43,7 +43,7 @@ function BookTroveNavbar() {
         <Navbar.Toggle aria-controls="booktrove-navbar" />
         
         <Navbar.Collapse id="booktrove-navbar">
-          {/* Menuja Kryesore */}
+          {/* main */}
           <Nav className="navbar-links-center">
             <Nav.Link as={Link} to="/" onClick={handleToggle}>Home</Nav.Link>
             <Nav.Link as={Link} to="/librat" onClick={handleToggle}>Librat</Nav.Link>
@@ -65,7 +65,7 @@ function BookTroveNavbar() {
             )}
           </Nav>
 
-          {/* Grupi i Djathtë: Search + Icons */}
+         
           <div className="navbar-right-final">
             <Form className="search-form-wrapper" onSubmit={handleSearch}>
               <Form.Control 
@@ -109,8 +109,8 @@ function BookTroveNavbar() {
                   </>
                 )}
               </NavDropdown>
-            </div> {/* Mbyllja e icons-wrapper */}
-          </div> {/* Mbyllja e navbar-right-final */}
+            </div> 
+          </div> 
         </Navbar.Collapse>
       </Container>
     </Navbar>

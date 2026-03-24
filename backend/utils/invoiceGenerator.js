@@ -5,14 +5,12 @@ const path = require('path');
 const generateInvoice = (order, filePath) => {
   const doc = new PDFDocument({ size: 'A4', margin: 50 });
 
-  // 1. Header i Dyqanit
   doc.fillColor('#444444').fontSize(20).text('BookTrove Store', 50, 50);
   doc.fontSize(10).text('Faturë Zyrtare', 50, 80);
   doc.text(`Nr. Porosisë: ${order._id}`, 50, 95);
   doc.text(`Data: ${new Date().toLocaleDateString()}`, 50, 110);
   doc.moveDown();
 
-  // 2. Tabela me produkte
   const tableTop = 170;
   doc.font('Helvetica-Bold');
   doc.text('Libri', 50, tableTop);
@@ -33,7 +31,6 @@ const generateInvoice = (order, filePath) => {
     i++;
   });
 
-  // 3. Totali Përfundimtar
   const totalY = tableTop + 30 + (i * 25) + 20;
   doc.moveTo(50, totalY).lineTo(550, totalY).stroke();
   doc.fontSize(15).font('Helvetica-Bold').text(`TOTALI: ${order.total.toFixed(2)}€`, 400, totalY + 20);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaShoppingBasket } from 'react-icons/fa';
-import { useCart } from './CartContext'; // Importojmë shportën
+import { useCart } from './CartContext'; 
 import './Home.css';
 
 const Home = () => {
@@ -11,13 +11,12 @@ const Home = () => {
   const [featuredBooks, setFeaturedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 1. Marrja e librave nga backend
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
         const response = await axios.get("http://localhost:5000/api/items");
-        // Marrim vetëm 4 librat e parë për Home Page
-        setFeaturedBooks(response.data.slice(0, 4));
+     
+        setFeaturedBooks(response.data.slice(3, 7));
       } catch (error) {
         console.error("Gabim gjatë marrjes së librave:", error);
       } finally {
@@ -33,7 +32,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
           <h1>"Çdo libër, një botë për të zbuluar."</h1>
@@ -45,7 +43,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Rreshti i Kategorive */}
       <nav className="categories-section">
         <div className="categories-flex-wrapper">
           <h3 className="categories-label">Kategoritë:</h3>
@@ -60,7 +57,6 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* Librat Featured - Tani DINAMIKE */}
       <section className="featured-books container">
         <h2 className="section-title">Librat më të Dashur</h2>
         
@@ -105,7 +101,7 @@ const Home = () => {
       <polyline points="12 5 19 12 12 19"></polyline>
     </svg>
   </Link>
-</div>
+    </div>
       </section>
     </div>
   );

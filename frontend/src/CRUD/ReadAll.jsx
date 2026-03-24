@@ -38,7 +38,6 @@ const ReadAll = () => {
         <Container className="mt-5 pt-5">
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h1 className="fw-bold">Lista e Librave</h1>
-                {/* Vetëm Admini sheh butonin "Shto" */}
                 {isAdmin() && (
                     <Link to="/add" className="btn btn-success shadow-sm">
                         + Shto Libër të Ri
@@ -70,12 +69,10 @@ const ReadAll = () => {
                             <td>{item.autori}</td>
                             <td className="text-success fw-bold">{item.cmimi}€</td>
                             <td>
-                                {/* Të gjithë mund të shikojnë detajet */}
                                 <Link to={`/read/${item._id}`} className="btn btn-info btn-sm me-2 text-white">
                                     Shiko
                                 </Link>
 
-                                {/* Vetëm Admini mund të bëjë Edit dhe Delete */}
                                 {isAdmin() && (
                                     <>
                                         <Link to={`/update/${item._id}`} className="btn btn-warning btn-sm me-2 text-white">
@@ -91,7 +88,6 @@ const ReadAll = () => {
                                     </>
                                 )}
                                 
-                                {/* Përdoruesi i thjeshtë sheh butonin "Shto në Shportë" */}
                                 {!isAdmin() && (
                                     <Button variant="primary" size="sm">
                                         🛒 Shportë

@@ -21,15 +21,15 @@
 .event-info { padding: 30px; flex: 1; }
 .event-meta { display: flex; gap: 20px; color: #8b5e3c; font-size: 0.9rem; margin-bottom: 15px; }
 .btn-interesuar { background: #3d2b1f; color: white; border: none; padding: 10px 25px; border-radius: 50px; font-weight: bold; }
-/* --- Responsiviteti për Eventet --- */
+
 
 @media (max-width: 1024px) {
   .eventet-page {
-    padding: 40px 5%; /* Pakësojmë anët në tablet */
+    padding: 40px 5%; 
   }
   
   .event-image {
-    width: 250px; /* Imazhi pak më i vogël në ekranet mesatare */
+    width: 250px; 
   }
 }
 
@@ -39,13 +39,13 @@
   }
 
   .event-card-horizontal {
-    flex-direction: column; /* Karta bëhet vertikale në celular */
-    max-width: 450px; /* E mban të mbledhur dhe estetike */
-    margin: 0 auto 30px auto; /* Centron kartën */
+    flex-direction: column; 
+    max-width: 450px; 
+    margin: 0 auto 30px auto; 
   }
 
   .event-image {
-    width: 100%; /* Imazhi zë gjithë gjerësinë lart */
+    width: 100%; 
     height: 220px;
   }
 
@@ -59,12 +59,12 @@
 
   .event-info {
     padding: 20px;
-    text-align: center; /* Centrojmë tekstin për pamje më të mbledhur */
+    text-align: center; 
   }
 
   .event-meta {
     justify-content: center;
-    flex-wrap: wrap; /* Ikonat ndahen në dy rreshta nëse nuk nxënë */
+    flex-wrap: wrap; 
     gap: 10px;
   }
 
@@ -73,13 +73,13 @@
   }
 }
 
-/* Për celularët e vegjël */
+
 @media (max-width: 480px) {
   .event-image {
     height: 180px;
   }
   
   .btn-interesuar {
-    width: 100%; /* Butoni zë gjithë hapësirën poshtë */
+    width: 100%;
   }
 }

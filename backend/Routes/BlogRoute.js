@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Blog = require('../models/BlogModel');
-
-// RREGULLO EMRI I IMPORTIT KËTU:
 const { authenticate, adminOnly } = require('../middleware/authMiddleware'); 
 
-// @desc    Merr të gjitha postimet
 router.get('/', async (req, res) => {
   try {
     const blogs = await Blog.find().sort({ data: -1 });
@@ -15,7 +12,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// @desc    Krijo një postim të ri (PËRDOR authenticate dhe adminOnly)
 router.post('/', authenticate, adminOnly, async (req, res) => {
   try {
     const { titulli, imazhi, tag, shkurtesa, permbajtja, autori } = req.body;
@@ -35,7 +31,6 @@ router.post('/', authenticate, adminOnly, async (req, res) => {
     res.status(400).json({ message: "Gabim në ruajtjen e blogut" });
   }
 });
-
 
 router.delete('/:id', authenticate, adminOnly, async (req, res) => {
   try {

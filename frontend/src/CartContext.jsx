@@ -3,13 +3,11 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  // We initialize the state from localStorage so the cart doesn't disappear on refresh
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem('booktrove_cart');
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // Whenever the cart changes, we save it to localStorage
   useEffect(() => {
     localStorage.setItem('booktrove_cart', JSON.stringify(cartItems));
   }, [cartItems]);
@@ -19,7 +17,6 @@ export const CartProvider = ({ children }) => {
     const isItemInCart = prevItems.find((item) => item._id === liber._id);
 
     if (isItemInCart) {
-      // Bllokimi: Nëse sasia në shportë arrin stokun, mos lejo shto tjetër
       if (isItemInCart.sasia >= liber.stoku) {
         alert(`Më vjen keq! Ka mbetur vetëm ${liber.stoku} kopje në stok.`);
         return prevItems;
@@ -29,7 +26,6 @@ export const CartProvider = ({ children }) => {
       );
     }
 
-    // Shtimi për herë të parë (vetëm nëse ka stok)
     if (liber.stoku > 0) {
       return [...prevItems, { ...liber, sasia: 1 }];
     } else {

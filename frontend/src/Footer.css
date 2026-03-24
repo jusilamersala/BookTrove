@@ -1,5 +1,5 @@
 .footer {
-  background-color: #3f2b1f; /* Ngjyra jote origjinale */
+  background-color: #3f2b1f; 
   color: #f5efe6;
   padding-top: 50px;
   font-family: "Georgia", serif;
@@ -10,13 +10,11 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  /* Krijon kolona automatike: 4 në desktop, 2 në tablet, 1 në celular */
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
   padding: 0 5% 40px 5%;
 }
 
-/* Stilimi i teksteve */
 .footer-logo {
   font-size: 24px;
   color: #e6d3b1;
@@ -92,18 +90,17 @@
 
 /* COPYRIGHT SECTION */
 .footer-bottom {
-  background-color: #1f140d; /* Pak më e errët për kontrast */
+  background-color: #1f140d; 
   text-align: center;
   padding: 20px;
   font-size: 13px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Shto këto te Footer.css ekzistues */
 
 .footer-section ul li a {
   text-decoration: none;
-  color: inherit; /* Merr ngjyrën e prindit (f5efe6) */
+  color: inherit; 
   display: block;
   width: 100%;
   transition: 0.3s;

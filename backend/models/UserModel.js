@@ -47,17 +47,19 @@ const userSchema = new mongoose.Schema({
     type: Date, 
     default: Date.now 
   },
+  orari: {
+        fillimi: { type: String, default: "08:00" },
+        mbarimi: { type: String, default: "16:00" },
+        ditet: { type: [String], default: ["Hënë", "Martë", "Mërkurë", "Enjte", "Premte"] }
+    }
 });
 
-// Enkriptimi i fjalëkalimit para ruajtjes
+// Encrypt password before saving to database
 userSchema.pre("save", async function() {
-  // NOTE: using async middleware means we don't receive `next` and should
-  // simply await operations or throw errors.
   if (!this.isModified("password")) return;
   this.password = await bcrypt.hash(this.password, 10);
 });
 
-// Metodë për të krahasuar fjalëkalimin gjatë Login-it
 userSchema.methods.comparePassword = async function(candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };

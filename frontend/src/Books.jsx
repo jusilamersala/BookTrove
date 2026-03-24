@@ -15,7 +15,7 @@ const Books = () => {
   const [searchTerm, setSearchTerm] = useState(location.state?.searchQuery || '');
   const [selectedGenre, setSelectedGenre] = useState(location.state?.selectedGenre || '');
 
-  // 1. Merr librat nga API
+ 
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -28,7 +28,6 @@ const Books = () => {
     fetchItems();
   }, []);
 
-  // 2. Përditëso gjendjen kur ndryshon kërkimi ose zhaneri
   useEffect(() => {
     if (location.state) {
       if (location.state.searchQuery !== undefined) {
@@ -40,7 +39,6 @@ const Books = () => {
     }
   }, [location]);
 
-  // 3. Logjika e filtrimit
   useEffect(() => {
     const filtered = librat.filter(liber => {
       const matchesSearch = 
